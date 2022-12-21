@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibKrnln", "LibKrnln.vcxproj", "{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{2D5BF970-6325-4B13-A100-CDE231FB309B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "TestProject\test.vcxproj", "{2D5BF970-6325-4B13-A100-CDE231FB309B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE} = {8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}
 	EndProjectSection
