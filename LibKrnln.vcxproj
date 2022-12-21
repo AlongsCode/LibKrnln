@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Lib|Win32">
+      <Configuration>Lib</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Lib|x64">
+      <Configuration>Lib</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Static|Win32">
+      <Configuration>Static</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Static|x64">
+      <Configuration>Static</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Edefcn.h" />
+    <ClInclude Include="include\krnln.h" />
+    <ClInclude Include="include\位运算.h" />
+    <ClInclude Include="include\媒体播放.h" />
+    <ClInclude Include="include\字节集操作.h" />
+    <ClInclude Include="include\操作系统.h" />
+    <ClInclude Include="include\数值转换.h" />
+    <ClInclude Include="include\数据操作.h" />
+    <ClInclude Include="include\数组.h" />
+    <ClInclude Include="include\文本操作.h" />
+    <ClInclude Include="include\文本转换.h" />
+    <ClInclude Include="include\时间操作.h" />
+    <ClInclude Include="include\流程控制.h" />
+    <ClInclude Include="include\环境存取.h" />
+    <ClInclude Include="include\磁盘操作.h" />
+    <ClInclude Include="include\算术运算.h" />
+    <ClInclude Include="include\系统处理.h" />
+    <ClInclude Include="include\逻辑比较.h" />
+    <ClInclude Include="src\媒体播放\MIDI.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\位运算\位取反.cpp" />
+    <ClCompile Include="src\位运算\取整数型某位.cpp" />
+    <ClCompile Include="src\位运算\取长整数高低位.cpp" />
+    <ClCompile Include="src\位运算\右移.cpp" />
+    <ClCompile Include="src\位运算\合并整数.cpp" />
+    <ClCompile Include="src\位运算\合并短整数.cpp" />
+    <ClCompile Include="src\位运算\左移.cpp" />
+    <ClCompile Include="src\媒体播放\播放MIDI.cpp" />
+    <ClCompile Include="src\媒体播放\播放音乐.cpp" />
+    <ClCompile Include="src\字节集操作\倒找字节集.cpp" />
+    <ClCompile Include="src\字节集操作\分割字节集.cpp" />
+    <ClCompile Include="src\字节集操作\到字节集.cpp" />
+    <ClCompile Include="src\字节集操作\取字节集中间.cpp" />
+    <ClCompile Include="src\字节集操作\取字节集内整数.cpp" />
+    <ClCompile Include="src\字节集操作\取字节集右边.cpp" />
+    <ClCompile Include="src\字节集操作\取字节集左边.cpp" />
+    <ClCompile Include="src\字节集操作\取字节集长度.cpp" />
+    <ClCompile Include="src\字节集操作\取空白字节集.cpp" />
+    <ClCompile Include="src\字节集操作\取重复字节集.cpp" />
+    <ClCompile Include="src\字节集操作\子字节集替换.cpp" />
+    <ClCompile Include="src\字节集操作\字节集拼接.cpp" />
+    <ClCompile Include="src\字节集操作\字节集替换.cpp" />
+    <ClCompile Include="src\字节集操作\寻找字节集.cpp" />
+    <ClCompile Include="src\字节集操作\指针到字节集.cpp" />
+    <ClCompile Include="src\字节集操作\置字节集内整数.cpp" />
+    <ClCompile Include="src\操作系统\安装与卸载字体.cpp" />
+    <ClCompile Include="src\操作系统\延迟.cpp" />
+    <ClCompile Include="src\数值转换\二进制.cpp" />
+    <ClCompile Include="src\数值转换\到字节.cpp" />
+    <ClCompile Include="src\数值转换\到小数.cpp" />
+    <ClCompile Include="src\数值转换\到数值.cpp" />
+    <ClCompile Include="src\数值转换\到整数.cpp" />
+    <ClCompile Include="src\数值转换\到短整数.cpp" />
+    <ClCompile Include="src\数值转换\到长整数.cpp" />
+    <ClCompile Include="src\数值转换\十六进制.cpp" />
+    <ClCompile Include="src\数值转换\反转整数字节序.cpp" />
+    <ClCompile Include="src\数值转换\取八进制文本.cpp" />
+    <ClCompile Include="src\数值转换\取十六进制文本.cpp" />
+    <ClCompile Include="src\数值转换\数值到大写.cpp" />
+    <ClCompile Include="src\数值转换\数值到格式文本.cpp" />
+    <ClCompile Include="src\数值转换\数值到金额.cpp" />
+    <ClCompile Include="src\数据操作\取数据摘要.cpp" />
+    <ClCompile Include="src\数据操作\数据加解密.cpp" />
+    <ClCompile Include="src\文本操作\倒找文本.cpp" />
+    <ClCompile Include="src\文本操作\分割文本.cpp" />
+    <ClCompile Include="src\文本操作\删全部空.cpp" />
+    <ClCompile Include="src\文本操作\删尾空.cpp" />
+    <ClCompile Include="src\文本操作\删首尾空.cpp" />
+    <ClCompile Include="src\文本操作\删首空.cpp" />
+    <ClCompile Include="src\文本操作\到全角.cpp" />
+    <ClCompile Include="src\文本操作\到半角.cpp" />
+    <ClCompile Include="src\文本操作\到大写.cpp" />
+    <ClCompile Include="src\文本操作\到小写.cpp" />
+    <ClCompile Include="src\文本操作\到文本.cpp" />
+    <ClCompile Include="src\文本操作\取代码.cpp" />
+    <ClCompile Include="src\文本操作\取文本中间.cpp" />
+    <ClCompile Include="src\文本操作\取文本右边.cpp" />
+    <ClCompile Include="src\文本操作\取文本左边.cpp" />
+    <ClCompile Include="src\文本操作\取文本长度.cpp" />
+    <ClCompile Include="src\文本操作\取空白文本.cpp" />
+    <ClCompile Include="src\文本操作\取统一拓展名.cpp" />
+    <ClCompile Include="src\文本操作\取重复文本.cpp" />
+    <ClCompile Include="src\文本操作\子文本替换.cpp" />
+    <ClCompile Include="src\文本操作\字符.cpp" />
+    <ClCompile Include="src\文本操作\寻找文本.cpp" />
+    <ClCompile Include="src\文本操作\指针到文本.cpp" />
+    <ClCompile Include="src\文本操作\文本替换.cpp" />
+    <ClCompile Include="src\文本操作\文本比较.cpp" />
+    <ClCompile Include="src\文本操作\是否以文本开头.cpp" />
+    <ClCompile Include="src\文本操作\是否以文本结尾.cpp" />
+    <ClCompile Include="src\文本转换\文本转换.cpp" />
+    <ClCompile Include="src\时间操作\到时间.cpp" />
+    <ClCompile Include="src\时间操作\取分钟.cpp" />
+    <ClCompile Include="src\时间操作\取小时.cpp" />
+    <ClCompile Include="src\时间操作\取年份.cpp" />
+    <ClCompile Include="src\时间操作\取日.cpp" />
+    <ClCompile Include="src\时间操作\取日期.cpp" />
+    <ClCompile Include="src\时间操作\取时间.cpp" />
+    <ClCompile Include="src\时间操作\取时间部分.cpp" />
+    <ClCompile Include="src\时间操作\取时间间隔.cpp" />
+    <ClCompile Include="src\时间操作\取星期几.cpp" />
+    <ClCompile Include="src\时间操作\取月份.cpp" />
+    <ClCompile Include="src\时间操作\取某月天数.cpp" />
+    <ClCompile Include="src\时间操作\取现行时间.cpp" />
+    <ClCompile Include="src\时间操作\取秒.cpp" />
+    <ClCompile Include="src\时间操作\增减时间.cpp" />
+    <ClCompile Include="src\时间操作\指定时间.cpp" />
+    <ClCompile Include="src\时间操作\时间到文本.cpp" />
+    <ClCompile Include="src\时间操作\置现行时间.cpp" />
+    <ClCompile Include="src\环境存取\写环境变量.cpp" />
+    <ClCompile Include="src\环境存取\取命令行.cpp" />
+    <ClCompile Include="src\环境存取\取完整目录.cpp" />
+    <ClCompile Include="src\环境存取\取执行文件名.cpp" />
+    <ClCompile Include="src\环境存取\取运行目录.cpp" />
+    <ClCompile Include="src\环境存取\枚举注册表.cpp" />
+    <ClCompile Include="src\环境存取\规范化路径.cpp" />
+    <ClCompile Include="src\环境存取\读环境变量.cpp" />
+    <ClCompile Include="src\磁盘操作\写到文件.cpp" />
+    <ClCompile Include="src\磁盘操作\创建目录.cpp" />
+    <ClCompile Include="src\磁盘操作\删除文件.cpp" />
+    <ClCompile Include="src\磁盘操作\删除目录.cpp" />
+    <ClCompile Include="src\磁盘操作\取临时文件名.cpp" />
+    <ClCompile Include="src\磁盘操作\取当前目录.cpp" />
+    <ClCompile Include="src\磁盘操作\取文件尺寸.cpp" />
+    <ClCompile Include="src\磁盘操作\取文件属性.cpp" />
+    <ClCompile Include="src\磁盘操作\取文件时间.cpp" />
+    <ClCompile Include="src\磁盘操作\取父路径.cpp" />
+    <ClCompile Include="src\磁盘操作\取磁盘剩余空间.cpp" />
+    <ClCompile Include="src\磁盘操作\取磁盘卷标.cpp" />
+    <ClCompile Include="src\磁盘操作\取磁盘总空间.cpp" />
+    <ClCompile Include="src\磁盘操作\复制文件.cpp" />
+    <ClCompile Include="src\磁盘操作\定位文件.cpp" />
+    <ClCompile Include="src\磁盘操作\寻找文件.cpp" />
+    <ClCompile Include="src\磁盘操作\改变目录.cpp" />
+    <ClCompile Include="src\磁盘操作\改变驱动器.cpp" />
+    <ClCompile Include="src\磁盘操作\文件是否存在.cpp" />
+    <ClCompile Include="src\磁盘操作\文件更名.cpp" />
+    <ClCompile Include="src\磁盘操作\清空目录.cpp" />
+    <ClCompile Include="src\磁盘操作\移动文件.cpp" />
+    <ClCompile Include="src\磁盘操作\置文件属性.cpp" />
+    <ClCompile Include="src\磁盘操作\置磁盘卷标.cpp" />
+    <ClCompile Include="src\磁盘操作\读入文件.cpp" />
+    <ClCompile Include="src\算数运算\取整.cpp" />
+    <ClCompile Include="src\算数运算\取符号.cpp" />
+    <ClCompile Include="src\算数运算\取绝对值.cpp" />
+    <ClCompile Include="src\算数运算\取随机数.cpp" />
+    <ClCompile Include="src\算数运算\四舍五入.cpp" />
+    <ClCompile Include="src\算数运算\是否运算正确.cpp" />
+    <ClCompile Include="src\算数运算\求余弦.cpp" />
+    <ClCompile Include="src\算数运算\求反对数.cpp" />
+    <ClCompile Include="src\算数运算\求反正切.cpp" />
+    <ClCompile Include="src\算数运算\求平方根.cpp" />
+    <ClCompile Include="src\算数运算\求次方.cpp" />
+    <ClCompile Include="src\算数运算\求正切.cpp" />
+    <ClCompile Include="src\算数运算\求正弦.cpp" />
+    <ClCompile Include="src\算数运算\求自然对数.cpp" />
+    <ClCompile Include="src\算数运算\绝对取整.cpp" />
+    <ClCompile Include="src\算数运算\置随机数种子.cpp" />
+    <ClCompile Include="src\系统处理\取屏幕宽度.cpp" />
+    <ClCompile Include="src\系统处理\取屏幕高度.cpp" />
+    <ClCompile Include="src\系统处理\延时.cpp" />
+    <ClCompile Include="src\逻辑比较\文本对比.cpp" />
+    <ClCompile Include="src\逻辑比较\近似等于.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{8797a36d-5147-4ae1-9f2a-afa4e87a1aae}</ProjectGuid>
+    <RootNamespace>LibKrnln</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Lib|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Lib|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
+    <PlatformToolset>v142</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'" Label="Configuration">
+    <PlatformToolset>v142</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Lib|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Lib|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Lib|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>LibKrnln</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Lib|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>LibKrnln</TargetName>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetExt>.lib</TargetExt>
+    <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Lib|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;KrnlnApi=__declspec(dllexport);LIBKRNLN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ImageHasSafeExceptionHandlers />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Lib|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;KrnlnApi=__declspec(dllexport);LIBKRNLN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <ImageHasSafeExceptionHandlers>
+      </ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
+    <ClCompile>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'">
+    <ClCompile>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
+    <ClCompile>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'">
+    <ClCompile>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|Win32'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers />
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;KrnlnApi=;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ConformanceMode>true</ConformanceMode>
+      <Optimization>MaxSpeed</Optimization>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>
+      </OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;KrnlnApi=;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ConformanceMode>true</ConformanceMode>
+      <Optimization>MinSpace</Optimization>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

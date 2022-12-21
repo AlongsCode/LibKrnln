@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\文本转换">
+      <UniqueIdentifier>{5f3a8225-58f7-4b38-b276-3e725a35aa57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数组">
+      <UniqueIdentifier>{725fbdb2-9507-4e9a-82e6-a5d457d63835}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\流程控制">
+      <UniqueIdentifier>{ca164843-e6b5-46c2-8a3f-defb886c5853}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\算数运算">
+      <UniqueIdentifier>{fdb5e636-8ac6-4b08-ba10-97b5a41a2fa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\算数运算\实现">
+      <UniqueIdentifier>{6a9389dc-bb43-41b7-b889-2d7582154641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\逻辑比较">
+      <UniqueIdentifier>{8e5e2107-3906-43b1-9ab5-ec3565c98256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\位运算">
+      <UniqueIdentifier>{96812f3e-ce7c-4af2-803e-f51e6552beae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\位运算\实现">
+      <UniqueIdentifier>{23ff6abb-0697-4bae-acbd-5fc5f840f1d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\环境存取">
+      <UniqueIdentifier>{ec522917-9ee5-4a64-a763-da0e4252bf6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\环境存取\实现">
+      <UniqueIdentifier>{6dbe3e44-df98-4adf-983f-3d35cdbc19d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\字节集操作">
+      <UniqueIdentifier>{6a7ae902-563d-4ba4-9cfb-7ffedd8d385a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\字节集操作\实现">
+      <UniqueIdentifier>{5dfcad39-1af2-4b4a-955b-03c9e6be7789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\逻辑比较\实现">
+      <UniqueIdentifier>{56514cbb-4f26-4f37-90b9-a15a4fa70d19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\文本操作">
+      <UniqueIdentifier>{4bb10ebd-d509-40e3-974f-f18c7e8a29ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\文本操作\实现">
+      <UniqueIdentifier>{ea30c772-acf1-4577-a226-f55608faa444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数值转换">
+      <UniqueIdentifier>{304e67ae-8838-4f48-b02b-0f8abfb813d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数值转换\实现">
+      <UniqueIdentifier>{b25c7975-9937-4fd7-b502-e5522c9bd420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\磁盘操作">
+      <UniqueIdentifier>{66c48ab2-174a-4ae2-81bb-9b16778a54fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\磁盘操作\实现">
+      <UniqueIdentifier>{07bfc7eb-1c83-4c6c-beb8-d4a7a87d6a1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\时间操作">
+      <UniqueIdentifier>{02fa4b5f-4d0a-47af-bb91-02fefacf6b8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\时间操作\实现">
+      <UniqueIdentifier>{0cc96def-fe17-4b2d-a13d-edd0724866ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\数据操作">
+      <UniqueIdentifier>{27d9e31e-02bd-43fa-9af3-9410cc8c1874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\媒体播放">
+      <UniqueIdentifier>{f47f9af2-f110-4afd-8339-9e6dfb148d11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\媒体播放\实现">
+      <UniqueIdentifier>{017c834d-ee8f-4e27-9be0-3b1e77a0f924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\系统处理">
+      <UniqueIdentifier>{64494970-8c63-4d5b-a942-111df73debcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\系统处理\实现">
+      <UniqueIdentifier>{5607f619-6938-4483-aba2-763a5b86ccd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\操作系统">
+      <UniqueIdentifier>{f26a8cb4-d30f-4a21-bbf7-4c9b46ae62be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\操作系统\实现">
+      <UniqueIdentifier>{04abe2e8-5367-4bbb-8a0b-925447be3205}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Edefcn.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\krnln.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\文本转换.h">
+      <Filter>源文件\文本转换</Filter>
+    </ClInclude>
+    <ClInclude Include="include\数组.h">
+      <Filter>源文件\数组</Filter>
+    </ClInclude>
+    <ClInclude Include="include\流程控制.h">
+      <Filter>源文件\流程控制</Filter>
+    </ClInclude>
+    <ClInclude Include="include\算术运算.h">
+      <Filter>源文件\算数运算</Filter>
+    </ClInclude>
+    <ClInclude Include="include\逻辑比较.h">
+      <Filter>源文件\逻辑比较</Filter>
+    </ClInclude>
+    <ClInclude Include="include\位运算.h">
+      <Filter>源文件\位运算</Filter>
+    </ClInclude>
+    <ClInclude Include="include\环境存取.h">
+      <Filter>源文件\环境存取</Filter>
+    </ClInclude>
+    <ClInclude Include="include\字节集操作.h">
+      <Filter>源文件\字节集操作</Filter>
+    </ClInclude>
+    <ClInclude Include="include\文本操作.h">
+      <Filter>源文件\文本操作</Filter>
+    </ClInclude>
+    <ClInclude Include="include\数值转换.h">
+      <Filter>源文件\数值转换</Filter>
+    </ClInclude>
+    <ClInclude Include="include\磁盘操作.h">
+      <Filter>源文件\磁盘操作</Filter>
+    </ClInclude>
+    <ClInclude Include="include\时间操作.h">
+      <Filter>源文件\时间操作</Filter>
+    </ClInclude>
+    <ClInclude Include="src\媒体播放\MIDI.hpp">
+      <Filter>源文件\媒体播放\实现</Filter>
+    </ClInclude>
+    <ClInclude Include="include\媒体播放.h">
+      <Filter>源文件\媒体播放</Filter>
+    </ClInclude>
+    <ClInclude Include="include\数据操作.h">
+      <Filter>源文件\数据操作</Filter>
+    </ClInclude>
+    <ClInclude Include="include\系统处理.h">
+      <Filter>源文件\系统处理</Filter>
+    </ClInclude>
+    <ClInclude Include="include\操作系统.h">
+      <Filter>源文件\操作系统</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\文本转换\文本转换.cpp">
+      <Filter>源文件\文本转换</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\绝对取整.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\求次方.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\求反对数.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\求反正切.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\求平方根.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\求余弦.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\求正切.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\求正弦.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\求自然对数.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\取符号.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\取绝对值.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\取随机数.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\取整.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\是否运算正确.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\四舍五入.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\置随机数种子.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\位运算\合并短整数.cpp">
+      <Filter>源文件\位运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\位运算\合并整数.cpp">
+      <Filter>源文件\位运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\位运算\取长整数高低位.cpp">
+      <Filter>源文件\位运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\位运算\取整数型某位.cpp">
+      <Filter>源文件\位运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\位运算\位取反.cpp">
+      <Filter>源文件\位运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\位运算\右移.cpp">
+      <Filter>源文件\位运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\位运算\左移.cpp">
+      <Filter>源文件\位运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\读环境变量.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\规范化路径.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\枚举注册表.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\取命令行.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\取完整目录.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\取运行目录.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\取执行文件名.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\写环境变量.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\到字节集.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\倒找字节集.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\分割字节集.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\取空白字节集.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\取重复字节集.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\取字节集内整数.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\取字节集右边.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\取字节集长度.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\取字节集中间.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\取字节集左边.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\寻找字节集.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\指针到字节集.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\置字节集内整数.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\子字节集替换.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\字节集替换.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\逻辑比较\近似等于.cpp">
+      <Filter>源文件\逻辑比较\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\逻辑比较\文本对比.cpp">
+      <Filter>源文件\逻辑比较\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\到半角.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\到大写.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\到全角.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\到文本.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\到小写.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\倒找文本.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\分割文本.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\取代码.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\取空白文本.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\取统一拓展名.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\取文本右边.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\取文本长度.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\取文本中间.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\取文本左边.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\取重复文本.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\删全部空.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\删首空.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\删首尾空.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\删尾空.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\是否以文本结尾.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\是否以文本开头.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\文本比较.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\文本替换.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\寻找文本.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\指针到文本.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\子文本替换.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文本操作\字符.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\到时间.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取分钟.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取秒.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取某月天数.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取年份.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取日.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取日期.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取时间.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取时间部分.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取时间间隔.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取现行时间.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取小时.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取星期几.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\取月份.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\时间到文本.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\增减时间.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\指定时间.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\时间操作\置现行时间.cpp">
+      <Filter>源文件\时间操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\到短整数.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\到数值.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\到小数.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\到长整数.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\到整数.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\到字节.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\二进制.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\反转整数字节序.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\取八进制文本.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\取十六进制文本.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\十六进制.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\数值到大写.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\数值到格式文本.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数值转换\数值到金额.cpp">
+      <Filter>源文件\数值转换\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\创建目录.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\读入文件.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\复制文件.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\改变目录.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\改变驱动器.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取磁盘卷标.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取磁盘剩余空间.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取磁盘总空间.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取当前目录.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取临时文件名.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取文件尺寸.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取文件时间.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取文件属性.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\删除目录.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\删除文件.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\文件更名.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\文件是否存在.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\写到文件.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\寻找文件.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\移动文件.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\置磁盘卷标.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\置文件属性.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\定位文件.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\取父路径.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\字节集拼接.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\媒体播放\播放音乐.cpp">
+      <Filter>源文件\媒体播放\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\媒体播放\播放MIDI.cpp">
+      <Filter>源文件\媒体播放\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数据操作\取数据摘要.cpp">
+      <Filter>源文件\数据操作</Filter>
+    </ClCompile>
+    <ClCompile Include="src\数据操作\数据加解密.cpp">
+      <Filter>源文件\数据操作</Filter>
+    </ClCompile>
+    <ClCompile Include="src\磁盘操作\清空目录.cpp">
+      <Filter>源文件\磁盘操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\安装与卸载字体.cpp">
+      <Filter>源文件\操作系统\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\系统处理\取屏幕高度.cpp">
+      <Filter>源文件\系统处理\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\系统处理\取屏幕宽度.cpp">
+      <Filter>源文件\系统处理\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\系统处理\延时.cpp">
+      <Filter>源文件\系统处理\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\延迟.cpp">
+      <Filter>源文件\操作系统\实现</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
