@@ -1,4 +1,5 @@
 ﻿#ifdef _WIN32
+#pragma warning(disable:6258)
 #include"windows.h"
 #include"vector"
 #include"string"
@@ -239,7 +240,7 @@ namespace KrnlnMidInside {
 		}
 		if (pMidiFileData)
 		{
-			for (INT i = 0; i < nMidiArrySize; i++)
+			for (size_t i = 0; i < nMidiArrySize; i++)
 			{
 				if (pMidiFileData[i].pData)
 				{
@@ -262,7 +263,7 @@ namespace KrnlnMidInside {
 
 		for (INT n = 0; n < nLoopNum; n++)
 		{
-			for (INT i = 0; i < nMidiArrySize; i++)
+			for (size_t i = 0; i < nMidiArrySize; i++)
 			{
 				if (pMidiFileData[i].pData)
 				{

@@ -36,6 +36,7 @@
     <ClInclude Include="include\磁盘操作.h" />
     <ClInclude Include="include\算术运算.h" />
     <ClInclude Include="include\系统处理.h" />
+    <ClInclude Include="include\线程操作.h" />
     <ClInclude Include="include\逻辑比较.h" />
     <ClInclude Include="src\媒体播放\MIDI.hpp" />
   </ItemGroup>
@@ -181,6 +182,7 @@
     <ClCompile Include="src\系统处理\取屏幕宽度.cpp" />
     <ClCompile Include="src\系统处理\取屏幕高度.cpp" />
     <ClCompile Include="src\系统处理\延时.cpp" />
+    <ClCompile Include="src\线程操作\线程操作.cpp" />
     <ClCompile Include="src\逻辑比较\文本对比.cpp" />
     <ClCompile Include="src\逻辑比较\近似等于.cpp" />
   </ItemGroup>

@@ -97,6 +97,12 @@
     <Filter Include="源文件\操作系统\实现">
       <UniqueIdentifier>{04abe2e8-5367-4bbb-8a0b-925447be3205}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\线程操作">
+      <UniqueIdentifier>{87a31c2d-be5a-4125-ba94-1ff2df834ac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\线程操作\实现">
+      <UniqueIdentifier>{0fe8c650-04fe-4458-b8bc-4d0f2f8191b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Edefcn.h">
@@ -155,6 +161,9 @@
     </ClInclude>
     <ClInclude Include="include\操作系统.h">
       <Filter>源文件\操作系统</Filter>
+    </ClInclude>
+    <ClInclude Include="include\线程操作.h">
+      <Filter>源文件\线程操作</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -586,6 +595,9 @@
     </ClCompile>
     <ClCompile Include="src\操作系统\延迟.cpp">
       <Filter>源文件\操作系统\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\线程操作\线程操作.cpp">
+      <Filter>源文件\线程操作\实现</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

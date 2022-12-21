@@ -40,6 +40,7 @@ using namespace std;
 /*此文件中会包含操作系统独占函数*/
 #include"操作系统.h"
 #include"系统处理.h"
+#include"线程操作.h"
 #ifdef _WIN32
 #include"媒体播放.h"
 #endif 

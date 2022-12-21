@@ -465,7 +465,7 @@ void rc4(unsigned char* buffer_ptr, size_t buffer_len, rc4_key* key)
 	unsigned char y;
 	unsigned char* state;
 	unsigned char xorIndex;
-	int counter;
+	size_t counter;
 
 	x = key->x;
 	y = key->y;
