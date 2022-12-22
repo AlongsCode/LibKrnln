@@ -147,9 +147,6 @@
     <ClInclude Include="include\时间操作.h">
       <Filter>源文件\时间操作</Filter>
     </ClInclude>
-    <ClInclude Include="include\媒体播放.h">
-      <Filter>源文件\媒体播放</Filter>
-    </ClInclude>
     <ClInclude Include="include\数据操作.h">
       <Filter>源文件\数据操作</Filter>
     </ClInclude>
@@ -563,12 +560,6 @@
     <ClCompile Include="src\字节集操作\字节集拼接.cpp">
       <Filter>源文件\字节集操作\实现</Filter>
     </ClCompile>
-    <ClCompile Include="src\媒体播放\播放音乐.cpp">
-      <Filter>源文件\媒体播放\实现</Filter>
-    </ClCompile>
-    <ClCompile Include="src\媒体播放\播放MIDI.cpp">
-      <Filter>源文件\媒体播放\实现</Filter>
-    </ClCompile>
     <ClCompile Include="src\数据操作\取数据摘要.cpp">
       <Filter>源文件\数据操作</Filter>
     </ClCompile>
@@ -595,6 +586,12 @@
     </ClCompile>
     <ClCompile Include="src\线程操作\线程操作.cpp">
       <Filter>源文件\线程操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\播放MIDI.cpp">
+      <Filter>源文件\操作系统\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\播放音乐.cpp">
+      <Filter>源文件\操作系统\实现</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

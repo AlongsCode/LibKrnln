@@ -41,9 +41,7 @@ using namespace std;
 #include"操作系统.h"
 #include"系统处理.h"
 #include"线程操作.h"
-#ifdef _WIN32
-#include"媒体播放.h"
-#endif 
+
 
 
 //#include"图片处理.h"

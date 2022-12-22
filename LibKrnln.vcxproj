@@ -22,7 +22,6 @@
     <ClInclude Include="include\Edefcn.h" />
     <ClInclude Include="include\krnln.h" />
     <ClInclude Include="include\位运算.h" />
-    <ClInclude Include="include\媒体播放.h" />
     <ClInclude Include="include\字节集操作.h" />
     <ClInclude Include="include\操作系统.h" />
     <ClInclude Include="include\数值转换.h" />
@@ -47,8 +46,6 @@
     <ClCompile Include="src\位运算\合并整数.cpp" />
     <ClCompile Include="src\位运算\合并短整数.cpp" />
     <ClCompile Include="src\位运算\左移.cpp" />
-    <ClCompile Include="src\媒体播放\播放MIDI.cpp" />
-    <ClCompile Include="src\媒体播放\播放音乐.cpp" />
     <ClCompile Include="src\字节集操作\倒找字节集.cpp" />
     <ClCompile Include="src\字节集操作\分割字节集.cpp" />
     <ClCompile Include="src\字节集操作\到字节集.cpp" />
@@ -67,6 +64,8 @@
     <ClCompile Include="src\字节集操作\置字节集内整数.cpp" />
     <ClCompile Include="src\操作系统\安装与卸载字体.cpp" />
     <ClCompile Include="src\操作系统\延迟.cpp" />
+    <ClCompile Include="src\操作系统\播放MIDI.cpp" />
+    <ClCompile Include="src\操作系统\播放音乐.cpp" />
     <ClCompile Include="src\数值转换\二进制.cpp" />
     <ClCompile Include="src\数值转换\到字节.cpp" />
     <ClCompile Include="src\数值转换\到小数.cpp" />
