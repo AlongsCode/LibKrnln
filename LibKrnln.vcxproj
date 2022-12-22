@@ -38,7 +38,6 @@
     <ClInclude Include="include\系统处理.h" />
     <ClInclude Include="include\线程操作.h" />
     <ClInclude Include="include\逻辑比较.h" />
-    <ClInclude Include="src\媒体播放\MIDI.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\位运算\位取反.cpp" />

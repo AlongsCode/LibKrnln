@@ -147,9 +147,6 @@
     <ClInclude Include="include\时间操作.h">
       <Filter>源文件\时间操作</Filter>
     </ClInclude>
-    <ClInclude Include="src\媒体播放\MIDI.hpp">
-      <Filter>源文件\媒体播放\实现</Filter>
-    </ClInclude>
     <ClInclude Include="include\媒体播放.h">
       <Filter>源文件\媒体播放</Filter>
     </ClInclude>

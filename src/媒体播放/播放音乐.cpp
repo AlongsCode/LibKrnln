@@ -1,4 +1,5 @@
-﻿#include<vector>
+﻿#ifdef _WIN32
+#include<vector>
 #include<string>
 #include<windows.h>
 using namespace std;
@@ -19,3 +20,4 @@ KrnlnApi bool 播放音乐(const string& 欲播放的音乐, bool 是否循环�
 KrnlnApi  bool 停止播放() {
 	return PlaySound(NULL, NULL, SND_PURGE);
 }
+#endif
