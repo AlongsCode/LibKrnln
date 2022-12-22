@@ -76,7 +76,7 @@ void 禁止重复运行(const std::wstring& identifier, void(*callback)())
 
 
 
-int wmain() {
+int main() {
 	//字节集 S = 到字节集("sadbutsdsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsaafsafwaewadsaad"), N = 到字节集("fwaewadsa");
 	//int A, B, 位置变量;
 	//A = GetTickCount64();
@@ -96,8 +96,8 @@ int wmain() {
 	//if
 	//调试输出("速度:" + 到文本A(B - A), 寻找字节集(S, N));
 
-
-
+	字节集 A, B;
+	调试输出(A + B, A);
 }
 
 

@@ -57,108 +57,106 @@ using namespace std;
 //*****************************DEBUG时请自行添加调试宏|重载使用方便************************
 #pragma region 调试输出
 #ifdef 调试版
+
+
 template <class Ty>
-static void pt(lstring& str, Ty v)
+static void pt(wstring& str, Ty v)
 {
 
-	str.append(std::to_wstring(v) + _l(" | "));
+	str.append(std::to_wstring(v) + L" | ");
 }
 template <class Ty>
-static void pt(lstring& str, vector<Ty> v)
+static void pt(wstring& str, vector<Ty> v)
 {
-
+	if (v.empty())
+	{
+		str.append(L" 数组:(空) |");
+		return;
+	}
 	for (size_t i = 0; i < v.size(); i++)
 	{
 		if (i == 0) {
-			str.append(_l("{"));
+			str.append(L" 数组 :" + to_wstring(v.size()) + L" {");
 		}
 		str.append(to_wstring(v[i]));
-		str.append(_l(","));
+		str.append(L",");
 	}
 	str.pop_back();
-	str.append(_l("} | "));
+	str.append(L"} | ");
 }
-static void pt(lstring& str, const WCHAR* s) //这个是 L""
+static void pt(wstring& str, const wchar_t* s) //这个是 L""
 {
 
-	str.append(_l("\""));
+	str.append(L"\"");
 	if (!s)
 	{
-		str.append(_l("(空)"));
-		str.append(_l("\" | "));
+		str.append(L"(空)");
+		str.append(L"\" | ");
 		return;
 	}
-#ifdef _UNICODE
-	str.append(s);
-#else
-	str.append(宽文本到文本(s));
 
-#endif // _UNICODE
-	str.append(_l("\" | "));
+	str.append(s);
+
+	str.append(L"\" | ");
 }
-static void pt(lstring& str, const CHAR* s) //这个是 L""
+static void pt(wstring& str, const char* s) //这个是 L""
 {
-	str.append(_l("\""));
+	str.append(L"\"");
 	if (!s)
 	{
-		str.append(_l("(空)"));
-		str.append(_l("\" | "));
+		str.append(L"(空)");
+		str.append(L"\" | ");
 		return;
 	}
-	str.append(_l("\""));
-#ifdef _UNICODE
-	str.append(文本到宽文本(s));
-#else
-	str.append(s);
-#endif // _UNICODE
-	str.append(_l("\" | "));
-}
-static void pt(lstring& str, std::string s)
-{
-	str.append(_l("\""));
-#ifdef _UNICODE
-	str.append(文本到宽文本(s));
-#else
-	str.append(s);
-#endif // _UNICODE
-	str.append(_l("\" | "));
-}
-static void pt(lstring& str, std::wstring s)
-{
-	str.append(_l("\""));
-#ifdef _UNICODE
-	str.append(s);
-#else
-	str.append(宽文本到文本(s));
+	str.append(L"\"");
 
-#endif // _UNICODE
-	str.append(_l("\" | "));
-}
-static void pt(lstring& str, vector<unsigned char> s)
-{
+	str.append(文本到宽文本(s));
 
+	str.append(L"\" | ");
+}
+static void pt(wstring& str, std::string s)
+{
+	str.append(L"\"");
+
+	str.append(文本到宽文本(s));
+
+	str.append(L"\" | ");
+}
+static void pt(wstring& str, std::wstring s)
+{
+	str.append(L"\"");
+	str.append(s);
+	str.append(L"\" | ");
+}
+static void pt(wstring& str, vector<unsigned char> s)
+{
+	if (s.empty())
+	{
+		str.append(L" 字节集:(空) |");
+		return;
+	}
 	for (size_t i = 0; i < s.size(); i++)
 	{
 		if (i == 0) {
-			str.append(_l("{"));
+			str.append(L" 字节集 :" + to_wstring(s.size()) + L" {");
 		}
 		str.append(to_wstring((int)s.data()[i]));
-		str.append(_l(","));
+		str.append(L",");
 	}
 	str.pop_back();
-	str.append(_l("} | "));
+	str.append(L"} | ");
 
 };
-static void pt(lstring& str, char* s)
+static void pt(wstring& str, char* s)
 {
 
-	str.append(到文本(string(s)) + _l(" | "));
+	str.append(到文本W(string(s)) + L" | ");
 
 };
-static void pt(lstring& str, std::tm s)
+static void pt(wstring& str, std::tm s)
 {
 
-	str.append(到文本W(s) + _l(" | "));
+	str.append(到文本W(s) + L" | ");
 
 };
 //调试输出 支持 无限参数!  任意类型!  (没有的可以重载方法自定义)
@@ -171,7 +169,7 @@ static void 调试输出(T... args)
 	str.pop_back();
 	str.pop_back();
 	str.append(L"\r\n");
-	OutputDebugString(str.c_str());
+	OutputDebugStringW(str.c_str());
 };
 
 #else
