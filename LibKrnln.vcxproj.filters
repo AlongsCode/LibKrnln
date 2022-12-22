@@ -103,6 +103,12 @@
     <Filter Include="源文件\线程操作\实现">
       <UniqueIdentifier>{0fe8c650-04fe-4458-b8bc-4d0f2f8191b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\控制台操作">
+      <UniqueIdentifier>{8ea1e7eb-0924-43b3-a456-ed53d9a466d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\控制台操作\实现">
+      <UniqueIdentifier>{b7be2f62-e61d-498d-bb78-e04a019ff3e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Edefcn.h">
@@ -158,6 +164,9 @@
     </ClInclude>
     <ClInclude Include="include\线程操作.h">
       <Filter>源文件\线程操作</Filter>
+    </ClInclude>
+    <ClInclude Include="include\控制台操作.h">
+      <Filter>源文件\控制台操作</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -592,6 +601,9 @@
     </ClCompile>
     <ClCompile Include="src\操作系统\播放音乐.cpp">
       <Filter>源文件\操作系统\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\控制台操作\标准输入.cpp">
+      <Filter>源文件\控制台操作\实现</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

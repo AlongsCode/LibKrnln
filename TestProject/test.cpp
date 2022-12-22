@@ -75,48 +75,30 @@ void 禁止重复运行(const std::wstring& identifier, void(*callback)())
 #pragma endregion
 
 
-#include<iostream>
-void* mutex = nullptr;
-void thread_func(void* arg)
-{
-	int* thread_num = static_cast<int*>(arg);
-	std::cout << "Thread " << *thread_num << " running" << std::endl;
 
-	// 使用互斥体保护共享资源
+int wmain() {
+	//字节集 S = 到字节集("sadbutsdsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsaafsafwaewadsaad"), N = 到字节集("fwaewadsa");
+	//int A, B, 位置变量;
+	//A = GetTickCount64();
+	//for (size_t i = 0; i < 9999999; i++)
+	//{
+	//	寻找字节集(到字节集("leetcode"), 到字节集("leeto"));
+	//}
+	//B = GetTickCount64();
 
-	进入许可区(mutex);
-	// 使用共享资源
-	std::cout << "Thread " << *thread_num << " using shared resource" << std::endl;
-	退出许可区(mutex);
+	//调试输出("速度:" + 到文本A(B - A), 寻找字节集(S, N));
+	//A = GetTickCount64();
+	//for (size_t i = 0; i < 9999999; i++)
+	//{
+	//	strStr(S, N);
+	//}
+	//B = GetTickCount64();
+	//if
+	//调试输出("速度:" + 到文本A(B - A), 寻找字节集(S, N));
 
-	std::cout << "Thread " << *thread_num << " exiting" << std::endl;
+
+
 }
-
-int main()
-{
-	mutex = 创建进入许可证();
-	int thread1_num = 1, thread2_num = 2;
-	void* thread1_handle = 启动线程(thread_func, &thread1_num);
-	void* thread2_handle = 启动线程(thread_func, &thread2_num);
-
-	// 等待两个线程结束
-	等待线程(thread1_handle);
-	等待线程(thread2_handle);
-
-	// 关闭线程句柄
-	关闭线程句柄(thread1_handle);
-	关闭线程句柄(thread2_handle);
-
-	// 释放互斥体资源
-	删除进入许可证(mutex);
-
-	return 0;
-}
-
-
-
-
-
 
 
 

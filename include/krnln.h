@@ -15,7 +15,7 @@ import STL;
 如果为MSVC则使用全中文模块--开始（MSVC版本没做定义，如果你还在用VC6自行修改吧）
 *******************************************************************************/
 #ifdef _MSC_VER 
-//msvc环境下定义为win环境，并使用中文代码。
+//使用vcide环境下定义默认为win环境，并使用中文代码。
 #pragma region 
 #define 使用中文代码
 #include<windows.h>
@@ -48,7 +48,7 @@ using namespace std;
 //#include"其他.h"
 //#include"网络通信.h"
 //#include"窗口操作.h"
-//#include"控制台程序.h"
+#include"控制台操作.h"
 //#include"COM变体型.h"
 
 //#include"文件读写.h"

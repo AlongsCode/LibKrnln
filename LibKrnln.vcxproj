@@ -23,6 +23,7 @@
     <ClInclude Include="include\krnln.h" />
     <ClInclude Include="include\位运算.h" />
     <ClInclude Include="include\字节集操作.h" />
+    <ClInclude Include="include\控制台操作.h" />
     <ClInclude Include="include\操作系统.h" />
     <ClInclude Include="include\数值转换.h" />
     <ClInclude Include="include\数据操作.h" />
@@ -62,6 +63,7 @@
     <ClCompile Include="src\字节集操作\寻找字节集.cpp" />
     <ClCompile Include="src\字节集操作\指针到字节集.cpp" />
     <ClCompile Include="src\字节集操作\置字节集内整数.cpp" />
+    <ClCompile Include="src\控制台操作\标准输入.cpp" />
     <ClCompile Include="src\操作系统\安装与卸载字体.cpp" />
     <ClCompile Include="src\操作系统\延迟.cpp" />
     <ClCompile Include="src\操作系统\播放MIDI.cpp" />

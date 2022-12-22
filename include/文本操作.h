@@ -190,16 +190,39 @@ int 文本比较(const std::wstring& 待比较文本一, const std::wstring& 待
 
 
 
-//给什么处理什么无需定义宏 重载
+/*   调用格式： 〈文本型〉 文本替换 （文本型 欲被替换的文本，整数型 起始替换位置，整数型 替换长度，［文本型 用作替换的文本］） - 系统核心支持库->文本操作
+	英文名称：ReplaceText
+	将指定文本的某一部分用其它的文本替换。本命令为初级命令。
+	参数<1>的名称为“欲被替换的文本”，类型为“文本型（text）”。
+	参数<2>的名称为“起始替换位置”，类型为“整数型（int）”。替换的起始位置，1为首位置，2为第2个位置，如此类推。
+	参数<3>的名称为“替换长度”，类型为“整数型（int）”。
+	参数<4>的名称为“用作替换的文本”，类型为“文本型（text）”，可以被省略。如果本参数被省略，则删除文本中的指定部分。
+
+	操作系统需求： Windows、Linux*/
 wstring 文本替换(const std::wstring& 欲被替换的文本, size_t 起始替换位置, size_t 替换长度, const std::wstring& 用作替换的文本);
+/*   调用格式： 〈文本型〉 文本替换 （文本型 欲被替换的文本，整数型 起始替换位置，整数型 替换长度，［文本型 用作替换的文本］） - 系统核心支持库->文本操作
+	英文名称：ReplaceText
+	将指定文本的某一部分用其它的文本替换。本命令为初级命令。
+	参数<1>的名称为“欲被替换的文本”，类型为“文本型（text）”。
+	参数<2>的名称为“起始替换位置”，类型为“整数型（int）”。替换的起始位置，1为首位置，2为第2个位置，如此类推。
+	参数<3>的名称为“替换长度”，类型为“整数型（int）”。
+	参数<4>的名称为“用作替换的文本”，类型为“文本型（text）”，可以被省略。如果本参数被省略，则删除文本中的指定部分。
+	操作系统需求： Windows、Linux*/
 string 文本替换(const std::string& 欲被替换的文本, size_t 起始替换位置, size_t 替换长度, const std::string& 用作替换的文本);
+
+string 文本替换下标(const string& 欲被替换的文本, size_t 起始替换下标, size_t 替换长度, const string& 用作替换的文本);
+wstring 文本替换下标(const wstring& 欲被替换的文本, size_t 起始替换下标, size_t 替换长度, const wstring& 用作替换的文本);
 #pragma endregion 
 
 
 #pragma region 寻找文本
 //给什么处理什么无需定义宏 重载
-intptr_t 寻找文本(wstring 被搜寻的文本, wstring 欲寻找的文本, size_t 起始搜寻位置, bool 是否不区分大小写);
-intptr_t 寻找文本(string 被搜寻的文本, string 欲寻找的文本, size_t 起始搜寻位置, bool 是否不区分大小写);
+intptr_t 寻找文本(const wstring& 被搜寻的文本, const wstring& 欲寻找的文本, size_t 起始搜寻位置 = 0, bool 是否不区分大小写 = 1);
+intptr_t 寻找文本(const string& 被搜寻的文本, const string& 欲寻找的文本, size_t 起始搜寻位置 = 0, bool 是否不区分大小写 = 1);
+//返回匹配串的起始下标
+intptr_t 寻找文本下标(const std::string& text, const std::string& search, size_t start_pos = 0, bool ignore_case = 1);
+//返回匹配串的起始下标
+intptr_t 寻找文本下标(const std::wstring& text, const std::wstring& search, size_t start_pos = 0, bool ignore_case = 1);
 #pragma endregion 
 
 #pragma region 分割文本(WA码)及其宏
@@ -237,13 +260,3 @@ bool 是否以文本结尾(const std::wstring& 所欲操作的文本, const std:
 bool 是否以文本开头(const std::string& 所欲操作的文本, const std::string& 搜索字符, bool 是否区分大小写);
 bool 是否以文本开头(const std::wstring& 所欲操作的文本, const std::wstring& 搜索字符, bool 是否区分大小写);
 
-//借用===================================
-template<typename T>
-void 标准输出(int 输出方向, T 输出内容) {
-	DWORD dwSdt = STD_OUTPUT_HANDLE;
-	if (输出方向 == 2) {
-		dwSdt = STD_ERROR_HANDLE;
-	}
-	HANDLE hCon = GetStdHandle(dwSdt);
-	WriteConsoleW(hCon, 到文本(输出内容).c_str(), 到文本(输出内容).size(), 0, NULL);
-};
