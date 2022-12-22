@@ -1471,11 +1471,11 @@ namespace KrnlnMidInside {
 	};
 	struct MIDMUSIC
 	{
-		union {
-			const char* name;
-			const wchar_t* wname;
-			MIDIFILEDATAINFO data;
-		};
+
+		string name;
+		wstring wname;
+		MIDIFILEDATAINFO data;
+
 		int datatype;
 	};
 	typedef MIDMUSIC* PMIDMUSIC;
@@ -1533,13 +1533,13 @@ namespace KrnlnMidInside {
 			}
 			else if (MIDDATA[i].datatype == 0) {//string
 
-				if (IsValidMidiFileName(MIDDATA[i].name))
+				if (IsValidMidiFileName(MIDDATA[i].name.c_str()))
 					nCount++;
 
 			}
 			else if (MIDDATA[i].datatype == 1) {//wstring
 
-				if (IsValidMidiFileName(MIDDATA[i].wname)) {
+				if (IsValidMidiFileName(MIDDATA[i].wname.c_str())) {
 					nCount++;
 				}
 			}
@@ -1649,9 +1649,9 @@ namespace KrnlnMidInside {
 			}
 			else if (MIDDATA[i].datatype == 0) {//string
 
-				if (IsValidMidiFileName(MIDDATA[i].name))
+				if (IsValidMidiFileName(MIDDATA[i].name.c_str()))
 				{
-					if (GetMidiDataFromFile(MIDDATA[i].name, nArry))
+					if (GetMidiDataFromFile(MIDDATA[i].name.c_str(), nArry))
 						nArry++;
 					nCount++;
 				}
@@ -1659,9 +1659,9 @@ namespace KrnlnMidInside {
 			}
 			else if (MIDDATA[i].datatype == 1) {//wstring
 
-				if (IsValidMidiFileName(MIDDATA[i].wname))
+				if (IsValidMidiFileName(MIDDATA[i].wname.c_str()))
 				{
-					if (GetMidiDataFromFile(MIDDATA[i].wname, nArry))
+					if (GetMidiDataFromFile(MIDDATA[i].wname.c_str(), nArry))
 						nArry++;
 					nCount++;
 				}
@@ -1789,7 +1789,7 @@ namespace KrnlnMidInside {
 
 		if (!MemData.empty())
 		{
-			temp.datatype = 1;
+			temp.datatype = 0;
 			temp.name = MemData.c_str();
 		}
 		else {
@@ -1849,5 +1849,7 @@ namespace KrnlnMidInside {
 		}
 		DestroyMidiPlayer = (PDESTROY)CloseMidiPlayer;
 	}
+
 }
+
 #endif // 

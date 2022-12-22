@@ -24,11 +24,11 @@ namespace KrnlnMidInside {
 	//字符串0，宽字符串1，数据指针2;
 	struct MIDMUSIC
 	{
-		union {
-			const char* name;
-			const wchar_t* wname;
-			MIDIFILEDATAINFO data;
-		};
+
+		string name;
+		wstring wname;
+		MIDIFILEDATAINFO data;
+
 		int datatype;
 	};
 	void PackMid(vector<MIDMUSIC>& MidStruct, string MemData);
@@ -37,6 +37,7 @@ namespace KrnlnMidInside {
 	void PlayMid(int times, int interval, vector<MIDMUSIC> wannaplay);
 }
 #pragma endregion
+
 template <class... T>
 void 播放MID(int 播放次数, int 间隔时间, T... 欲播放MID)
 {
