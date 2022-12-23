@@ -112,6 +112,18 @@
     <Filter Include="源文件\操作系统\实现\windows">
       <UniqueIdentifier>{abe4cb00-d1ae-406b-b8e2-8108e3d5a082}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\网络通信">
+      <UniqueIdentifier>{fa2c60b2-ee5d-4d49-9ef1-7a6a512ab059}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\程序进程">
+      <UniqueIdentifier>{8d74c8ce-a17f-4200-8f06-3d84ecaeeacf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\程序进程\实现">
+      <UniqueIdentifier>{5c8bbb84-6e5a-4a7c-bab1-10c6253bc96c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\网络通信\实现">
+      <UniqueIdentifier>{f3c9fa9e-b123-43cf-bb6f-74d75067ae96}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Edefcn.h">
@@ -170,6 +182,12 @@
     </ClInclude>
     <ClInclude Include="include\控制台操作.h">
       <Filter>源文件\控制台操作</Filter>
+    </ClInclude>
+    <ClInclude Include="include\网络通信.h">
+      <Filter>源文件\网络通信</Filter>
+    </ClInclude>
+    <ClInclude Include="include\程序进程.h">
+      <Filter>源文件\程序进程</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -613,6 +631,24 @@
     </ClCompile>
     <ClCompile Include="src\操作系统\信息框.cpp">
       <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\注册项是否存在.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\写注册项.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\程序进程\禁止程序重复运行.cpp">
+      <Filter>源文件\程序进程\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\网络通信\打开指定网址.cpp">
+      <Filter>源文件\网络通信\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\系统处理\剪辑板中可有文本.cpp">
+      <Filter>源文件\系统处理\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\系统处理\终止进程.cpp">
+      <Filter>源文件\系统处理\实现</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -84,4 +84,44 @@ template<typename Type>
 void 数组清零(std::vector<Type>& 数值数组变量) {
 	memset(&数值数组变量[0], 0, sizeof(Type) * 数值数组变量.size());
 };
+
+//字符串拼接重载运算符，也可使使用字符串拼接函数
+template<typename Type>
+std::vector<Type> operator+(const std::vector<Type>& 数组1, const std::vector<Type>& 数组2) {
+	std::vector<Type> result;
+	result.reserve(数组1.size() + 数组2.size());
+	result.insert(result.end(), 数组1.begin(), 数组1.end());
+	result.insert(result.end(), 数组2.begin(), 数组2.end());
+	return result;
+}
+//二分查找一定要确保数值类以及升序类型，返回数组下标，与易的下标不同注意区分
+template<typename Type>
+intptr_t 二分查找(std::vector<Type>& 有序数组变量, Type 要查找的值) {
+	intptr_t left = 0;
+	intptr_t right = 有序数组变量.size() - 1;
+	while (left <= right) {
+		intptr_t mid = left + (right - left) / 2;
+		if (有序数组变量[mid] == 要查找的值) {
+			return mid;
+		}
+		else if (有序数组变量[mid] < 要查找的值) {
+			left = mid + 1;
+		}
+		else {
+			right = mid - 1;
+		}
+	}
+	return -1;
+}
+//用于非数值类的数组寻找,返回数组下标，与易的下标不同注意区分
+template<typename Type>
+intptr_t 数组查找(const std::vector<Type>& 数组, Type 要查找的值) {
+	auto it = std::find(数组.begin(), 数组.end(), 要查找的值);
+	if (it != 数组.end()) {
+		return std::distance(数组.begin(), it);
+	}
+	else {
+		return -1;
+	}
+}
 #endif 

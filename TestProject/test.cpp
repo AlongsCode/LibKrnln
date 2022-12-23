@@ -3,76 +3,7 @@
 #include"..\include\krnln.h"
 
 
-#pragma region 禁止程序重复运行
-#ifdef _WIN32
-#include <windows.h>
-#else
-#include <pthread.h>
-#endif
 
-
-#ifdef _WIN32
-void 禁止重复运行(const std::wstring& identifier, void(*callback)())
-{
-	if (OpenEventW(EVENT_ALL_ACCESS, false, identifier.c_str())) {
-
-		if (callback) {
-			callback();
-		}
-
-		exit(0);
-	}
-	CreateEventW(NULL, false, false, identifier.c_str());
-}
-void 禁止重复运行(const std::string& identifier, void(*callback)())
-{
-	if (OpenEventA(EVENT_ALL_ACCESS, false, identifier.c_str())) {
-
-		if (callback) {
-			callback();
-		}
-		exit(0);
-	}
-	CreateEventA(NULL, false, false, identifier.c_str());
-}
-#else
-#include<sys/file.h>
-void 禁止重复运行(const std::string& identifier, void(*callback)())
-{
-	std::string lock_file = identifier + ".lock";
-	int fd = open(lock_file.c_str(), O_CREAT | O_WRONLY, 0644);
-	if (fd < 0) {
-		if (callback) {
-			callback();
-		}
-		exit(0);
-	}
-	if (lockf(fd, F_TLOCK, 0) < 0) {
-		if (callback) {
-			callback();
-		}
-		exit(0);
-	}
-}
-void 禁止重复运行(const std::wstring& identifier, void(*callback)())
-{
-	std::wstring lock_file = identifier + L".lock";
-	int fd = wopen(lock_file.c_str(), O_CREAT | O_WRONLY, 0644);
-	if (fd < 0) {
-		if (callback) {
-			callback();
-		}
-		exit(0);
-	}
-	if (lockf(fd, F_TLOCK, 0) < 0) {
-		if (callback) {
-			callback();
-		}
-		exit(0);
-	}
-}
-#endif
-#pragma endregion
 
 //寻找文本速度对比
 //int main() {
@@ -89,21 +20,76 @@ void 禁止重复运行(const std::wstring& identifier, void(*callback)())
 //}
 
 
+//int main() {
+//
+//	数组 < 文本型 > A = { L"测试",L"测试",L"测试" }, B = { L"测试2" ,L"测试2" ,L"测试2" };
+//	调试输出(A + B);
+//	return 0;
+//}
 
 
 
 
+//int main() {
+//	std::vector<int> fruits = { 2,71, 45,11,32, 674,88, 5465,946 ,8676 };
+//	数组排序(fruits);
+//	int index = 二分查找(fruits, 8676);
+//	if (index != -1) {
+//		std::cout << "Found cherry at index " << fruits[index] << std::endl;
+//	}
+//	else {
+//		std::cout << "Cherry not found" << std::endl;
+//	}
+//	return 0;
+//}
+
+#ifdef _WIN32
+#include <windows.h>
+#include"tlhelp32.h"
+#else
+#include <unistd.h>
+#include <sys/wait.h>
+#endif
+bool 终止进程(std::string process_name_or_window_title) {
+	// 用于存储进程 ID 的变量
+	unsigned int process_id = 0;
+
+	// 在 Windows 系统上使用 FindWindow 函数查找窗口句柄
+#ifdef _WIN32
+	HWND window_handle = FindWindowA(0, process_name_or_window_title.c_str());
+	if (window_handle) {
+		GetWindowThreadProcessId(window_handle, (LPDWORD)&process_id);
+	}
+#else
+	 // 使用 ps 命令查找进程 ID
+	std::string command = "pidof " + process_name_or_window_title;
+	std::FILE* process_id_file = std::popen(command.c_str(), "r");
+	if (process_id_file) {
+		std::fscanf(process_id_file, "%d", &process_id);
+		std::pclose(process_id_file);
+	}
+#endif
+	// 如果没有找到进程 ID，返回 false
+	if (process_id == 0) {
+		return false;
+	}
+
+	// 在 Windows 系统上使用 TerminateProcess 函数终止进程
+#ifdef _WIN32
+	HANDLE process_handle = OpenProcess(PROCESS_TERMINATE, 0, process_id);
+	bool result = TerminateProcess(process_handle, 0) == TRUE;
+	return result;
+#else
+	int kill_result = std::system(("kill " + std::to_string(process_id)).c_str());
+	// 如果 kill 命令返回 0，表示成功终止进程
+	return kill_result == 0;
+#endif
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+int main()
+{
+	调试输出(终止进程(21620));
+	return 0;
+}

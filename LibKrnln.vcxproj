@@ -34,9 +34,11 @@
     <ClInclude Include="include\流程控制.h" />
     <ClInclude Include="include\环境存取.h" />
     <ClInclude Include="include\磁盘操作.h" />
+    <ClInclude Include="include\程序进程.h" />
     <ClInclude Include="include\算术运算.h" />
     <ClInclude Include="include\系统处理.h" />
     <ClInclude Include="include\线程操作.h" />
+    <ClInclude Include="include\网络通信.h" />
     <ClInclude Include="include\逻辑比较.h" />
   </ItemGroup>
   <ItemGroup>
@@ -65,10 +67,12 @@
     <ClCompile Include="src\字节集操作\置字节集内整数.cpp" />
     <ClCompile Include="src\控制台操作\标准输入.cpp" />
     <ClCompile Include="src\操作系统\信息框.cpp" />
+    <ClCompile Include="src\操作系统\写注册项.cpp" />
     <ClCompile Include="src\操作系统\安装与卸载字体.cpp" />
     <ClCompile Include="src\操作系统\延迟.cpp" />
     <ClCompile Include="src\操作系统\播放MIDI.cpp" />
     <ClCompile Include="src\操作系统\播放音乐.cpp" />
+    <ClCompile Include="src\操作系统\注册项是否存在.cpp" />
     <ClCompile Include="src\数值转换\二进制.cpp" />
     <ClCompile Include="src\数值转换\到字节.cpp" />
     <ClCompile Include="src\数值转换\到小数.cpp" />
@@ -164,6 +168,7 @@
     <ClCompile Include="src\磁盘操作\置文件属性.cpp" />
     <ClCompile Include="src\磁盘操作\置磁盘卷标.cpp" />
     <ClCompile Include="src\磁盘操作\读入文件.cpp" />
+    <ClCompile Include="src\程序进程\禁止程序重复运行.cpp" />
     <ClCompile Include="src\算数运算\取整.cpp" />
     <ClCompile Include="src\算数运算\取符号.cpp" />
     <ClCompile Include="src\算数运算\取绝对值.cpp" />
@@ -181,10 +186,13 @@
     <ClCompile Include="src\算数运算\绝对取整.cpp" />
     <ClCompile Include="src\算数运算\置随机数种子.cpp" />
     <ClCompile Include="src\系统处理\关闭系统.cpp" />
+    <ClCompile Include="src\系统处理\剪辑板中可有文本.cpp" />
     <ClCompile Include="src\系统处理\取屏幕宽度.cpp" />
     <ClCompile Include="src\系统处理\取屏幕高度.cpp" />
     <ClCompile Include="src\系统处理\延时.cpp" />
+    <ClCompile Include="src\系统处理\终止进程.cpp" />
     <ClCompile Include="src\线程操作\线程操作.cpp" />
+    <ClCompile Include="src\网络通信\打开指定网址.cpp" />
     <ClCompile Include="src\逻辑比较\文本对比.cpp" />
     <ClCompile Include="src\逻辑比较\近似等于.cpp" />
   </ItemGroup>

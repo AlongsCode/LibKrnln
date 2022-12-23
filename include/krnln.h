@@ -41,12 +41,12 @@ using namespace std;
 #include"操作系统.h"
 #include"系统处理.h"
 #include"线程操作.h"
-
-
+#include"网络通信.h"
+#include"程序进程.h"
 
 //#include"图片处理.h"
 //#include"其他.h"
-//#include"网络通信.h"
+
 //#include"窗口操作.h"
 #include"控制台操作.h"
 //#include"COM变体型.h"
