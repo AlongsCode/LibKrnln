@@ -2,7 +2,7 @@
 #include <algorithm>
 
 
-KrnlnApi intptr_t 寻找文本(const std::string& text, const std::string& search, size_t start_pos = 0, bool ignore_case = 0)
+KrnlnApi intptr_t 寻找文本(const std::string& text, const std::string& search, size_t start_pos, bool ignore_case)
 {
 	if (ignore_case) {
 		std::string formatted_text = text;

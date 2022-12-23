@@ -10,10 +10,10 @@ BOOL 卸载字体(const std::string& 字体文件);
 BOOL 卸载字体(const std::wstring& 字体文件);
 BOOL 卸载字体(HANDLE 字体句柄);
 BOOL 延迟(INT64 millisecond);
-bool 播放音乐(const vector<unsigned char>& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
-bool 播放音乐(const string& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
-bool 播放音乐(const wstring& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
-bool 停止播放();
+BOOL  播放音乐(const vector<unsigned char>& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
+BOOL  播放音乐(const string& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
+BOOL  播放音乐(const wstring& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
+BOOL  停止播放();
 #pragma region 非暴漏接口
 namespace KrnlnMidInside {
 	struct MIDIFILEDATAINFO
@@ -45,6 +45,9 @@ void 播放MID(int 播放次数, int 间隔时间, T... 欲播放MID)
 	std::initializer_list<INT>{(PackMid(Data, std::forward<T>(欲播放MID)), 0)...};
 	KrnlnMidInside::PlayMid(播放次数, 间隔时间, Data);
 };
+/*关闭方式：1:#关机;2:#重启;3:#注销;4:#休眠5:#冬眠。注意在Windows95/98/ME下冬眠等同于休眠。*|**/
+int 信息框(const string& 提示信息, int 按钮 = 0, const  string& 窗口标题 = "信息", HWND 父窗口 = NULL);
+int 信息框(const wstring& 提示信息, int 按钮 = 0, const wstring& 窗口标题 = L"信息", HWND 父窗口 = NULL);
 
 #else//Linux POSIX 环境下的系统处理macos用苹果的编程语言比较多，不再单独列出
 

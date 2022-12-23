@@ -74,31 +74,19 @@ void 禁止重复运行(const std::wstring& identifier, void(*callback)())
 #endif
 #pragma endregion
 
-
-
-int main() {
-	//字节集 S = 到字节集("sadbutsdsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsaafsafwaewadsaad"), N = 到字节集("fwaewadsa");
-	//int A, B, 位置变量;
-	//A = GetTickCount64();
-	//for (size_t i = 0; i < 9999999; i++)
-	//{
-	//	寻找字节集(到字节集("leetcode"), 到字节集("leeto"));
-	//}
-	//B = GetTickCount64();
-
-	//调试输出("速度:" + 到文本A(B - A), 寻找字节集(S, N));
-	//A = GetTickCount64();
-	//for (size_t i = 0; i < 9999999; i++)
-	//{
-	//	strStr(S, N);
-	//}
-	//B = GetTickCount64();
-	//if
-	//调试输出("速度:" + 到文本A(B - A), 寻找字节集(S, N));
-
-	字节集 A, B;
-	调试输出(A + B, A);
-}
+//寻找文本速度对比
+//int main() {
+//	std::string S = "sadbutsdsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsadstsdsadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsasadsatsdsadsatsdsadsatsdsadsatsdsadsaafsafwaewadsaadt = formatted_text.find(f", N = "tsdsadsatsdsadsatsdsadsaafsafwaewadsaadt = formatted_text.find(f";
+//	intptr_t  A, B, ret = 0;
+//	size_t i;
+//	A = GetTickCount();
+//	for (i = 0; i < 9999999; i++)
+//	{
+//		ret = 寻找文本(S, N, 0, false);
+//	}
+//	B = GetTickCount();
+//	标准输出(0, "速度:" + std::to_string(B - A) + "位置:" + to_string(ret) + " " + std::to_string(i));
+//}
 
 
 

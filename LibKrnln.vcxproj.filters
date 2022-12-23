@@ -109,6 +109,9 @@
     <Filter Include="源文件\控制台操作\实现">
       <UniqueIdentifier>{b7be2f62-e61d-498d-bb78-e04a019ff3e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\操作系统\实现\windows">
+      <UniqueIdentifier>{abe4cb00-d1ae-406b-b8e2-8108e3d5a082}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Edefcn.h">
@@ -578,9 +581,6 @@
     <ClCompile Include="src\磁盘操作\清空目录.cpp">
       <Filter>源文件\磁盘操作\实现</Filter>
     </ClCompile>
-    <ClCompile Include="src\操作系统\安装与卸载字体.cpp">
-      <Filter>源文件\操作系统\实现</Filter>
-    </ClCompile>
     <ClCompile Include="src\系统处理\取屏幕高度.cpp">
       <Filter>源文件\系统处理\实现</Filter>
     </ClCompile>
@@ -590,20 +590,29 @@
     <ClCompile Include="src\系统处理\延时.cpp">
       <Filter>源文件\系统处理\实现</Filter>
     </ClCompile>
-    <ClCompile Include="src\操作系统\延迟.cpp">
-      <Filter>源文件\操作系统\实现</Filter>
-    </ClCompile>
     <ClCompile Include="src\线程操作\线程操作.cpp">
       <Filter>源文件\线程操作\实现</Filter>
     </ClCompile>
-    <ClCompile Include="src\操作系统\播放MIDI.cpp">
-      <Filter>源文件\操作系统\实现</Filter>
-    </ClCompile>
-    <ClCompile Include="src\操作系统\播放音乐.cpp">
-      <Filter>源文件\操作系统\实现</Filter>
-    </ClCompile>
     <ClCompile Include="src\控制台操作\标准输入.cpp">
       <Filter>源文件\控制台操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\安装与卸载字体.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\播放MIDI.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\播放音乐.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\延迟.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\系统处理\关闭系统.cpp">
+      <Filter>源文件\系统处理\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\信息框.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

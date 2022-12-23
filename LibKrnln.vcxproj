@@ -64,6 +64,7 @@
     <ClCompile Include="src\字节集操作\指针到字节集.cpp" />
     <ClCompile Include="src\字节集操作\置字节集内整数.cpp" />
     <ClCompile Include="src\控制台操作\标准输入.cpp" />
+    <ClCompile Include="src\操作系统\信息框.cpp" />
     <ClCompile Include="src\操作系统\安装与卸载字体.cpp" />
     <ClCompile Include="src\操作系统\延迟.cpp" />
     <ClCompile Include="src\操作系统\播放MIDI.cpp" />
@@ -179,6 +180,7 @@
     <ClCompile Include="src\算数运算\求自然对数.cpp" />
     <ClCompile Include="src\算数运算\绝对取整.cpp" />
     <ClCompile Include="src\算数运算\置随机数种子.cpp" />
+    <ClCompile Include="src\系统处理\关闭系统.cpp" />
     <ClCompile Include="src\系统处理\取屏幕宽度.cpp" />
     <ClCompile Include="src\系统处理\取屏幕高度.cpp" />
     <ClCompile Include="src\系统处理\延时.cpp" />
