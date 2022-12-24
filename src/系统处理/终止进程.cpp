@@ -1,6 +1,7 @@
 ﻿#include <string>
 
 #ifdef _WIN32
+#undef UNICODE
 #include <windows.h>
 #include<tlhelp32.h>
 #else
@@ -8,9 +9,8 @@
 #include <sys/wait.h>
 #endif
 
-#undef PROCESSENTRY32
-#undef Process32First
-#undef Process32Next
+
+
 KrnlnApi bool 终止进程(std::wstring process_name_or_window_title) {
 	// 用于存储进程 ID 的变量
 	unsigned int process_id = 0;
@@ -133,8 +133,6 @@ KrnlnApi bool 终止进程(std::string process_name_or_window_title) {
 	return kill_result == 0;
 #endif
 }
-
-
 KrnlnApi bool 终止进程(unsigned int process_id) {
 	if (process_id == 0)
 	{
