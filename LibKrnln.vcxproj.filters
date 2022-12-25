@@ -124,6 +124,12 @@
     <Filter Include="源文件\网络通信\实现">
       <UniqueIdentifier>{f3c9fa9e-b123-43cf-bb6f-74d75067ae96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\文件读写">
+      <UniqueIdentifier>{bf2b5212-c72e-4403-b91b-0bd55fb369a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\文件读写\实现">
+      <UniqueIdentifier>{3f977824-31cc-49c9-bad0-601de878d013}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Edefcn.h">
@@ -188,6 +194,9 @@
     </ClInclude>
     <ClInclude Include="include\程序进程.h">
       <Filter>源文件\程序进程</Filter>
+    </ClInclude>
+    <ClInclude Include="include\文件读写.h">
+      <Filter>源文件\文件读写</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -649,6 +658,9 @@
     </ClCompile>
     <ClCompile Include="src\系统处理\终止进程.cpp">
       <Filter>源文件\系统处理\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\文件读写\内存文件.cpp">
+      <Filter>源文件\文件读写\实现</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

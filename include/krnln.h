@@ -51,7 +51,7 @@ using namespace std;
 #include"控制台操作.h"
 //#include"COM变体型.h"
 
-//#include"文件读写.h"
+#include"文件读写.h"
 //#include"Sqlite数据库.h"
 //#include"通用易类.h"
 //*****************************DEBUG时请自行添加调试宏|重载使用方便************************

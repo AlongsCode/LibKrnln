@@ -28,6 +28,7 @@
     <ClInclude Include="include\数值转换.h" />
     <ClInclude Include="include\数据操作.h" />
     <ClInclude Include="include\数组.h" />
+    <ClInclude Include="include\文件读写.h" />
     <ClInclude Include="include\文本操作.h" />
     <ClInclude Include="include\文本转换.h" />
     <ClInclude Include="include\时间操作.h" />
@@ -89,6 +90,7 @@
     <ClCompile Include="src\数值转换\数值到金额.cpp" />
     <ClCompile Include="src\数据操作\取数据摘要.cpp" />
     <ClCompile Include="src\数据操作\数据加解密.cpp" />
+    <ClCompile Include="src\文件读写\内存文件.cpp" />
     <ClCompile Include="src\文本操作\倒找文本.cpp" />
     <ClCompile Include="src\文本操作\分割文本.cpp" />
     <ClCompile Include="src\文本操作\删全部空.cpp" />
