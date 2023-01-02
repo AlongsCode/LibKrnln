@@ -1,13 +1,12 @@
 ﻿/*这是例程和测试文件，如果你仅仅想使用库，
-那么编译libkrnln项目即可
+那么编译Libkrnln项目为你需要的动态库或静态库架构和平台对应版本即可，
+下方有些许例程。
 如果你了解，那么在下方define后面填写Yes表便可以通过编译
 */
-
-#define   /*←在这里输入Yes*/
+#define   //←在双斜杠前输入Yes*
 #ifndef Yes
-使你编译无法通过
-#endif // !Yes
-
+这是使你不仔细看就编译无法通过的;
+#else
 
 #define 调试版
 #include"..\include\krnln.h"
@@ -58,12 +57,10 @@
 //{
 //public:
 //	void* 文件句柄
-
 //};
 
 
-
-#pragma region 标准库实现文件读取
+#pragma region 标准库实现文件读取(还在测试)
 
 #include <chrono>
 #include <fstream>
@@ -660,6 +657,9 @@ private:
 #pragma endregion
 
 
+#pragma region 测试win组件
+/*Win组件不会在此库中添加，此处的窗口组件仅为测试windos环境下的窗口操作的有效性
+例如 置窗口圆角()置窗口透明度等*/
 
 class Control {
 protected:
@@ -792,6 +792,9 @@ public:
 	}
 };
 
+#pragma endregion
+
+
 
 int main() {
 	数组<整数型> 整数数组;
@@ -807,10 +810,5 @@ int main() {
 
 
 
-
-
-
-
-
-
+#endif 
 
