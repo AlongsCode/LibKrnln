@@ -1306,7 +1306,7 @@ void CMIDI::FreeBuffers() {
 
 void CMIDI::MidiError(MMRESULT mmResult) {
 #ifdef _DEBUG
-	char chText[512];
+	wchar_t chText[512];
 	midiOutGetErrorText(mmResult, chText, sizeof(chText));
 	TRACE1("Midi error: %hs\n", chText);
 #endif

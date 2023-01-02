@@ -1,4 +1,14 @@
-﻿
+﻿/*这是例程和测试文件，如果你仅仅想使用库，
+那么编译libkrnln项目即可
+如果你了解，那么在下方define后面填写Yes表便可以通过编译
+*/
+
+#define   /*←在这里输入Yes*/
+#ifndef Yes
+使你编译无法通过
+#endif // !Yes
+
+
 #define 调试版
 #include"..\include\krnln.h"
 #pragma warning(disable:4996)
@@ -257,6 +267,7 @@ public:
 	}
 	vector<unsigned char> 读入字节集(size_t 读入长度)
 	{
+
 		if (!fs.is_open())
 		{
 			return {};
@@ -650,18 +661,156 @@ private:
 
 
 
+class Control {
+protected:
+	int swStyle;
+	const wchar_t* szText;
+	HWND hwnd;
+
+public:
+	Control(int swStyle, const wchar_t* szText)
+		: swStyle(swStyle), szText(szText), hwnd(nullptr) {}
+
+	virtual ~Control() {}
+
+	virtual void create(HWND hwndParent, int x, int y, int width, int height,
+		HMENU hMenu, HINSTANCE hInstance, DWORD style) = 0;
+};
+
+class EditBox : public Control {
+public:
+	EditBox(int swStyle, const wchar_t* szText) : Control(swStyle, szText) {}
+
+	void create(HWND hwndParent, int x, int y, int width, int height,
+		HMENU hMenu, HINSTANCE hInstance, DWORD style) override {
+		hwnd = CreateWindowExW(0, L"edit", szText,
+			WS_CHILD | WS_VISIBLE | WS_BORDER | ES_LEFT |
+			ES_MULTILINE | ES_AUTOHSCROLL | swStyle | style,
+			x, y, width, height, hwndParent, hMenu, hInstance,
+			NULL);
+	}
+};
+
+class Label : public Control {
+public:
+	Label(int swStyle, const wchar_t* szText) : Control(swStyle, szText) {}
+
+	void create(HWND hwndParent, int x, int y, int width, int height,
+		HMENU hMenu, HINSTANCE hInstance, DWORD style) override {
+		hwnd = CreateWindowExW(0, L"static", szText,
+			WS_CHILD | WS_VISIBLE | SS_LEFT | swStyle | style, x,
+			y, width, height, hwndParent, hMenu, hInstance,
+			NULL);
+	}
+};
+
+class CheckBox : public Control {
+public:
+	CheckBox(int swStyle, const wchar_t* szText) : Control(swStyle, szText) {}
+
+	void create(HWND hwndParent, int x, int y, int width, int height,
+		HMENU hMenu, HINSTANCE hInstance, DWORD style) override {
+		hwnd = CreateWindowExW(0, L"button", szText,
+			WS_CHILD | WS_VISIBLE | WS_TABSTOP | swStyle |
+			BS_AUTOCHECKBOX | style,
+			x, y, width, height, hwndParent, hMenu, hInstance,
+			NULL);
+	}
+};
+
+class Button : public Control {
+public:
+	Button(int swStyle, const wchar_t* szText) : Control(swStyle, szText) {}
+
+	void create(HWND hwndParent, int x, int y, int width, int height,
+		HMENU hMenu, HINSTANCE hInstance, DWORD style) override {
+		hwnd = CreateWindowExW(0, L"button", szText,
+			WS_CHILD | WS_VISIBLE | WS_TABSTOP | swStyle |
+			BS_PUSHBUTTON | style,
+			x, y, width, height, hwndParent, hMenu, hInstance,
+			NULL);
+	}
+};
+
+class Window {
+private:
+	HINSTANCE hInstance;
+	const wchar_t* szWindowClass;
+	const wchar_t* szTitle;
+	WNDPROC WndProc;
+	int nCmdShow;
+	int x;
+	int y;
+	int width;
+	int height;
+	HWND hwnd;
+
+public:
+	Window(HINSTANCE hInstance, const wchar_t* szWindowClass,
+		const wchar_t* szTitle, WNDPROC WndProc, int nCmdShow, int x, int y,
+		int width, int height)
+		: hInstance(hInstance),
+		szWindowClass(szWindowClass),
+		szTitle(szTitle),
+		WndProc(WndProc),
+		nCmdShow(nCmdShow),
+		x(x),
+		y(y),
+		width(width),
+		height(height),
+		hwnd(nullptr) {}
+
+	void create() {
+		WNDCLASSEXW wcex;
+
+		wcex.cbSize = sizeof(WNDCLASSEX);
+		wcex.style = CS_HREDRAW | CS_VREDRAW;
+		wcex.lpfnWndProc = WndProc;
+		wcex.cbClsExtra = 0;
+		wcex.cbWndExtra = 0;
+		wcex.hInstance = hInstance;
+		wcex.hIcon = LoadIcon(hInstance, IDI_APPLICATION);
+		wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+		wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+		wcex.lpszMenuName = NULL;
+		wcex.lpszClassName = szWindowClass;
+		wcex.hIconSm = LoadIcon(wcex.hInstance, IDI_APPLICATION);
+
+		if (!RegisterClassExW(&wcex)) {
+			MessageBox(NULL, L"Call to RegisterClassEx failed!", szTitle,
+				MB_ICONEXCLAMATION | MB_OK);
+			return;
+		}
+
+		hwnd = CreateWindowW(
+			szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, x, y, width, height,
+			NULL, NULL, hInstance, NULL);
+
+		if (!hwnd) {
+			MessageBox(NULL, L"创建失败", 0, 0);
+		}
+	}
+};
 
 
+int main() {
+	数组<整数型> 整数数组;
+	置随机数种子();
+	计次循环首(100, i) {
+		加入成员(整数数组, 取随机数(1, 10));
+	}
+	字节集 字节集数据 = { 0,4,7,1,5 };
+	文本型 文本型变量 = L"unicode字符";
+	调试输出(整数数组, 字节集数据 + 到字节集(文本型变量));
 
-
-int main()
-{
-	内存文件 A;
-	A.写(L"test", 2);
-	//调试输出(到字节集(L"test"), 到字节集("test"));
-	//调试输出(A.取文件长度());
-	//调试输出(A.获取位置());
-	A.移到文件首();
-	调试输出(A.读(999));
-	return 0;
 }
+
+
+
+
+
+
+
+
+
+
