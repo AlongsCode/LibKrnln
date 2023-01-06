@@ -1,4 +1,4 @@
-﻿#include"math.h"
+﻿#include<cmath>
 //算术运算 - 求次方
 /*
 	调用格式： 〈双精度小数型〉 求次方 （双精度小数型 欲求次方数值，双精度小数型 次方数） - 系统核心支持库->算术运算
@@ -9,5 +9,5 @@
 */
 KrnlnApi double  求次方(double 欲求次方数值, int 次方数)
 {
-	return pow(欲求次方数值, 次方数);
+	return std::pow(欲求次方数值, 次方数);
 }

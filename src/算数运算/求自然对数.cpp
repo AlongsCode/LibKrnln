@@ -1,4 +1,4 @@
-﻿#include"math.h"
+﻿#include<cmath>
 
 //算术运算 - 求自然对数
 /*
@@ -9,6 +9,6 @@
 */
 KrnlnApi double 求自然对数(double 欲求其自然对数的数值)
 {
-	return log(欲求其自然对数的数值);
+	return std::log(欲求其自然对数的数值);
 
 }

@@ -1,4 +1,4 @@
-﻿#include"math.h"
+﻿#include<cmath>
 /* 调用格式： 〈双精度小数型〉 求正切 （双精度小数型 欲进行计算的角） - 系统核心支持库->算术运算
  英文名称：tan
  返回指定角的正切值。本命令为初级命令。
@@ -6,6 +6,6 @@
 
 KrnlnApi double 求正切(double 欲进行计算的角)
 {
-	return  tan(欲进行计算的角);
+	return  std::tan(欲进行计算的角);
 
 }

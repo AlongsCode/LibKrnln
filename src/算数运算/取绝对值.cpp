@@ -1,4 +1,4 @@
-﻿#include"math.h"
+﻿#include<cmath>
 //算术运算 - 取绝对值
 /*
 	调用格式： 〈双精度小数型〉 取绝对值 （双精度小数型 欲取其绝对值的数值） - 系统核心支持库->算术运算
@@ -8,6 +8,6 @@
 */
 KrnlnApi double 取绝对值(double 数)
 {
-	return fabs(数);
+	return std::fabs(数);
 
 }

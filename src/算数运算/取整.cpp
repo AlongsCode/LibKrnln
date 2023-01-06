@@ -1,4 +1,4 @@
-﻿#include"math.h"
+﻿#include<cmath>
 double __cdecl ProcessDouble1(double a1)
 {
 	double v1; // st7@1

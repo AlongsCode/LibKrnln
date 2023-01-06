@@ -1,4 +1,4 @@
-﻿#include"math.h"
+﻿#include<cmath>
 //算术运算 - 求余弦
 /*
 	调用格式： 〈双精度小数型〉 求余弦 （双精度小数型 欲进行计算的角） - 系统核心支持库->算术运算
@@ -8,6 +8,6 @@
 */
 KrnlnApi double 求余弦(double 欲进行计算的角)
 {
-	return  cos(欲进行计算的角);
+	return  std::cos(欲进行计算的角);
 
 }

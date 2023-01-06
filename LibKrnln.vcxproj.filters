@@ -248,9 +248,6 @@
     <ClCompile Include="src\算数运算\四舍五入.cpp">
       <Filter>源文件\算数运算\实现</Filter>
     </ClCompile>
-    <ClCompile Include="src\算数运算\置随机数种子.cpp">
-      <Filter>源文件\算数运算\实现</Filter>
-    </ClCompile>
     <ClCompile Include="src\位运算\合并短整数.cpp">
       <Filter>源文件\位运算\实现</Filter>
     </ClCompile>
@@ -661,6 +658,12 @@
     </ClCompile>
     <ClCompile Include="src\文件读写\内存文件.cpp">
       <Filter>源文件\文件读写\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\弧度到角度.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\角度到弧度.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

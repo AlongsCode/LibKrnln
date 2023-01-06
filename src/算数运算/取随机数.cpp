@@ -1,22 +1,8 @@
-﻿#include"stdlib.h"
-#define XCHG(x, y) {x = x^y; y = x^y; x = x^y;}
+﻿#include <random>
 
-//算术运算 - 取随机数
-/*
-	调用格式： 〈整数型〉 取随机数 （［整数型 欲取随机数的最小值］，［整数型 欲取随机数的最大值］） - 系统核心支持库->算术运算
-	英文名称：rnd
-	返回一个指定范围内的随机数值。在使用本命令取一系列的随机数之前，应该先使用“置随机数种子”命令为随机数生成器初始化一个种子值。本命令为初级命令。
-	参数<1>的名称为“欲取随机数的最小值”，类型为“整数型（int）”，可以被省略。参数必须大于或等于零。本参数如果被省略，默认为 0 。
-	参数<2>的名称为“欲取随机数的最大值”，类型为“整数型（int）”，可以被省略。参数必须大于或等于零。本参数如果被省略，默认为无限。
-*/
-KrnlnApi size_t 取随机数(size_t 欲取随机数的最小值, size_t 欲取随机数的最大值)
-{
-	size_t nMin = 欲取随机数的最小值 < 0 ? 0 : 欲取随机数的最小值;
-	size_t nMax = 欲取随机数的最大值 < 0 ? 0 : 欲取随机数的最大值;
-	// if min bigger than max
-	// xchg them
-	if (nMin > nMax) {
-		XCHG(nMin, nMax);
-	}
-	return nMin + (rand() % (nMax - nMin + 1));
+KrnlnApi size_t 取随机数(size_t min, size_t max) {
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<size_t> dis(min, max);
+	return dis(gen);
 }

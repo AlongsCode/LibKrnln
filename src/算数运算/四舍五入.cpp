@@ -1,4 +1,4 @@
-﻿#include"math.h"
+﻿#include<cmath>
 
 inline double _round(double x)
 {

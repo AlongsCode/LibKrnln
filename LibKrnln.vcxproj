@@ -176,6 +176,7 @@
     <ClCompile Include="src\算数运算\取绝对值.cpp" />
     <ClCompile Include="src\算数运算\取随机数.cpp" />
     <ClCompile Include="src\算数运算\四舍五入.cpp" />
+    <ClCompile Include="src\算数运算\弧度到角度.cpp" />
     <ClCompile Include="src\算数运算\是否运算正确.cpp" />
     <ClCompile Include="src\算数运算\求余弦.cpp" />
     <ClCompile Include="src\算数运算\求反对数.cpp" />
@@ -186,7 +187,7 @@
     <ClCompile Include="src\算数运算\求正弦.cpp" />
     <ClCompile Include="src\算数运算\求自然对数.cpp" />
     <ClCompile Include="src\算数运算\绝对取整.cpp" />
-    <ClCompile Include="src\算数运算\置随机数种子.cpp" />
+    <ClCompile Include="src\算数运算\角度到弧度.cpp" />
     <ClCompile Include="src\系统处理\关闭系统.cpp" />
     <ClCompile Include="src\系统处理\剪辑板中可有文本.cpp" />
     <ClCompile Include="src\系统处理\取屏幕宽度.cpp" />

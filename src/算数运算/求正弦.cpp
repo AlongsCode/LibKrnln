@@ -1,4 +1,4 @@
-﻿#include"math.h"
+﻿#include<cmath>
 //算术运算 - 求正弦
 /*
 	调用格式： 〈双精度小数型〉 求正弦 （双精度小数型 欲进行计算的角） - 系统核心支持库->算术运算
@@ -8,6 +8,6 @@
 */
 KrnlnApi double 求正弦(double 欲进行计算的角)
 {
-	return sin(欲进行计算的角);
+	return std::sin(欲进行计算的角);
 
 }
