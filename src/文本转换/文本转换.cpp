@@ -6,7 +6,7 @@
 KrnlnApi std::string 宽文本到文本(const std::wstring& 宽文本)
 {
 	int asciisize = ::WideCharToMultiByte(CP_ACP, 0, 宽文本.c_str(), -1, NULL, 0, NULL, NULL);
-	if (asciisize == ERROR_NO_UNICODE_TRANSLATION)
+	if (GetLastError() == ERROR_NO_UNICODE_TRANSLATION)
 	{
 		throw std::exception("Invalid UTF-8 sequence.");
 	}
@@ -28,7 +28,7 @@ KrnlnApi std::string 宽文本到文本(const std::wstring& 宽文本)
 KrnlnApi std::wstring 文本到宽文本(const std::string& 文本)
 {
 	int widesize = MultiByteToWideChar(CP_ACP, 0, 文本.c_str(), -1, NULL, 0);
-	if (widesize == ERROR_NO_UNICODE_TRANSLATION)
+	if (GetLastError() == ERROR_NO_UNICODE_TRANSLATION)
 	{
 		throw std::exception("Invalid UTF-8 sequence.");
 	}
@@ -62,7 +62,7 @@ KrnlnApi std::wstring UTF8到宽文本(const char* lpcszString)
 KrnlnApi std::wstring UTF8到宽文本(const std::string& utf8string)
 {
 	int widesize = ::MultiByteToWideChar(CP_UTF8, 0, utf8string.c_str(), -1, NULL, 0);
-	if (widesize == ERROR_NO_UNICODE_TRANSLATION)
+	if (GetLastError() == ERROR_NO_UNICODE_TRANSLATION)
 	{
 		throw std::exception("Invalid UTF-8 sequence.");
 	}
@@ -97,7 +97,7 @@ KrnlnApi std::string 宽文本到UTF8(const std::wstring& widestring)
 	delete[]resultstring;
 	return Ret;
 }
-#else
+#else//Linux
 #include <locale.h>
 KrnlnApi std::wstring UTF8到宽文本(const std::string& lpcszString)
 {
