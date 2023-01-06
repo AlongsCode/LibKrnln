@@ -1,14 +1,13 @@
 ﻿/*这是例程和测试文件，如果你仅仅想使用库，
 那么编译Libkrnln项目为你需要的动态库或静态库架构和平台对应版本即可，
 下方有些许例程。
-如果你了解，那么在下方define后面填写Yes表便可以通过编译
+如果你了解，那么在下方define后面填写"调试版"表便可以通过编译
 */
-#define   //←在双斜杠前输入Yes*
-#ifndef Yes
+#define  调试版//←在双斜杠前输入"调试版"*
+#ifndef 调试版
 这是使你不仔细看就编译无法通过的;
 #else
 
-#define 调试版
 #include"..\include\krnln.h"
 #pragma warning(disable:4996)
 
@@ -796,19 +795,174 @@ public:
 
 
 
+//int main() {
+//	数组<整数型> 整数数组;
+//	置随机数种子();
+//	计次循环首(100, i) {
+//		加入成员(整数数组, 取随机数(1, 10));
+//	}
+//	字节集 字节集数据 = { 0,4,7,1,5 };
+//	文本型 文本型变量 = L"unicode字符";
+//	调试输出(整数数组, 字节集数据 + 到字节集(文本型变量));
+//
+//}
+//bool ShellCopyFile(const char* DestDir, const  char* SourceFile)
+//{
+//	bool ret = false;
+//	if (DestDir && SourceFile) {
+//		size_t Lenth = strlen(SourceFile), PathLenth = strlen(DestDir);;
+//		char* Filename = new char[Lenth + 2], * Dest = new char[PathLenth + 2];    //双结束符结尾
+//		SHFILEOPSTRUCTA FileOp = { 0 };
+//		FileOp.wFunc = FO_COPY;
+//		FileOp.fFlags = FOF_ALLOWUNDO;
+//		strcpy(Filename, SourceFile);
+//		strcpy(Dest, DestDir);
+//		Filename[Lenth + 1] = '\0';
+//		Filename[Lenth] = '\0';
+//		Dest[PathLenth + 1] = '\0';
+//		Dest[PathLenth] = '\0';
+//		FileOp.pFrom = Filename;
+//		FileOp.pTo = Dest;
+//		if (!::SHFileOperationA(&FileOp) && !FileOp.fAnyOperationsAborted)
+//			ret = true;
+//		delete[]Filename;
+//		delete[] Dest;
+//	}
+//	return  ret;
+//}
+//BOOL ShellCopyFile(const std::string_view& DestDir, const  std::string_view& SourceFile)
+//{
+//	BOOL ret = FALSE;
+//	if (!DestDir.empty() && !SourceFile.empty()) {
+//		std::string Filename(SourceFile);
+//		std::string Dest(DestDir);
+//		Filename += '\0';
+//		Dest += '\0';
+//		SHFILEOPSTRUCTA FileOp = { 0 };
+//		FileOp.wFunc = FO_COPY;
+//		FileOp.fFlags = FOF_ALLOWUNDO;
+//		FileOp.pFrom = Filename.c_str();
+//		FileOp.pTo = Dest.c_str();
+//		if (!::SHFileOperationA(&FileOp) && !FileOp.fAnyOperationsAborted)
+//			ret = TRUE;
+//	}
+//	return ret;
+//}
+//BOOL ShellCopyFiles(const std::string_view& DestDir, const std::vector<std::string_view>& SourceFiles)
+//{
+//	BOOL ret = FALSE;
+//	if (!DestDir.empty() && !SourceFiles.empty()) {
+//		std::string Dest(DestDir);
+//		Dest += '\0';
+//		SHFILEOPSTRUCTA FileOp = { 0 };
+//		FileOp.wFunc = FO_COPY;
+//		FileOp.fFlags = FOF_ALLOWUNDO;
+//		std::vector<char> FilenameBuffer;
+//		for (const auto& SourceFile : SourceFiles) {
+//			FilenameBuffer.resize(FilenameBuffer.size() + SourceFile.size() + 1);
+//			std::memcpy(FilenameBuffer.data() + FilenameBuffer.size() - SourceFile.size() - 1, SourceFile.data(), SourceFile.size());
+//			FilenameBuffer.back() = '\0';
+//		}
+//		FilenameBuffer.push_back('\0');
+//		FileOp.pFrom = FilenameBuffer.data();
+//		FileOp.pTo = Dest.c_str();
+//		if (!::SHFileOperationA(&FileOp) && !FileOp.fAnyOperationsAborted)
+//			ret = TRUE;
+//	}
+//	return ret;
+//}
+
+int fix(double x) {
+	return x < 0.0 ? std::ceil(x) : std::floor(x);
+}
+#include<string_view>
 int main() {
-	数组<整数型> 整数数组;
-	置随机数种子();
-	计次循环首(100, i) {
-		加入成员(整数数组, 取随机数(1, 10));
-	}
-	字节集 字节集数据 = { 0,4,7,1,5 };
-	文本型 文本型变量 = L"unicode字符";
-	调试输出(整数数组, 字节集数据 + 到字节集(文本型变量));
 
 }
 
-
-
 #endif 
 
+double _ST6;
+double  IFunction(double a1)
+{
+	_ST6 = 1.442695040888963387 * a1;
+	__asm { frndint }
+	return 0;//__F2XM1__(1.442695040888963387 * a1 - _ST6) + 1.0;
+}
+
+int  IntegratFunction(int a1, double a2, double a3, int a4)
+{
+	long double v4; // ST38_8@1
+	double v5; // ST20_8@2
+	double v6; // ST38_8@2
+	double v7; // ST38_8@2
+	double v8; // st7@5
+	double v9; // ST40_8@6
+	double v10; // ST40_8@6
+	char v12; // c0@6
+	int result; // eax@7
+	double v14; // [sp+8h] [bp-30h]@1
+	double v15; // [sp+10h] [bp-28h]@5
+	double v16; // [sp+18h] [bp-20h]@1
+	double v17; // [sp+20h] [bp-18h]@1
+	double v18; // [sp+28h] [bp-10h]@2
+	double v19; // [sp+48h] [bp+10h]@2
+	double v20; // [sp+48h] [bp+10h]@6
+
+	v16 = a3;
+	v4 = (double)a1;
+	v17 = 0.0;
+	v14 = (a3 - a2) / v4;
+	if (fmod(v4, 2.0) == 0.0)
+	{
+		v18 = 0.0;
+	}
+	else
+	{
+		v5 = a3 - v14 * 3.0;
+		v6 = IFunction(a3 - (v14 + v14));
+		v7 = (IFunction(a3 - v14) + v6) * 3.0;
+		v19 = IFunction(a3) + v7;
+		v16 = v5;
+		v18 = (IFunction(v5) + v19) * v14 * 0.375;
+	}
+	if (a1 != 3)
+	{
+		v8 = a2;
+		v15 = a2;
+		if (a2 < v16 - v14)
+		{
+			do
+			{
+				v20 = v14 + v14 + v8;
+				v9 = IFunction(v8 + v14) * 4.0;
+				v10 = IFunction(v15) + v9;
+				v17 = (IFunction(v20) + v10) * v14 * 0.3333333333333333 + v17;
+				v8 = v20;
+				v15 = v20;
+			} while (v12);
+		}
+	}
+	result = a4;
+	*(double*)a4 = v17 + v18;
+	return result;
+}
+
+int  CalculousIntegrateFunction(int 样本区间, double 积分下限, double 积分上限)
+{
+	int v3; // ecx@1
+	int result; // eax@3
+	double v5; // [sp+0h] [bp-10h]@2
+	double v6; // [sp+8h] [bp-8h]@2
+
+	v3 = 样本区间;
+	if (v3 >= 0 && (v6 = 积分下限, v5 = 积分上限, v6 < v5))
+	{
+		result = IntegratFunction(v3, v6, v5, result);
+	}
+	else
+	{
+		result = 0;
+	}
+	return result;
+}

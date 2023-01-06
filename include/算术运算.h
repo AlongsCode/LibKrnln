@@ -71,3 +71,16 @@ bool 是否运算正确(double 欲校验的计算结果);
 size_t 取随机数(size_t 欲取随机数的最小值 = 0, size_t 欲取随机数的最大值 = -1);
 
 
+std::wstring 阶乘(uint64_t 求阶乘数);
+
+std::wstring 双阶乘(uint64_t 求阶乘数);
+
+bool 是否素数(uint64_t 数值);
+
+
+int 取斐波那契数列项值(int n);
+
+
+bool 一阶微分(double(*一阶微分方程)(double, double), double 已知的x值, double 已知的y值, double 要求解的x值, double 允许的误差, double 初始步长, double 最小步长);
+
+int 数值积分计算(double(*函数)(double), int 样本区间, double 积分下限, double 积分上限);
