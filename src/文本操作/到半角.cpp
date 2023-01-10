@@ -2,10 +2,10 @@
 #include<string>
 using namespace std;
 /*是否需要??*/
-KrnlnApi bool 是否为全角字符(wchar_t c)
-{
-	return c >= 0xFF00 && c <= 0xFFEF;
-}
+//KrnlnApi bool 是否为全角字符(wchar_t c)
+//{
+//	return c >= 0xFF00 && c <= 0xFFEF;
+//}
 KrnlnApi string 到半角(const std::string& str) {
 	std::string result;
 	unsigned char fc;
@@ -38,7 +38,7 @@ KrnlnApi string 到半角(const std::string& str) {
 	return result;
 }
 
-KrnlnApi std::wstring ToHalfWidth(const std::wstring& text)
+KrnlnApi std::wstring 到半角(const std::wstring& text)
 {
 	if (text.empty())
 		return std::wstring();

@@ -15,7 +15,7 @@ KrnlnApi std::vector<unsigned char> 读入文件(const std::string& filename) {
 		file.seekg(0, std::ios::beg);
 		// 读取整个文件的所有字节到 vector<unsigned char>
 		data.resize((size_t)length);
-		file.read((char*)&data[0], length);
+		file.read(reinterpret_cast<char*>(&data[0]), length);
 	}
 	// 关闭文件
 	file.close();
@@ -35,7 +35,7 @@ KrnlnApi std::vector<unsigned char> 读入文件(const std::wstring& filename) {
 		file.seekg(0, std::ios::beg);
 		// 读取整个文件的所有字节到 vector<unsigned char>
 		data.resize((size_t)length);
-		file.read((char*)&data[0], length);
+		file.read(reinterpret_cast<char*>(&data[0]), length);
 	}
 	// 关闭文件
 	file.close();

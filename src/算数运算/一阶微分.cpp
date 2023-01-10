@@ -1,7 +1,7 @@
-#include<cmath>
+ï»¿#include<cmath>
 
 
-/*Îåµã Runge-Kutta ·¨*/
+/*äº”ç‚¹ Runge-Kutta æ³•*/
 class DifferentialEquationSolver {
 private:
 	double x_known, y_known;
@@ -38,8 +38,8 @@ public:
 	}
 };
 
-KrnlnApi bool Ò»½×Î¢·Ö(double(*Ò»½×Î¢·Ö·½³Ì)(double, double), double ÒÑÖªµÄxÖµ, double ÒÑÖªµÄyÖµ, double ÒªÇó½âµÄxÖµ, double ÔÊĞíµÄÎó²î, double ³õÊ¼²½³¤, double ×îĞ¡²½³¤) {
-	DifferentialEquationSolver solver(Ò»½×Î¢·Ö·½³Ì, ÒÑÖªµÄxÖµ, ÒÑÖªµÄyÖµ, ÔÊĞíµÄÎó²î, ³õÊ¼²½³¤, ×îĞ¡²½³¤);
+KrnlnApi bool ä¸€é˜¶å¾®åˆ†(double(*ä¸€é˜¶å¾®åˆ†æ–¹ç¨‹)(double, double), double å·²çŸ¥çš„xå€¼, double å·²çŸ¥çš„yå€¼, double è¦æ±‚è§£çš„xå€¼, double å…è®¸çš„è¯¯å·®, double åˆå§‹æ­¥é•¿, double æœ€å°æ­¥é•¿) {
+	DifferentialEquationSolver solver(ä¸€é˜¶å¾®åˆ†æ–¹ç¨‹, å·²çŸ¥çš„xå€¼, å·²çŸ¥çš„yå€¼, å…è®¸çš„è¯¯å·®, åˆå§‹æ­¥é•¿, æœ€å°æ­¥é•¿);
 	double y;
-	return  solver.solve(ÒªÇó½âµÄxÖµ, y);
+	return  solver.solve(è¦æ±‚è§£çš„xå€¼, y);
 }

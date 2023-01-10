@@ -3,9 +3,8 @@
 #define KRNLNCONSOLE
 #include<iostream>
 
-void 标准输出(int 输出方向) {
-	// 函数出口
-}
+void 标准输出(int 输出方向);
+
 template<typename T, typename... Args>
 void 标准输出(int 输出方向, T 输出内容, Args... args) {
 	// 判断输出内容的类型是否为宽字符

@@ -1,20 +1,20 @@
-#include <cmath>
+ï»¿#include <cmath>
 
 class NumericIntegration
 {
 private:
 	double IntegrateBySimpson13(int sampleInterval, double lowerLimit, double upperLimit) {
-		// Simpson 1/3 ·¨¼ÆËã»ı·Ö
+		// Simpson 1/3 æ³•è®¡ç®—ç§¯åˆ†
 
-		// ¼ÆËãÇø¼ä³¤¶È
+		// è®¡ç®—åŒºé—´é•¿åº¦
 		double intervalLength = upperLimit - lowerLimit;
 
-		// ¼ÆËã²½³¤
+		// è®¡ç®—æ­¥é•¿
 		double step = intervalLength / sampleInterval;
 
 		double integral = 0.0;
 
-		// ¼ÆËãËùÓĞ×ÓÇø¼äµÄ»ı·ÖÖµ²¢ÇóºÍ
+		// è®¡ç®—æ‰€æœ‰å­åŒºé—´çš„ç§¯åˆ†å€¼å¹¶æ±‚å’Œ
 		for (int i = 0; i < sampleInterval; i++)
 		{
 			double x0 = lowerLimit + i * step;
@@ -26,17 +26,17 @@ private:
 	};
 	double IntegrateBySimpson38(int sampleInterval, double lowerLimit, double upperLimit)
 	{
-		// Simpson 3/8 ·¨¼ÆËã»ı·Ö
+		// Simpson 3/8 æ³•è®¡ç®—ç§¯åˆ†
 
-		// ¼ÆËãÇø¼ä³¤¶È
+		// è®¡ç®—åŒºé—´é•¿åº¦
 		double intervalLength = upperLimit - lowerLimit;
 
-		// ¼ÆËã²½³¤
+		// è®¡ç®—æ­¥é•¿
 		double step = intervalLength / sampleInterval;
 
 		double integral = 0.0;
 
-		// ¼ÆËãËùÓĞ×ÓÇø¼äµÄ»ı·ÖÖµ²¢ÇóºÍ
+		// è®¡ç®—æ‰€æœ‰å­åŒºé—´çš„ç§¯åˆ†å€¼å¹¶æ±‚å’Œ
 		for (int i = 0; i < sampleInterval; i++)
 		{
 			double x0 = lowerLimit + i * step;
@@ -55,17 +55,17 @@ public:
 			return 0;
 		}
 		Function = F;
-		// Ê¹ÓÃ Simpson 1/3 ·¨ºÍ Simpson 3/8 ·¨¼ÆËã»ı·Ö
+		// ä½¿ç”¨ Simpson 1/3 æ³•å’Œ Simpson 3/8 æ³•è®¡ç®—ç§¯åˆ†
 		return IntegrateBySimpson13(sampleInterval, lowerLimit, upperLimit) + IntegrateBySimpson38(sampleInterval, lowerLimit, upperLimit);
 	}
 };
 
 
-KrnlnApi int ÊıÖµ»ı·Ö¼ÆËã(double(*º¯Êı)(double), int Ñù±¾Çø¼ä, double »ı·ÖÏÂÏŞ, double »ı·ÖÉÏÏŞ)
+KrnlnApi int æ•°å€¼ç§¯åˆ†è®¡ç®—(double(*å‡½æ•°)(double), int æ ·æœ¬åŒºé—´, double ç§¯åˆ†ä¸‹é™, double ç§¯åˆ†ä¸Šé™)
 {
 	NumericIntegration IntegrateVector;
-	// µ÷ÓÃ Integrate º¯Êı¼ÆËã»ı·Ö
-	return IntegrateVector.Integrate(º¯Êı, Ñù±¾Çø¼ä, »ı·ÖÏÂÏŞ, »ı·ÖÉÏÏŞ);
+	// è°ƒç”¨ Integrate å‡½æ•°è®¡ç®—ç§¯åˆ†
+	return IntegrateVector.Integrate(å‡½æ•°, æ ·æœ¬åŒºé—´, ç§¯åˆ†ä¸‹é™, ç§¯åˆ†ä¸Šé™);
 }
 
 

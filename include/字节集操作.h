@@ -1,12 +1,6 @@
 ﻿#pragma once
 //字符串拼接重载运算符，也可使使用字符串拼接函数
-std::vector<unsigned char> operator+(const std::vector<unsigned char>& 字节集1, const std::vector<unsigned char>& 字节集2) {
-	std::vector<unsigned char> result;
-	result.reserve(字节集1.size() + 字节集2.size());
-	result.insert(result.end(), 字节集1.begin(), 字节集1.end());
-	result.insert(result.end(), 字节集2.begin(), 字节集2.end());
-	return result;
-}
+std::vector<unsigned char> operator+(const std::vector<unsigned char>& 字节集1, const std::vector<unsigned char>& 字节集2);
 #pragma region 到字节集
 vector<unsigned char> 到字节集(const string& 欲转换为字节集的数据);
 vector<unsigned char> 到字节集(const wstring& 欲转换为字节集的数据);
