@@ -2,7 +2,8 @@
 #ifndef KRNLNCONSOLE
 #define KRNLNCONSOLE
 #include<iostream>
-
+bool 置控制台标题(const std::string& title);
+bool 置控制台标题(const std::wstring& title);
 void 标准输出(int 输出方向);
 
 template<typename T, typename... Args>

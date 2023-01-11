@@ -87,7 +87,7 @@ std::vector<wstring> 分割文本(const std::wstring& 待分割文本, const std
 
 #pragma region 取代吗(WA码)
 int 取代码(const std::string& 欲取字符代码的文本, size_t 欲取其代码的字符位置 = 1);
-int 取代码(const std::wstring& 欲取字符代码的文本, size_t 欲取其代码的字符位置 = 1);
+short 取代码(const std::wstring& 欲取字符代码的文本, size_t 欲取其代码的字符位置 = 1);
 #pragma endregion 
 
 #pragma region 取空白文本(WA码)及其宏
