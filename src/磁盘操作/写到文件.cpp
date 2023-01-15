@@ -88,31 +88,31 @@ using namespace std; //直接使用标准库输出差距不大
 
 
 
-KrnlnApi bool 写到文件(const wstring& 文件名, vector<unsigned char> 欲写入文件的数据)
+KrnlnApi bool 写到文件(const wstring& filename, vector<unsigned char> data)
 {
 
-	if (文件名.empty() || 欲写入文件的数据.empty())
+	if (filename.empty() || data.empty())
 		return false;
 
-	FILE* out = _wfopen(文件名.c_str(), L"wb");
+	FILE* out = _wfopen(filename.c_str(), L"wb");
 	if (out == NULL)
 		return false;
 
-	const bool blpSucceeded = (fwrite(欲写入文件的数据.data(), 1, 欲写入文件的数据.size(), out) == 欲写入文件的数据.size());
+	const bool blpSucceeded = (fwrite(data.data(), 1, data.size(), out) == data.size());
 	fclose(out);
 	return blpSucceeded;
 }
-KrnlnApi bool 写到文件(const string& 文件名, vector<unsigned char> 欲写入文件的数据)
+KrnlnApi bool 写到文件(const string& filename, vector<unsigned char> data)
 {
 
-	if (文件名.empty() || 欲写入文件的数据.empty())
+	if (filename.empty() || data.empty())
 		return false;
 
-	FILE* out = fopen(文件名.c_str(), "wb");
+	FILE* out = fopen(filename.c_str(), "wb");
 	if (out == NULL)
 		return false;
 
-	const bool blpSucceeded = (fwrite(欲写入文件的数据.data(), 1, 欲写入文件的数据.size(), out) == 欲写入文件的数据.size());
+	const bool blpSucceeded = (fwrite(data.data(), 1, data.size(), out) == data.size());
 	fclose(out);
 	return blpSucceeded;
 }

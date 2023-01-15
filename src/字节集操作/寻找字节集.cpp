@@ -1,4 +1,5 @@
 ﻿#include<vector>
+#include<algorithm>
 using namespace std;
 //我的代码，速度不如7号
 //#include <unordered_map>
@@ -110,7 +111,13 @@ KrnlnApi size_t 寻找字节集(const vector<unsigned char>& s, const vector<uns
 	return -1;
 }
 
-
+size_t find_sub_bytes(const std::vector<unsigned char>& bytes, const std::vector<unsigned char>& sub_bytes, intptr_t start_pos) {
+	auto it = std::search(bytes.begin() + start_pos, bytes.end(), sub_bytes.begin(), sub_bytes.end());
+	if (it == bytes.end()) {
+		return std::numeric_limits<size_t>::max();
+	}
+	return it - bytes.begin() + 1;
+}
 
 KrnlnApi size_t 寻找字节集下标(const vector<unsigned char>& 被搜寻的字节集, const vector<unsigned char>& 欲寻找的字节集, size_t 起始搜寻位置) {
 	if (被搜寻的字节集.empty() || 欲寻找的字节集.empty())

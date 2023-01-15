@@ -14,7 +14,6 @@ KrnlnApi void 禁止重复运行(const std::wstring& identifier, void(*callback)
 		if (callback) {
 			callback();
 		}
-
 		exit(0);
 	}
 	CreateEventW(NULL, false, false, identifier.c_str());
