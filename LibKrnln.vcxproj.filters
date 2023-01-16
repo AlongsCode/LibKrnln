@@ -130,6 +130,12 @@
     <Filter Include="源文件\文件读写\实现">
       <UniqueIdentifier>{3f977824-31cc-49c9-bad0-601de878d013}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\算数运算\实现\数论">
+      <UniqueIdentifier>{6535627e-ec44-4dbb-a5f8-2dec78aa45f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\算数运算\实现\微积分">
+      <UniqueIdentifier>{2112c79f-7be3-471f-a03e-58d1a1c2b635}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Edefcn.h">
@@ -664,6 +670,39 @@
     </ClCompile>
     <ClCompile Include="src\算数运算\角度到弧度.cpp">
       <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\阶乘.cpp">
+      <Filter>源文件\算数运算\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\是否素数.cpp">
+      <Filter>源文件\算数运算\实现\数论</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\取斐波那契数列项值.cpp">
+      <Filter>源文件\算数运算\实现\数论</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\一阶微分.cpp">
+      <Filter>源文件\算数运算\实现\微积分</Filter>
+    </ClCompile>
+    <ClCompile Include="src\算数运算\数值积分计算.cpp">
+      <Filter>源文件\算数运算\实现\微积分</Filter>
+    </ClCompile>
+    <ClCompile Include="src\网络通信\取本机名.cpp">
+      <Filter>源文件\网络通信\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\网络通信\取本机ip.cpp">
+      <Filter>源文件\网络通信\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\控制台操作\标准输出.cpp">
+      <Filter>源文件\控制台操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\字节集操作\字节集重载运算符.cpp">
+      <Filter>源文件\字节集操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\控制台操作\置控制台标题.cpp">
+      <Filter>源文件\控制台操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\高级信息框.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

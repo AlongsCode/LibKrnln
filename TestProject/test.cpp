@@ -871,98 +871,134 @@ public:
 //	}
 //	return ret;
 //}
+#include <windows.h>
+#include <functional>
 
-int fix(double x) {
-	return x < 0.0 ? std::ceil(x) : std::floor(x);
+
+void* 创建协程(void* func, void* arg) {
+
+	void* coroutine_fiber = CreateFiber(0, (PFIBER_START_ROUTINE)func, arg);
+	if (coroutine_fiber == NULL) {
+		return NULL;
+	}
+	return coroutine_fiber;
 }
-#include<string_view>
-int main() {
+//将当前线程切换至协程
+void 切换协程(void* 协程句柄) {
+	if (!协程句柄) return;
+	SwitchToFiber(协程句柄);
+}
+//void 销毁协程(void* 协程句柄) {
+//	if (!协程句柄 || IsBadReadPtr(协程句柄, sizeof(void*)))
+//	{
+//		return;
+//	}
+//	DeleteFiber(协程句柄);
+//}
+void 销毁协程(void* 协程句柄) {
+	if (!协程句柄) return;
+	DeleteFiber(协程句柄);
+}
 
+
+//void* 创建协程(void* func, void* arg) {
+//	std::function<void()> fn = std::bind((void(*)(void*))func, arg);
+//	auto pfn_fiber = [](void* pfn) -> void
+//	{
+//		std::function<void()>* fn = (std::function<void()>*)pfn;
+//		(*fn)();
+//	};
+//	void* coroutine_fiber = CreateFiber(0, (LPFIBER_START_ROUTINE)pfn_fiber, new std::function<void()>(fn));
+//	if (coroutine_fiber == NULL) {
+//		return NULL;
+//	}
+//	return coroutine_fiber;
+//}
+
+void* 取当前函数所在协程() {
+	void* ret = ConvertThreadToFiber(NULL);;
+	if (!ret)
+	{
+		ret = GetCurrentFiber();
+	}
+	return ret;
+}
+#include <Windows.h>
+#include <iostream>
+void* main_fiber;
+void WINAPI CoroutineFunc(void* arg, INT A, INT B) {
+	调试输出((int)取当前函数所在协程());
+	int count = *(int*)arg;
+	while (count > 0) {
+		std::cout << "Coroutine running, count = " << count << std::endl;
+		--count;
+		Sleep(200);
+		std::cout << "开始切换" << count << std::endl;
+		切换协程(main_fiber);
+		std::cout << "切换成功" << count << std::endl;
+	}
+
+}
+//
+//int main() {
+//
+//
+//	int i = 10;
+//	SwitchToFiber(&i);
+//	main_fiber = 取当前函数所在协程();
+//	void* 协程句柄 = 创建协程(CoroutineFunc, &i);
+//	切换协程(协程句柄);
+//	//销毁协程((void*)9999);
+//	while (true)
+//	{
+//		std::cout << "main 函数 " << std::endl;
+//		Sleep(200);
+//		切换协程(协程句柄);
+//
+//	}
+//
+//	return 0;
+//}
+#undef max
+size_t find_sub_bytes(const std::vector<unsigned char>& bytes, const std::vector<unsigned char>& sub_bytes, intptr_t start_pos) {
+	auto it = std::search(bytes.begin() + start_pos, bytes.end(), sub_bytes.begin(), sub_bytes.end());
+	if (it == bytes.end()) {
+		return std::numeric_limits<size_t>::max();
+	}
+	return it - bytes.begin() + 1;
+}
+//int main() {
+//
+//	std::vector<unsigned char> 字节集变量 = 到字节集(L"打撒达瓦让发撒福娃福娃");
+//	std::vector<unsigned char> f = 到字节集(L"福娃");
+//	int a = 0, b = 0;
+//	INT 位置变量;
+//	a = GetTickCount();
+//	for (size_t i = 0; i < 99999; i++)
+//	{
+//		位置变量 = find_sub_bytes(字节集变量, f, 0);
+//	}
+//	b = GetTickCount();
+//	调试输出(b - a, 位置变量);
+//
+//
+//	a = GetTickCount();
+//	for (size_t i = 0; i < 99999; i++)
+//	{
+//		位置变量 = 寻找字节集(字节集变量, f, 0);
+//	}
+//	b = GetTickCount();
+//	调试输出(b - a, 位置变量);
+//
+//
+//
+//
+//}
+
+
+int main() {
+	调试输出((int)高级信息框(L"测试", L"", L"", (高级信息框按钮)3));
 }
 
 #endif 
 
-double _ST6;
-double  IFunction(double a1)
-{
-	_ST6 = 1.442695040888963387 * a1;
-	__asm { frndint }
-	return 0;//__F2XM1__(1.442695040888963387 * a1 - _ST6) + 1.0;
-}
-
-int  IntegratFunction(int a1, double a2, double a3, int a4)
-{
-	long double v4; // ST38_8@1
-	double v5; // ST20_8@2
-	double v6; // ST38_8@2
-	double v7; // ST38_8@2
-	double v8; // st7@5
-	double v9; // ST40_8@6
-	double v10; // ST40_8@6
-	char v12; // c0@6
-	int result; // eax@7
-	double v14; // [sp+8h] [bp-30h]@1
-	double v15; // [sp+10h] [bp-28h]@5
-	double v16; // [sp+18h] [bp-20h]@1
-	double v17; // [sp+20h] [bp-18h]@1
-	double v18; // [sp+28h] [bp-10h]@2
-	double v19; // [sp+48h] [bp+10h]@2
-	double v20; // [sp+48h] [bp+10h]@6
-
-	v16 = a3;
-	v4 = (double)a1;
-	v17 = 0.0;
-	v14 = (a3 - a2) / v4;
-	if (fmod(v4, 2.0) == 0.0)
-	{
-		v18 = 0.0;
-	}
-	else
-	{
-		v5 = a3 - v14 * 3.0;
-		v6 = IFunction(a3 - (v14 + v14));
-		v7 = (IFunction(a3 - v14) + v6) * 3.0;
-		v19 = IFunction(a3) + v7;
-		v16 = v5;
-		v18 = (IFunction(v5) + v19) * v14 * 0.375;
-	}
-	if (a1 != 3)
-	{
-		v8 = a2;
-		v15 = a2;
-		if (a2 < v16 - v14)
-		{
-			do
-			{
-				v20 = v14 + v14 + v8;
-				v9 = IFunction(v8 + v14) * 4.0;
-				v10 = IFunction(v15) + v9;
-				v17 = (IFunction(v20) + v10) * v14 * 0.3333333333333333 + v17;
-				v8 = v20;
-				v15 = v20;
-			} while (v12);
-		}
-	}
-	result = a4;
-	*(double*)a4 = v17 + v18;
-	return result;
-}
-
-int  CalculousIntegrateFunction(int 样本区间, double 积分下限, double 积分上限)
-{
-	int v3; // ecx@1
-	int result; // eax@3
-	double v5; // [sp+0h] [bp-10h]@2
-	double v6; // [sp+8h] [bp-8h]@2
-
-	v3 = 样本区间;
-	if (v3 >= 0 && (v6 = 积分下限, v5 = 积分上限, v6 < v5))
-	{
-		result = IntegratFunction(v3, v6, v5, result);
-	}
-	else
-	{
-		result = 0;
-	}
-	return result;
-}

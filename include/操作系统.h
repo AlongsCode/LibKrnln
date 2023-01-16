@@ -109,7 +109,17 @@ int 信息框(const string& 提示信息, int 按钮 = 0, const  string& 窗口�
 	参数<3>的名称为“窗口标题”，类型为“文本型（text）”，可以被省略。参数值指定显示在对话框标题栏中的文本。如果省略，默认为文本“信息：”。
 */
 int 信息框(const wstring& 提示信息, int 按钮 = 0, const wstring& 窗口标题 = L"信息", HWND 父窗口 = NULL, DWORD 留存时长 = 0);
-
+enum class 高级信息框按钮 {
+	确认 = 1,
+	是 = 2,
+	否 = 4,
+	取消 = 8,
+	重试 = 16,
+	关闭 = 32,
+	失败 = 0
+};
+高级信息框按钮 operator| (高级信息框按钮 lhs, 高级信息框按钮 rhs);
+高级信息框按钮 高级信息框(const wstring& 信息, const wstring& 标题 = L"提示", const wstring& 窗口标题 = L"", 高级信息框按钮 按钮 = 高级信息框按钮::确认, HWND parent = 0, int 图标 = -1);
 #else//Linux POSIX 环境下的系统处理macos用苹果的编程语言比较多，不再单独列出
 
 
