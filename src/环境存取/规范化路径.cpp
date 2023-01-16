@@ -7,6 +7,10 @@ using namespace std;
 
 KrnlnApi string 规范化路径(const string& szPath)
 {
+	if (szPath.empty())
+	{
+		return {};
+	}
 	char* str = new char[szPath.size() + 1];
 	memset(str, 0, sizeof(char) * (szPath.size() + 1));
 
@@ -25,6 +29,10 @@ KrnlnApi string 规范化路径(const string& szPath)
 }
 KrnlnApi wstring 规范化路径(const wstring& szPath)
 {
+	if (szPath.empty())
+	{
+		return {};
+	}
 	wchar_t* str = new wchar_t[szPath.size() + 1];
 	memset(str, 0, sizeof(wchar_t) * (szPath.size() + 1));
 	wcscpy_s(str, szPath.size(), szPath.c_str());
