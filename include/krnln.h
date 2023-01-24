@@ -152,12 +152,12 @@ static void pt(std::wstring& str, std::vector<unsigned char> s)
 	str.append(L"} | ");
 
 };
-//static void pt(std::wstring& str, char* s)
-//{
-//	using namespace std;
-//	str.append(到文本W(std::string(s)) + L" | ");
-//
-//};
+static void pt(std::wstring& str, char* s)
+{
+	using namespace std;
+	str.append(到文本W(std::string(s)) + L" | ");
+
+};
 static void pt(std::wstring& str, std::tm s)
 {
 	using namespace std;
