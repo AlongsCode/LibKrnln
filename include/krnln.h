@@ -19,7 +19,7 @@ import STL;
 #pragma region 
 #define 使用中文代码
 #include<windows.h>
-using namespace std;
+//using namespace std;
 #pragma endregion
 #include"Edefcn.h"//定义函数
 //#include"模板打包.h"
@@ -60,14 +60,15 @@ using namespace std;
 
 
 template <class Ty>
-static void pt(wstring& str, Ty v)
+static void pt(std::wstring& str, Ty v)
 {
-
-	str.append(std::to_wstring(v) + L" | ");
+	using namespace std;
+	str.append(to_wstring(v) + L" | ");
 }
 template <class Ty>
-static void pt(wstring& str, vector<Ty> v)
+static void pt(std::wstring& str, std::vector<Ty> v)
 {
+	using namespace std;
 	if (v.empty())
 	{
 		str.append(L" 数组:(空) |");
@@ -84,9 +85,9 @@ static void pt(wstring& str, vector<Ty> v)
 	str.pop_back();
 	str.append(L"} | ");
 }
-static void pt(wstring& str, const wchar_t* s) //这个是 L""
+static void pt(std::wstring& str, const wchar_t* s) //这个是 L""
 {
-
+	using namespace std;
 	str.append(L"\"");
 	if (!s)
 	{
@@ -99,8 +100,9 @@ static void pt(wstring& str, const wchar_t* s) //这个是 L""
 
 	str.append(L"\" | ");
 }
-static void pt(wstring& str, const char* s) //这个是 L""
+static void pt(std::wstring& str, const char* s) //这个是 L""
 {
+	using namespace std;
 	str.append(L"\"");
 	if (!s)
 	{
@@ -114,22 +116,25 @@ static void pt(wstring& str, const char* s) //这个是 L""
 
 	str.append(L"\" | ");
 }
-static void pt(wstring& str, std::string s)
+static void pt(std::wstring& str, std::string s)
 {
+	using namespace std;
 	str.append(L"\"");
 
 	str.append(文本到宽文本(s));
 
 	str.append(L"\" | ");
 }
-static void pt(wstring& str, std::wstring s)
+static void pt(std::wstring& str, std::wstring s)
 {
+	using namespace std;
 	str.append(L"\"");
 	str.append(s);
 	str.append(L"\" | ");
 }
-static void pt(wstring& str, vector<unsigned char> s)
+static void pt(std::wstring& str, std::vector<unsigned char> s)
 {
+	using namespace std;
 	if (s.empty())
 	{
 		str.append(L" 字节集:(空) |");
@@ -147,15 +152,15 @@ static void pt(wstring& str, vector<unsigned char> s)
 	str.append(L"} | ");
 
 };
-static void pt(wstring& str, char* s)
+//static void pt(std::wstring& str, char* s)
+//{
+//	using namespace std;
+//	str.append(到文本W(std::string(s)) + L" | ");
+//
+//};
+static void pt(std::wstring& str, std::tm s)
 {
-
-	str.append(到文本W(string(s)) + L" | ");
-
-};
-static void pt(wstring& str, std::tm s)
-{
-
+	using namespace std;
 	str.append(到文本W(s) + L" | ");
 
 };

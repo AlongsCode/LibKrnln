@@ -24,15 +24,15 @@ bool 写注册项(注册表根目录 rootDirectory, const std::wstring& fullPath
 
 BOOL  安装字体(const std::string& 字体文件);
 /*当安装字体为内存资源时为临时安装，生命周期跟随进程，并且为进程独占，其他进程须发共享已安装的字体资源*/
-HANDLE  安装字体(const vector<unsigned char>& FontData);
+HANDLE  安装字体(const std::vector<unsigned char>& FontData);
 BOOL  安装字体(const std::wstring& 字体文件);
 BOOL 卸载字体(const std::string& 字体文件);
 BOOL 卸载字体(const std::wstring& 字体文件);
 BOOL 卸载字体(HANDLE 字体句柄);
 BOOL 延迟(INT64 millisecond);
-BOOL  播放音乐(const vector<unsigned char>& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
-BOOL  播放音乐(const string& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
-BOOL  播放音乐(const wstring& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
+BOOL  播放音乐(const std::vector<unsigned char>& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
+BOOL  播放音乐(const std::string& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
+BOOL  播放音乐(const std::wstring& 欲播放的音乐, bool 是否循环播放 = false, bool 是否同步播放 = false);
 BOOL  停止播放();
 #pragma region 非暴漏接口
 namespace KrnlnMidInside {
@@ -45,23 +45,23 @@ namespace KrnlnMidInside {
 	struct MIDMUSIC
 	{
 
-		string name;
-		wstring wname;
+		std::string name;
+		std::wstring wname;
 		MIDIFILEDATAINFO data;
 
 		int datatype;
 	};
-	void PackMid(vector<MIDMUSIC>& MidStruct, string MemData);
-	void PackMid(vector<MIDMUSIC>& MidStruct, wstring MemData);
-	void PackMid(vector<MIDMUSIC>& MidStruct, vector<unsigned char> MemData);
-	void PlayMid(int times, int interval, vector<MIDMUSIC> wannaplay);
+	void PackMid(std::vector<MIDMUSIC>& MidStruct, std::string MemData);
+	void PackMid(std::vector<MIDMUSIC>& MidStruct, std::wstring MemData);
+	void PackMid(std::vector<MIDMUSIC>& MidStruct, std::vector<unsigned char> MemData);
+	void PlayMid(int times, int interval, std::vector<MIDMUSIC> wannaplay);
 }
 #pragma endregion
 
 template <class... T>
 void 播放MID(int 播放次数, int 间隔时间, T... 欲播放MID)
 {
-	vector<KrnlnMidInside::MIDMUSIC> Data;
+	std::vector<KrnlnMidInside::MIDMUSIC> Data;
 	std::initializer_list<INT>{(PackMid(Data, std::forward<T>(欲播放MID)), 0)...};
 	KrnlnMidInside::PlayMid(播放次数, 间隔时间, Data);
 };
@@ -88,7 +88,7 @@ void 播放MID(int 播放次数, int 间隔时间, T... 欲播放MID)
 
 	参数<3>的名称为“窗口标题”，类型为“文本型（text）”，可以被省略。参数值指定显示在对话框标题栏中的文本。如果省略，默认为文本“信息：”。
 */
-int 信息框(const string& 提示信息, int 按钮 = 0, const  string& 窗口标题 = "信息", HWND 父窗口 = NULL, DWORD 留存时长 = 0);
+int 信息框(const std::string& 提示信息, int 按钮 = 0, const  std::string& 窗口标题 = "信息", HWND 父窗口 = NULL, DWORD 留存时长 = 0);
 /*
 	调用格式： 〈整数型〉 信息框 （通用型 提示信息，整数型 按钮，［文本型 窗口标题］） - 系统核心支持库->系统处理
 	英文名称：MsgBox
@@ -108,7 +108,7 @@ int 信息框(const string& 提示信息, int 按钮 = 0, const  string& 窗口�
 
 	参数<3>的名称为“窗口标题”，类型为“文本型（text）”，可以被省略。参数值指定显示在对话框标题栏中的文本。如果省略，默认为文本“信息：”。
 */
-int 信息框(const wstring& 提示信息, int 按钮 = 0, const wstring& 窗口标题 = L"信息", HWND 父窗口 = NULL, DWORD 留存时长 = 0);
+int 信息框(const std::wstring& 提示信息, int 按钮 = 0, const std::wstring& 窗口标题 = L"信息", HWND 父窗口 = NULL, DWORD 留存时长 = 0);
 enum class 高级信息框按钮 {
 	确认 = 1,
 	是 = 2,
@@ -119,7 +119,7 @@ enum class 高级信息框按钮 {
 	失败 = 0
 };
 高级信息框按钮 operator| (高级信息框按钮 lhs, 高级信息框按钮 rhs);
-高级信息框按钮 高级信息框(const wstring& 信息, const wstring& 标题 = L"提示", const wstring& 窗口标题 = L"", 高级信息框按钮 按钮 = 高级信息框按钮::确认, HWND parent = 0, int 图标 = -1);
+高级信息框按钮 高级信息框(const std::wstring& 信息, const std::wstring& 标题 = L"提示", const std::wstring& 窗口标题 = L"", 高级信息框按钮 按钮 = 高级信息框按钮::确认, HWND parent = 0, int 图标 = -1);
 #else//Linux POSIX 环境下的系统处理macos用苹果的编程语言比较多，不再单独列出
 
 

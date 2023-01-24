@@ -1,7 +1,7 @@
 ﻿#pragma once
 #ifdef _WIN32
-vector<wstring> 枚举注册表项(HKEY 根类, const wstring& 父路径);
-vector<string> 枚举注册表项(HKEY 根类, const string& 父路径);
+std::vector<std::wstring> 枚举注册表项(HKEY 根类, const std::wstring& 父路径);
+std::vector<std::string> 枚举注册表项(HKEY 根类, const std::string& 父路径);
 std::vector<std::wstring> 取命令行W();
 std::vector<std::string> 取命令行A();
 
@@ -24,28 +24,28 @@ size_t 取命令行A(std::vector<std::string>& saryArgs);
 #endif
 
 
-string 取执行文件名A();
-wstring 取执行文件名W();
+std::string 取执行文件名A();
+std::wstring 取执行文件名W();
 
-string 读环境变量(const string& 环境变量名称);
-wstring 读环境变量(const wstring& 环境变量名称);
+std::string 读环境变量(const std::string& 环境变量名称);
+std::wstring 读环境变量(const std::wstring& 环境变量名称);
 
 
 
 //将目录中所有的"/"转为"\",所有的大写转小写
-string 规范化路径(const string& 路径);
+std::string 规范化路径(const std::string& 路径);
 //将目录中所有的"/"转为"\",所有的大写转小写
-wstring 规范化路径(const wstring& 路径);
-wstring 取运行目录W();
-string 取运行目录A();
+std::wstring 规范化路径(const std::wstring& 路径);
+std::wstring 取运行目录W();
+std::string 取运行目录A();
 
-bool 写环境变量(const string& 环境变量名称, const string& 欲写入内容);
-bool 写环境变量(const wstring& 环境变量名称, const wstring& 欲写入内容);
+bool 写环境变量(const std::string& 环境变量名称, const std::string& 欲写入内容);
+bool 写环境变量(const std::wstring& 环境变量名称, const std::wstring& 欲写入内容);
 
 
 
 
 /*目录为空则取当前路径*/
-string 合并路径(const string& 文件名, const string& 目录 = "");
+std::string 合并路径(const std::string& 文件名, const std::string& 目录 = "");
 /*目录为空则取当前路径*/
-wstring 合并路径(const wstring& 文件名, const wstring& 目录 = L"");
+std::wstring 合并路径(const std::wstring& 文件名, const std::wstring& 目录 = L"");

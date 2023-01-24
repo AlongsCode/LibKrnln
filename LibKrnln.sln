@@ -12,20 +12,30 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "TestProject\test.vc
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DebugLib|x64 = DebugLib|x64
+		DebugLib|x86 = DebugLib|x86
 		Lib|x64 = Lib|x64
 		Lib|x86 = Lib|x86
 		Static|x64 = Static|x64
 		Static|x86 = Static|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugLib|x64.ActiveCfg = DebugLib|x64
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugLib|x64.Build.0 = DebugLib|x64
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugLib|x86.ActiveCfg = DebugLib|Win32
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugLib|x86.Build.0 = DebugLib|Win32
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x64.ActiveCfg = Lib|x64
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x64.Build.0 = Lib|x64
-		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x86.ActiveCfg = Lib|Win32
-		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x86.Build.0 = Lib|Win32
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x86.ActiveCfg = DebugLib|Win32
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x86.Build.0 = DebugLib|Win32
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Static|x64.ActiveCfg = Static|x64
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Static|x64.Build.0 = Static|x64
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Static|x86.ActiveCfg = Static|Win32
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Static|x86.Build.0 = Static|Win32
+		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugLib|x64.ActiveCfg = DebugLib|x64
+		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugLib|x64.Build.0 = DebugLib|x64
+		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugLib|x86.ActiveCfg = DebugLib|Win32
+		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugLib|x86.Build.0 = DebugLib|Win32
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.Lib|x64.ActiveCfg = Lib|x64
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.Lib|x64.Build.0 = Lib|x64
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.Lib|x86.ActiveCfg = Lib|Win32

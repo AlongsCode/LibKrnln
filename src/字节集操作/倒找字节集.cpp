@@ -1,5 +1,5 @@
-﻿#include"vector"
-
+﻿#include<vector>
+#include<optional>
 
 
 KrnlnApi intptr_t 倒找字节集(const std::vector<unsigned char>& 被搜寻的字节集, const std::vector<unsigned char>& 欲寻找的字节集, size_t 起始搜寻位置) {
@@ -109,8 +109,8 @@ KrnlnApi intptr_t 倒找字节集(const std::vector<unsigned char>& 被搜寻的
 
 	if (欲寻找的字节集.empty() || 被搜寻的字节集.empty()) return -1;
 	// 计算需要搜索的字节集的长度和被搜索的字节集的长度
-	size_t src_len = 被搜寻的字节集.size();
-	size_t nSubLen = 欲寻找的字节集.size();
+	const size_t src_len = 被搜寻的字节集.size();
+	const size_t nSubLen = 欲寻找的字节集.size();
 	// 如果需要搜索的字节集长度为 0 或者被搜索的字节集长度小于需要搜索的字节集长度，则返回 -1
 	if (nSubLen == 0 || nSubLen > src_len) return -1;
 	// 获取被搜索的字节集的数据
@@ -118,7 +118,7 @@ KrnlnApi intptr_t 倒找字节集(const std::vector<unsigned char>& 被搜寻的
 	// 如果被搜索的字节集长度小于需要搜索的字节集长度，则返回 -1
 	if (src_len < nSubLen) return -1;
 	// 计算偏移量
-	size_t off = src_len - nSubLen;
+	const size_t off = src_len - nSubLen;
 	// 获取需要搜索的字节集的数据
 	const unsigned char* pDes = 欲寻找的字节集.data();
 	// 短子串直接暴力搜索
@@ -210,3 +210,31 @@ KrnlnApi intptr_t 倒找字节集(const std::vector<unsigned char>& 被搜寻的
 	return -1;
 }
 
+
+
+KrnlnApi intptr_t 倒找字节集下标(const std::vector<unsigned char>& 被搜寻的字节集, const std::vector<unsigned char>& 欲寻找的字节集, std::optional<size_t> 起始搜寻下标) {
+
+	const unsigned char* str_data = 被搜寻的字节集.data();
+	const size_t nLen = 被搜寻的字节集.size();
+	const unsigned char* find_str_data = 欲寻找的字节集.data();
+	const size_t nSubLen = 欲寻找的字节集.size();
+	const size_t pos = 起始搜寻下标.has_value() ? 起始搜寻下标.value() : nLen - 1;
+
+	if (nLen == 0 || nSubLen == 0 || nSubLen > nLen) return -1;
+	if (pos < nSubLen || pos <= 0) return -1;
+	if (nLen < nSubLen) return -1;
+
+	if (nSubLen <= nLen) { // room for match, look for it
+		for (const unsigned char* match_try = str_data + std::min(pos, nLen - nSubLen);; --match_try) {
+
+			if (*match_try == *find_str_data && memcmp(match_try, find_str_data, nSubLen) == 0) {
+				return match_try - str_data; // found a match
+			}
+			if (match_try == str_data) {
+				break; // at beginning, no more chance for match
+			}
+		}
+	}
+
+	return -1; // no match
+}

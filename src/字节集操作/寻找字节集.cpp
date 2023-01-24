@@ -1,5 +1,6 @@
 ﻿#include<vector>
 #include<algorithm>
+#include<optional>
 using namespace std;
 //我的代码，速度不如7号
 //#include <unordered_map>
@@ -111,91 +112,115 @@ KrnlnApi size_t 寻找字节集(const vector<unsigned char>& s, const vector<uns
 	return -1;
 }
 
-size_t find_sub_bytes(const std::vector<unsigned char>& bytes, const std::vector<unsigned char>& sub_bytes, intptr_t start_pos) {
-	auto it = std::search(bytes.begin() + start_pos, bytes.end(), sub_bytes.begin(), sub_bytes.end());
-	if (it == bytes.end()) {
-		return std::numeric_limits<size_t>::max();
-	}
-	return it - bytes.begin() + 1;
-}
 
-KrnlnApi size_t 寻找字节集下标(const vector<unsigned char>& 被搜寻的字节集, const vector<unsigned char>& 欲寻找的字节集, size_t 起始搜寻位置) {
-	if (被搜寻的字节集.empty() || 欲寻找的字节集.empty())
+//KrnlnApi size_t 寻找字节集下标(const vector<unsigned char>& 被搜寻的字节集, const vector<unsigned char>& 欲寻找的字节集, size_t 起始搜寻位置) {
+//	if (被搜寻的字节集.empty() || 欲寻找的字节集.empty())
+//		return -1;
+//
+//	size_t nLen = 被搜寻的字节集.size();
+//	size_t nSubLen = 欲寻找的字节集.size();
+//
+//	const unsigned char* pSrc;
+//	size_t off;
+//	if (起始搜寻位置 <= 1)
+//	{
+//		off = 1;
+//		pSrc = 被搜寻的字节集.data();
+//	}
+//	else
+//	{
+//		off = 起始搜寻位置;
+//		pSrc = 被搜寻的字节集.data() + off - 1;
+//		nLen -= off - 1;
+//	}
+//
+//	if (nLen <= 0 || nSubLen <= 0 || nSubLen > nLen)
+//		return -1;
+//
+//	const  unsigned char* pDes = 欲寻找的字节集.data();
+//	size_t i;
+//
+//	// 短子串直接暴力搜索
+//	switch (nSubLen)
+//	{
+//	case 1:
+//		i = (const unsigned char*)memchr(pSrc, pDes[0], nLen) - pSrc;
+//		if (i >= 0)
+//			return i + off - 1;
+//		else
+//			return -1;
+//	case 2:
+//		for (i = 0; i < nLen - 1; i++)
+//			if (((short*)(pSrc + i))[0] == ((short*)pDes)[0])
+//				return i + off - 1;
+//		return -1;
+//	case 3:
+//		for (i = 0; i < nLen - 2; i++)
+//			if (((short*)(pSrc + i))[0] == ((short*)pDes)[0])
+//				if (pSrc[i + 2] == pDes[2])
+//					return i + off - 1;
+//		return -1;
+//	case 4:
+//		for (i = 0; i < nLen - 3; i++)
+//			if (((int*)(pSrc + i))[0] == ((int*)pDes)[0])
+//				return i + off - 1;
+//		return -1;
+//	case 5:
+//		for (i = 0; i < nLen - 4; i++)
+//			if (((int*)(pSrc + i))[0] == ((int*)pDes)[0])
+//				if (pSrc[i + 4] == pDes[4])
+//					return i + off - 1;
+//		return -1;
+//	case 6:
+//		for (i = 0; i < nLen - 5; i++)
+//			if (((int*)(pSrc + i))[0] == ((int*)pDes)[0])
+//				if (((short*)(pSrc + i + 4))[0] == ((short*)(pDes + 4))[0])
+//					return i + off - 1;
+//		return -1;
+//	default:
+//		break;
+//	}
+//	size_t next[256];
+//	for (i = 0; i < 256; i++)
+//		next[i] = nSubLen;
+//	for (i = 0; i < nSubLen; i++)
+//		next[pDes[i]] = nSubLen - i;
+//
+//	const unsigned char* naddr;
+//	for (naddr = pSrc; naddr <= pSrc + nLen - nSubLen; naddr += next[naddr[nSubLen]])
+//		if (memcmp(naddr, pDes, nSubLen) == 0)
+//			return naddr - pSrc + off - 1;
+//
+//	return -1;
+//}
+//
+
+KrnlnApi intptr_t 寻找字节集下标(const vector<unsigned char>& b1, const vector<unsigned char>& b2, std::optional<size_t> p) {
+
+
+	const unsigned char* str_data = b1.data();
+	const size_t str_len = b1.size();
+	const unsigned char* find_str_data = b2.data();
+	const size_t find_str_size = b2.size();
+	size_t pos = p.has_value() ? p.value() : 0;
+
+	if (find_str_size > str_len || pos > str_len - find_str_size) {
 		return -1;
-
-	size_t nLen = 被搜寻的字节集.size();
-	size_t nSubLen = 欲寻找的字节集.size();
-
-	const unsigned char* pSrc;
-	size_t off;
-	if (起始搜寻位置 <= 1)
-	{
-		off = 1;
-		pSrc = 被搜寻的字节集.data();
-	}
-	else
-	{
-		off = 起始搜寻位置;
-		pSrc = 被搜寻的字节集.data() + off - 1;
-		nLen -= off - 1;
 	}
 
-	if (nLen <= 0 || nSubLen <= 0 || nSubLen > nLen)
-		return -1;
+	if (find_str_size == 0) {
+		return pos;
+	}
 
-	const  unsigned char* pDes = 欲寻找的字节集.data();
-	size_t i;
-
-	// 短子串直接暴力搜索
-	switch (nSubLen)
-	{
-	case 1:
-		i = (const unsigned char*)memchr(pSrc, pDes[0], nLen) - pSrc;
-		if (i >= 0)
-			return i + off - 1;
-		else
+	const unsigned char* end = str_data + (str_len - find_str_size) + 1;
+	for (const unsigned char* match_try = str_data + pos;; ++match_try) {
+		match_try = (unsigned char*)(memchr(match_try, *find_str_data, end - match_try));
+		if (!match_try) {
 			return -1;
-	case 2:
-		for (i = 0; i < nLen - 1; i++)
-			if (((short*)(pSrc + i))[0] == ((short*)pDes)[0])
-				return i + off - 1;
-		return -1;
-	case 3:
-		for (i = 0; i < nLen - 2; i++)
-			if (((short*)(pSrc + i))[0] == ((short*)pDes)[0])
-				if (pSrc[i + 2] == pDes[2])
-					return i + off - 1;
-		return -1;
-	case 4:
-		for (i = 0; i < nLen - 3; i++)
-			if (((int*)(pSrc + i))[0] == ((int*)pDes)[0])
-				return i + off - 1;
-		return -1;
-	case 5:
-		for (i = 0; i < nLen - 4; i++)
-			if (((int*)(pSrc + i))[0] == ((int*)pDes)[0])
-				if (pSrc[i + 4] == pDes[4])
-					return i + off - 1;
-		return -1;
-	case 6:
-		for (i = 0; i < nLen - 5; i++)
-			if (((int*)(pSrc + i))[0] == ((int*)pDes)[0])
-				if (((short*)(pSrc + i + 4))[0] == ((short*)(pDes + 4))[0])
-					return i + off - 1;
-		return -1;
-	default:
-		break;
+		}
+
+		if (memcmp(match_try, find_str_data, find_str_size) == 0) {
+			return match_try - str_data;
+		}
 	}
-	size_t next[256];
-	for (i = 0; i < 256; i++)
-		next[i] = nSubLen;
-	for (i = 0; i < nSubLen; i++)
-		next[pDes[i]] = nSubLen - i;
-
-	const unsigned char* naddr;
-	for (naddr = pSrc; naddr <= pSrc + nLen - nSubLen; naddr += next[naddr[nSubLen]])
-		if (memcmp(naddr, pDes, nSubLen) == 0)
-			return naddr - pSrc + off - 1;
-
-	return -1;
 }

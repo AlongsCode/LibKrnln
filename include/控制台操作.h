@@ -47,11 +47,11 @@ std::wstring 标准输入W(bool 是否回显 = 1, std::string 编码格式 = std
 
 
 template <typename Stream>
-void 置控制台编码(const wstring& 编码类型, Stream& 流 = std::wcin) {
+void 置控制台编码(const std::wstring& 编码类型, Stream& 流 = std::wcin) {
 	流.imbue(std::locale(编码类型));
 }
 template <typename Stream>
-void 置控制台编码(const string& 编码类型, Stream& 流 = std::wcin) {
+void 置控制台编码(const std::string& 编码类型, Stream& 流 = std::wcin) {
 	流.imbue(std::locale(编码类型));
 }
 template <typename Stream>

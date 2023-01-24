@@ -29,7 +29,7 @@ typedef char lchar;
 #define 双精度小数型 double
 #define 逻辑型 bool
 
-typedef vector<unsigned char> 字节集类;
+typedef std::vector<unsigned char> 字节集类;
 #define 文本型 lstring
 #define 子程序指针 void*
 #define 字节集 字节集类
