@@ -44,7 +44,9 @@ std::wstring 标准输入W(bool 是否回显 = 1, std::string 编码格式 = std
 #define 标准输入(是否回显) 标准输入A(是否回显)
 #endif
 
+inline void 释放控制台() {
 
+}
 
 template <typename Stream>
 void 置控制台编码(const std::wstring& 编码类型, Stream& 流 = std::wcin) {

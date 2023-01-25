@@ -75,6 +75,7 @@
     <ClCompile Include="src\字节集操作\寻找字节集.cpp" />
     <ClCompile Include="src\字节集操作\指针到字节集.cpp" />
     <ClCompile Include="src\字节集操作\置字节集内整数.cpp" />
+    <ClCompile Include="src\控制台操作\打开控制台.cpp" />
     <ClCompile Include="src\控制台操作\标准输入.cpp" />
     <ClCompile Include="src\控制台操作\标准输出.cpp" />
     <ClCompile Include="src\控制台操作\置控制台标题.cpp" />
@@ -430,6 +431,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <PreprocessorDefinitions>KrnlnApi=__declspec(dllexport);WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugLib|x64'">
@@ -437,7 +439,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <PreprocessorDefinitions>KrnlnApi=__declspec(dllexport);_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

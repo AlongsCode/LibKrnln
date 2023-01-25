@@ -1,6 +1,6 @@
 ﻿#include<vector>
 #include<string>
-#include<iostream>
+
 //MD5ChecksumDefines.h : MD5 Checksum constants
 
 //Magic initialization constants
@@ -442,7 +442,6 @@ std::wstring CMD5Checksum::FinalW()
 		str += std::to_string((unsigned char)lpszMD5[i]);
 		str += ",";
 	}
-	std::cout << "Digest: " << str << std::endl;
 	std::wstring result;
 	result.reserve(32);  // Pre-allocate space for 32 characters in the string
 	wchar_t buf[10];

@@ -704,5 +704,8 @@
     <ClCompile Include="src\操作系统\高级信息框.cpp">
       <Filter>源文件\操作系统\实现\windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\控制台操作\打开控制台.cpp">
+      <Filter>源文件\控制台操作\实现</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
