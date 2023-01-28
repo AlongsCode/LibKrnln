@@ -3,7 +3,7 @@
 
 //返回一个文本，代表指定数值、逻辑值或日期时间被转换后的结果。如果为文本数据，将被直接返回。本命令为初级命令。* | *
 #pragma region 到文本(WA码)及其宏
-#define 到文本A(val) std::to_string(val)
+#define 到文本A(val) to_string(val)
 std::string to_string(const std::wstring& 待转换的数据);
 std::string to_string(const std::vector <char>& 待转换的数据);
 std::string to_string(const std::vector <wchar_t>& 待转换的数据);
@@ -14,7 +14,7 @@ std::string to_string(const std::tm& 待转换的数据);
 std::string to_string(const std::string& 待转换的数据);
 //W码声明
 
-#define 到文本W(val) std::to_wstring(val)
+#define 到文本W(val) to_wstring(val)
 std::wstring to_wstring(const std::string& 待转换的数据);
 std::wstring to_wstring(const std::vector <char>& 待转换的数据);
 std::wstring to_wstring(const std::vector <wchar_t>& 待转换的数据);
