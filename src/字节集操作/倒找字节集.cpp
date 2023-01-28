@@ -218,14 +218,13 @@ KrnlnApi intptr_t 倒找字节集下标(const std::vector<unsigned char>& 被搜
 	const size_t nLen = 被搜寻的字节集.size();
 	const unsigned char* find_str_data = 欲寻找的字节集.data();
 	const size_t nSubLen = 欲寻找的字节集.size();
-	const size_t pos = 起始搜寻下标.has_value() ? 起始搜寻下标.value() : nLen - 1;
+	const intptr_t pos = 起始搜寻下标.has_value() ? 起始搜寻下标.value() + 1 - 欲寻找的字节集.size() : nLen - 欲寻找的字节集.size();
 
 	if (nLen == 0 || nSubLen == 0 || nSubLen > nLen) return -1;
-	if (pos < nSubLen || pos <= 0) return -1;
-	if (nLen < nSubLen) return -1;
+	if (pos < 0) return -1;
 
 	if (nSubLen <= nLen) { // room for match, look for it
-		for (const unsigned char* match_try = str_data + std::min(pos, nLen - nSubLen);; --match_try) {
+		for (const unsigned char* match_try = str_data + std::min(pos, static_cast<intptr_t>(nLen - nSubLen));; --match_try) {
 
 			if (*match_try == *find_str_data && memcmp(match_try, find_str_data, nSubLen) == 0) {
 				return match_try - str_data; // found a match
@@ -235,6 +234,5 @@ KrnlnApi intptr_t 倒找字节集下标(const std::vector<unsigned char>& 被搜
 			}
 		}
 	}
-
 	return -1; // no match
 }

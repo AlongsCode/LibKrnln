@@ -14,6 +14,8 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		DebugLib|x64 = DebugLib|x64
 		DebugLib|x86 = DebugLib|x86
+		DebugStatic|x64 = DebugStatic|x64
+		DebugStatic|x86 = DebugStatic|x86
 		Lib|x64 = Lib|x64
 		Lib|x86 = Lib|x86
 		Static|x64 = Static|x64
@@ -24,6 +26,10 @@ Global
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugLib|x64.Build.0 = DebugLib|x64
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugLib|x86.ActiveCfg = DebugLib|Win32
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugLib|x86.Build.0 = DebugLib|Win32
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugStatic|x64.ActiveCfg = DebugStatic|x64
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugStatic|x64.Build.0 = DebugStatic|x64
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugStatic|x86.ActiveCfg = DebugStatic|Win32
+		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.DebugStatic|x86.Build.0 = DebugStatic|Win32
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x64.ActiveCfg = Lib|x64
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x64.Build.0 = Lib|x64
 		{8797A36D-5147-4AE1-9F2A-AFA4E87A1AAE}.Lib|x86.ActiveCfg = Lib|Win32
@@ -36,6 +42,8 @@ Global
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugLib|x64.Build.0 = DebugLib|x64
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugLib|x86.ActiveCfg = DebugLib|Win32
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugLib|x86.Build.0 = DebugLib|Win32
+		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugStatic|x64.ActiveCfg = DebugStatic|x64
+		{2D5BF970-6325-4B13-A100-CDE231FB309B}.DebugStatic|x86.ActiveCfg = DebugLib|Win32
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.Lib|x64.ActiveCfg = Lib|x64
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.Lib|x64.Build.0 = Lib|x64
 		{2D5BF970-6325-4B13-A100-CDE231FB309B}.Lib|x86.ActiveCfg = Lib|Win32

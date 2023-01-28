@@ -43,7 +43,7 @@ import STL;
 #include"线程操作.h"
 #include"网络通信.h"
 #include"程序进程.h"
-
+#include"媒体播放.h"
 //#include"图片处理.h"
 //#include"其他.h"
 
@@ -56,7 +56,7 @@ import STL;
 //#include"通用易类.h"
 //*****************************DEBUG时请自行添加调试宏|重载使用方便************************
 #pragma region 调试输出
-#ifdef 调试版
+#ifdef _DEBUG
 
 
 template <class Ty>

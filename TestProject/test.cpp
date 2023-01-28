@@ -983,60 +983,55 @@ size_t find_sub_bytes(const std::vector<unsigned char>& bytes, const std::vector
 
 
 
+int main() {
+	高级信息框(L"test");
+	std::vector<unsigned char> 字节集变量 = 到字节集("替换文本测试:水水水水替换撒旦哇二 额哇 替换 大王吊袜带 哇Et替换ta");
+	std::vector<unsigned char> f = 到字节集("替换");
+	std::vector<unsigned char> Wf = 到字节集("");
+	int a = 0, b = 0;
+	std::vector<unsigned char> 位置变量;
 
-//int main() {
-//
-//	std::vector<unsigned char> 字节集变量 = 到字节集(L"ABC");
-//	std::vector<unsigned char> f = 到字节集(L"AB");
-//	int a = 0, b = 0;
-//	INT 位置变量;
-//
-//
-//	a = GetTickCount();
-//	for (size_t i = 0; i < 99999; i++)
-//	{
-//		位置变量 = 倒找字节集下标(字节集变量, f, f.size());
-//	}
-//	b = GetTickCount();
-//	调试输出(b - a, 位置变量);
-//
-//	a = GetTickCount();
-//	for (size_t i = 0; i < 99999; i++)
-//	{
-//		位置变量 = 倒找字节集(字节集变量, f, 5);
-//	}
-//	b = GetTickCount();
-//	调试输出(b - a, 位置变量);
-//	//string 文本 = "123456789abcAbc123";
-//	//string f = "Abc";
-//	//int a = 0, b = 0;
-//	//INT 位置变量;
-//	//a = GetTickCount();
-//	//for (size_t i = 0; i < 99999; i++)
-//	//{
-//	//	位置变量 = 寻找文本(文本, f, 0, 0);
-//	//}
-//	//b = GetTickCount();
-//	//调试输出(b - a, 位置变量);
-//	//a = GetTickCount();
-//	//for (size_t i = 0; i < 99999; i++)
-//	//{
-//	//	位置变量 = 快速文本寻找(文本, f, 1);
-//	//}
-//	//b = GetTickCount();
-//	//调试输出(b - a, 位置变量);
-//}
+
+	a = GetTickCount();
+	for (size_t i = 0; i < 99999; i++)
+	{
+		位置变量 = 子字节集替换(字节集变量, f, Wf);
+	}
+	b = GetTickCount();
+	调试输出(b - a, 到文本A(位置变量));
+
+	//a = GetTickCount();
+	//for (size_t i = 0; i < 99999; i++)
+	//{
+	//	位置变量 = 倒找字节集(字节集变量, f, 6);
+	//}
+	//b = GetTickCount();
+	//调试输出(b - a, 位置变量);
+	//string 文本 = "123456789abcAbc123";
+	//string f = "Abc";
+	//int a = 0, b = 0;
+	//INT 位置变量;
+	//a = GetTickCount();
+	//for (size_t i = 0; i < 99999; i++)
+	//{
+	//	位置变量 = 寻找文本(文本, f, 0, 0);
+	//}
+	//b = GetTickCount();
+	//调试输出(b - a, 位置变量);
+	//a = GetTickCount();
+	//for (size_t i = 0; i < 99999; i++)
+	//{
+	//	位置变量 = 快速文本寻找(文本, f, 1);
+	//}
+	//b = GetTickCount();
+	//调试输出(b - a, 位置变量);
+}
 #pragma endregion
 
 
 
 
-int main() {
 
-	定位文件("J:\\MyProject\\LibCpp\\krnln", true);
-
-
-}
 
 #endif 
 

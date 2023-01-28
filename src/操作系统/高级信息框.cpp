@@ -1,10 +1,16 @@
 ﻿#ifdef _WIN32
+#pragma warning(disable:4996)
 #include <Windows.h>
 #include <string>
 #include<commctrl.h>
 #pragma comment(lib, "comctl32.lib")
+#if defined _M_IX86
 #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")
-
+#elif defined _M_X64
+#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='amd64' publicKeyToken='6595b64144ccf1df' language='*'\"")
+#else
+#pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
+#endif
 using namespace std;
 enum class 高级信息框按钮 {
 	确认 = 1,
@@ -24,17 +30,62 @@ KrnlnApi 高级信息框按钮 高级信息框(const wstring& 信息, const wstr
 	const PWSTR icon[] = { nullptr,TD_ERROR_ICON,TD_INFORMATION_ICON,TD_SHIELD_ICON,TD_WARNING_ICON , MAKEINTRESOURCEW(-8),MAKEINTRESOURCEW(-7) };
 	TASKDIALOGCONFIG config = { sizeof(TASKDIALOGCONFIG) };
 	config.hwndParent = parent;
-	config.pszWindowTitle = 窗口标题.c_str();
-	config.pszMainInstruction = 标题.c_str();
-	config.pszContent = 信息.c_str();
+	wchar_t* pszWindowTitle = new wchar_t[窗口标题.size() + 1], * pszMainInstruction = new wchar_t[标题.size() + 1], * pszContent = new wchar_t[信息.size() + 1];
+	wcscpy(pszWindowTitle, 窗口标题.c_str());
+	wcscpy(pszMainInstruction, 标题.c_str());
+	wcscpy(pszContent, 信息.c_str());
+	config.pszWindowTitle = pszWindowTitle;
+	config.pszMainInstruction = pszMainInstruction;
+	config.pszContent = pszContent;
 	config.dwCommonButtons = static_cast<TASKDIALOG_COMMON_BUTTON_FLAGS>(按钮);
 	if (图标 > 0 && 图标 <= 6)
 	{
 		config.pszMainIcon = icon[图标];
 	}
-
 	int buttonPressed;
 	HRESULT hr = TaskDialogIndirect(&config, &buttonPressed, NULL, NULL);
+	delete[]pszWindowTitle;
+	delete[]pszMainInstruction;
+	delete[]pszContent;
+	if (SUCCEEDED(hr))
+	{
+		switch (buttonPressed) {
+		case IDOK:
+			return 高级信息框按钮::确认;
+		case IDCANCEL:
+			return 高级信息框按钮::取消;
+		case IDRETRY:
+			return 高级信息框按钮::重试;
+		case IDYES:
+			return 高级信息框按钮::是;
+		case IDNO:
+			return 高级信息框按钮::否;
+		case IDCLOSE:
+			return 高级信息框按钮::关闭;
+		default:
+			break;
+		}
+	}
+	return 高级信息框按钮::失败;
+}
+
+KrnlnApi 高级信息框按钮 高级信息框(const wchar_t* 信息, const wchar_t* 标题, const wchar_t* 窗口标题, 高级信息框按钮 按钮, HWND parent, int 图标)
+{
+	const PWSTR icon[] = { nullptr,TD_ERROR_ICON,TD_INFORMATION_ICON,TD_SHIELD_ICON,TD_WARNING_ICON , MAKEINTRESOURCEW(-8),MAKEINTRESOURCEW(-7) };
+	TASKDIALOGCONFIG config = { sizeof(TASKDIALOGCONFIG) };
+	config.hwndParent = parent;
+
+	config.pszWindowTitle = 信息;
+	config.pszMainInstruction = 标题;
+	config.pszContent = 窗口标题;
+	config.dwCommonButtons = static_cast<TASKDIALOG_COMMON_BUTTON_FLAGS>(按钮);
+	if (图标 > 0 && 图标 <= 6)
+	{
+		config.pszMainIcon = icon[图标];
+	}
+	int buttonPressed;
+	HRESULT hr = TaskDialogIndirect(&config, &buttonPressed, NULL, NULL);
+
 	if (SUCCEEDED(hr))
 	{
 		switch (buttonPressed) {

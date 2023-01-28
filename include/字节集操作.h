@@ -169,15 +169,14 @@ intptr_t 倒找字节集(const std::vector<unsigned char>& 被搜寻的字节集
    操作系统需求： Windows、Linux*/
 intptr_t 倒找字节集(const std::vector<unsigned char>& 被搜寻的字节集, const std::vector<unsigned char>& 欲寻找的字节集 = std::vector<unsigned char>());
 
-/*    调用格式： 〈整数型〉 倒找字节集 （字节集 被搜寻的字节集，字节集 欲寻找的字节集，［整数型 起始搜寻位置］） - 系统核心支持库->字节集操作
-   英文名称：InBinRev
-   返回一字节集在另一字节集中最后出现的位置下标，位置值从 0 开始。如果未找到，返回 -1。本命令为初级命令。
-	  也就是下标加1
-   参数<1>的名称为“被搜寻的字节集”，类型为“字节集（bin）”。
-   参数<2>的名称为“欲寻找的字节集”，类型为“字节集（bin）”。
-   参数<3>的名称为“起始搜寻位置”，类型为“整数型（int）”，可以被省略。1为首位置，2为第2个位置，如此类推，如果被省略，则“寻找字节集”命令默认从首部开始，“倒找字节集”命令默认从尾部开始。
+/**
 
-   操作系统需求： Windows、Linux*/
+@brief 倒找字节集
+@param 被搜寻的字节集 std::vector<unsigned char>
+@param 欲寻找的字节集 std::vector<unsigned char>
+@param 起始搜寻位置 size_t 指定偏移位置,如想从第一个字节开始包括并向前搜索则为0，第二位为1，以此类推，为空搜索全部
+@return 返回一字节集在另一字节集中最后出现的位置下标，位置值从 0 开始。如果未找到，返回 -1。
+@note 英文名称：InBinRev*/
 intptr_t 倒找字节集下标(const std::vector<unsigned char>& b1, const std::vector<unsigned char>& b2, std::optional<size_t> p = std::nullopt);
 
 std::vector<unsigned char> 字节集拼接(std::vector<unsigned char> 字节集1, const std::vector<unsigned char>& 字节集2);

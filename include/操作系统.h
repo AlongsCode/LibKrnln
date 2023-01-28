@@ -120,6 +120,9 @@ enum class 高级信息框按钮 {
 };
 高级信息框按钮 operator| (高级信息框按钮 lhs, 高级信息框按钮 rhs);
 高级信息框按钮 高级信息框(const std::wstring& 信息, const std::wstring& 标题 = L"提示", const std::wstring& 窗口标题 = L"", 高级信息框按钮 按钮 = 高级信息框按钮::确认, HWND parent = 0, int 图标 = -1);
+
+高级信息框按钮 高级信息框(const wchar_t* 信息, const wchar_t* 标题 = L"提示", const wchar_t* 窗口标题 = L"", 高级信息框按钮 按钮 = 高级信息框按钮::确认, HWND parent = 0, int 图标 = -1);
+
 #else//Linux POSIX 环境下的系统处理macos用苹果的编程语言比较多，不再单独列出
 
 

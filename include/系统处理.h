@@ -10,3 +10,7 @@ bool 终止进程(std::wstring process_name_or_window_title);
 bool 终止进程(std::string process_name_or_window_title);
 //进程ID
 bool 终止进程(unsigned int process_id);
+
+#ifdef _WIN32
+bool 是否为64位系统();
+#endif // _WIN32
