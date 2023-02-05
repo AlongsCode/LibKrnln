@@ -234,3 +234,35 @@ KrnlnApi wstring 子文本替换(const  wstring& 欲被替换的文本, const  w
 	// 复制计算结果
 	return 返回值;
 }
+
+
+
+/*尝试新算法替换七号的代码*/
+
+#include <optional>
+#include <algorithm>
+std::string replace_substring(std::string text, std::string to_replace, std::optional<std::string> replace_with = std::nullopt, std::optional<size_t> start_pos = std::nullopt, std::optional<size_t> replace_count = std::nullopt, std::optional<bool> case_sensitive = std::nullopt) {
+	// Get the start position for search
+	size_t search_start = start_pos.value_or(0);
+	// Get the replace count
+	size_t count = replace_count.value_or(std::numeric_limits<size_t>::max());
+	// Get the case sensitivity
+	bool sensitive = case_sensitive.value_or(true);
+	// Get the string to replace with
+	std::string replace = replace_with.value_or("");
+
+
+	if (!sensitive) {
+		std::transform(text.begin(), text.end(), text.begin(), ::tolower);
+		std::transform(to_replace.begin(), to_replace.end(), to_replace.begin(), ::tolower);
+	}
+
+	size_t pos = text.find(to_replace, search_start);
+	while (pos != std::string::npos && count > 0) {
+		text.replace(pos, to_replace.length(), replace);
+		pos = text.find(to_replace, pos + replace.length());
+		--count;
+	}
+
+	return text;
+}
