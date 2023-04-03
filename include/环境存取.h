@@ -49,3 +49,35 @@ bool 写环境变量(const std::wstring& 环境变量名称, const std::wstring&
 std::string 合并路径(const std::string& 文件名, const std::string& 目录 = "");
 /*目录为空则取当前路径*/
 std::wstring 合并路径(const std::wstring& 文件名, const std::wstring& 目录 = L"");
+
+
+
+inline std::string 读配置项(const std::string& 配置文件名, const std::string& 节名称, const std::string& 配置项名称, const std::string& 默认文本) {
+	std::string pBuffer;
+	DWORD nLen = 1024;
+	do {
+		pBuffer.resize(nLen + 1);
+		DWORD nRet = GetPrivateProfileStringA(节名称.c_str(), 配置项名称.c_str(), 默认文本.c_str(), pBuffer.data(), nLen, 配置文件名.c_str());
+		if (nRet < nLen - 1) {
+			break;
+		}
+		nLen = nRet + 1024;
+	} while (true);
+
+	return pBuffer.c_str();
+}
+
+inline std::wstring 读配置项(const std::wstring& 配置文件名, const std::wstring& 节名称, const std::wstring& 配置项名称, const std::wstring& 默认文本) {
+	std::wstring pBuffer;
+	DWORD nLen = 1024;
+	do {
+		pBuffer.resize(nLen + 1);
+		DWORD nRet = GetPrivateProfileStringW(节名称.c_str(), 配置项名称.c_str(), 默认文本.c_str(), pBuffer.data(), nLen, 配置文件名.c_str());
+
+		if (nRet < nLen - 1) {
+			break;
+		}
+		nLen = nRet + 1024;
+	} while (true);
+	return pBuffer.c_str();
+}

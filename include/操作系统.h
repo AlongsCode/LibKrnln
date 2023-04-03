@@ -123,6 +123,8 @@ enum class 高级信息框按钮 {
 
 高级信息框按钮 高级信息框(const wchar_t* 信息, const wchar_t* 标题 = L"提示", const wchar_t* 窗口标题 = L"", 高级信息框按钮 按钮 = 高级信息框按钮::确认, HWND parent = 0, int 图标 = -1);
 
+void 完美延迟(long long second);
+
 #else//Linux POSIX 环境下的系统处理macos用苹果的编程语言比较多，不再单独列出
 
 

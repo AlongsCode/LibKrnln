@@ -722,5 +722,14 @@
     <ClCompile Include="src\媒体播放\媒体播放.cpp">
       <Filter>源文件\媒体播放</Filter>
     </ClCompile>
+    <ClCompile Include="src\文本操作\取文本出现次数.cpp">
+      <Filter>源文件\文本操作\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\网络通信\网页访问.cpp">
+      <Filter>源文件\网络通信\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\操作系统\完美延迟.cpp">
+      <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

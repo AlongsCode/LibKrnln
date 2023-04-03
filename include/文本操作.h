@@ -261,3 +261,60 @@ bool 是否以文本结尾(const std::wstring& 所欲操作的文本, const std:
 bool 是否以文本开头(const std::string& 所欲操作的文本, const std::string& 搜索字符, bool 是否区分大小写);
 bool 是否以文本开头(const std::wstring& 所欲操作的文本, const std::wstring& 搜索字符, bool 是否区分大小写);
 
+//获取指定文本在字符串中出现的次数
+size_t 取文本出现次数(const std::string& str, const std::string& text);
+
+size_t 取文本出现次数(const std::wstring& str, const std::wstring& text);
+
+
+/*通过前后文本，取出所有最短匹配要求的中间文本。*/
+inline std::vector<std::string> 取中间文本(const std::string& 欲取的文本, const std::string& 左边文本, const std::string& 右边文本)
+{
+	std::vector<std::string> aryText;
+	size_t start_place = 0;
+
+	while (start_place != std::string::npos) {
+		start_place = 欲取的文本.find(左边文本, start_place);
+
+		if (start_place != std::string::npos) {
+			start_place += 左边文本.length();
+
+			size_t end_place = 欲取的文本.find(右边文本, start_place);
+
+			if (end_place != std::string::npos) {
+				std::string ret = 欲取的文本.substr(start_place, end_place - start_place);
+				aryText.push_back(ret);
+				start_place = end_place + 右边文本.length();
+			}
+		}
+	}
+	return aryText;
+};
+/*通过前后文本，取出所有最短匹配要求的中间文本。*/
+inline std::vector<std::string> 取中间文本(const std::string& 欲取的文本, const std::string& 左边文本, const std::string& 右边文本, const size_t& 最大获取数量)
+{
+	std::vector<std::string> aryText;
+	size_t start_place = 0;
+
+	while (start_place != std::string::npos) {
+		if (aryText.size() >= 最大获取数量)
+		{
+			break;
+		}
+		start_place = 欲取的文本.find(左边文本, start_place);
+
+		if (start_place != std::string::npos) {
+			start_place += 左边文本.length();
+
+			size_t end_place = 欲取的文本.find(右边文本, start_place);
+
+			if (end_place != std::string::npos) {
+				std::string ret = 欲取的文本.substr(start_place, end_place - start_place);
+				aryText.push_back(ret);
+
+				start_place = end_place + 右边文本.length();
+			}
+		}
+	}
+	return aryText;
+};

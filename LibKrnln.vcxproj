@@ -92,6 +92,7 @@
     <ClCompile Include="src\操作系统\信息框.cpp" />
     <ClCompile Include="src\操作系统\写注册项.cpp" />
     <ClCompile Include="src\操作系统\安装与卸载字体.cpp" />
+    <ClCompile Include="src\操作系统\完美延迟.cpp" />
     <ClCompile Include="src\操作系统\延迟.cpp" />
     <ClCompile Include="src\操作系统\播放MIDI.cpp" />
     <ClCompile Include="src\操作系统\播放音乐.cpp" />
@@ -127,6 +128,7 @@
     <ClCompile Include="src\文本操作\到文本.cpp" />
     <ClCompile Include="src\文本操作\取代码.cpp" />
     <ClCompile Include="src\文本操作\取文本中间.cpp" />
+    <ClCompile Include="src\文本操作\取文本出现次数.cpp" />
     <ClCompile Include="src\文本操作\取文本右边.cpp" />
     <ClCompile Include="src\文本操作\取文本左边.cpp" />
     <ClCompile Include="src\文本操作\取文本长度.cpp" />
@@ -230,6 +232,7 @@
     <ClCompile Include="src\网络通信\打开指定网址.cpp" />
     <ClCompile Include="src\网络通信\是否联网.cpp" />
     <ClCompile Include="src\网络通信\端口检测.cpp" />
+    <ClCompile Include="src\网络通信\网页访问.cpp" />
     <ClCompile Include="src\逻辑比较\文本对比.cpp" />
     <ClCompile Include="src\逻辑比较\近似等于.cpp" />
   </ItemGroup>
