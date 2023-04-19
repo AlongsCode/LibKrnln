@@ -1,8 +1,8 @@
-#include <Windows.h>
+ï»¿#include <Windows.h>
 #include <thread>
 #include <chrono>
 
-KrnlnApi void ÍêÃÀÑÓ³Ù(long long milliseconds)
+KrnlnApi void å®Œç¾Žå»¶è¿Ÿ(long long milliseconds)
 {
 	HANDLE hThread = CreateThread(NULL, 0, [](LPVOID lpParam) -> DWORD {
 		std::this_thread::sleep_for(std::chrono::milliseconds(*reinterpret_cast<long long*>(lpParam)));

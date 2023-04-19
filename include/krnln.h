@@ -49,6 +49,7 @@ import STL;
 
 //#include"窗口操作.h"
 #include"控制台操作.h"
+#include"edbs.h"
 //#include"COM变体型.h"
 
 #include"文件读写.h"

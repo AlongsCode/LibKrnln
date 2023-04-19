@@ -133,6 +133,9 @@
     <Filter Include="源文件\媒体播放">
       <UniqueIdentifier>{4cac0c97-fbf3-4b4c-8f60-6d0d1298a17b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\EDBS数据表">
+      <UniqueIdentifier>{1536342d-6ed6-4b91-a25a-bd19b2536c8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Edefcn.h">
@@ -203,6 +206,9 @@
     </ClInclude>
     <ClInclude Include="include\媒体播放.h">
       <Filter>源文件\媒体播放</Filter>
+    </ClInclude>
+    <ClInclude Include="include\edbs.h">
+      <Filter>源文件\EDBS数据表</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -730,6 +736,9 @@
     </ClCompile>
     <ClCompile Include="src\操作系统\完美延迟.cpp">
       <Filter>源文件\操作系统\实现\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EDBS数据表\edbs.cpp">
+      <Filter>源文件\EDBS数据表</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

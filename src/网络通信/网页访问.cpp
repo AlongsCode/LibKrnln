@@ -1,4 +1,4 @@
-#include<string>
+ï»¿#include<string>
 #include<vector>
 #include<sstream>
 #include<optional>
@@ -12,26 +12,26 @@
 
 
 /**
- * @brief Ê¹ÓÃWinInet API·½Ê½·ÃÎÊÍøÒ³
+ * @brief ä½¿ç”¨WinInet APIæ–¹å¼è®¿é—®ç½‘é¡µ
  *
- * @param ÍøÖ· [in] ÍêÕûµÄÍøÒ³µØÖ·£¬±ØĞë°üº¬http://»òÕßhttps://¡£
- * @param ·ÃÎÊ·½Ê½ [in] Ò»¸öÕûÊıĞÍµÄ²ÎÊı£¬ÆäÖµ¿ÉÒÔÊÇ0£¨GET£©£¬1£¨POST£©£¬2£¨HEAD£©£¬3£¨PUT£©£¬4£¨OPTIONS£©£¬5£¨DELETE£©£¬6£¨TRACE£©»ò7£¨CONNECT£©¡£
- * @param Ìá½»ĞÅÏ¢ [in] Ò»¸öÎÄ±¾ĞÍµÄ²ÎÊı£¬½öÔÚ·ÃÎÊ·½Ê½ÎªPOSTÊ±ÓĞĞ§¡£
- * @param Ìá½»Cookies [in] Ò»¸öÎÄ±¾ĞÍµÄ²ÎÊı£¬±íÊ¾Ìá½»Ê±µÄcookie¡£
- * @param ·µ»ØCookies [out] Ò»¸öÎÄ±¾ĞÍµÄ²ÎÊı£¬±íÊ¾·µ»ØµÄCookie¡£
- * @param ¸½¼ÓĞ­ÒéÍ· [in] Ò»¸öÎÄ±¾ĞÍµÄ²ÎÊı£¬±íÊ¾Ò»Ğ©¸½¼ÓµÄĞ­ÒéÍ·ĞÅÏ¢£¬Ò»ĞĞÒ»¸ö£¬ÒÔ»»ĞĞ·û¸ô¿ª¡£
- * @param ·µ»ØĞ­ÒéÍ· [out] Ò»¸öÎÄ±¾ĞÍµÄ²ÎÊı£¬±íÊ¾·µ»ØµÄĞ­ÒéÍ·¡£
- * @param ½ûÖ¹ÖØ¶¨Ïò [in] Ò»¸öÂß¼­ĞÍµÄ²ÎÊı£¬±íÊ¾ÊÇ·ñ½ûÖ¹ÍøÒ³ÖØ¶¨Ïò¡£
- * @param ×Ö½Ú¼¯Ìá½» [in] Ò»¸ö×Ö½Ú¼¯µÄ²ÎÊı£¬±íÊ¾Ìá½»×Ö½Ú¼¯Êı¾İ¡£
- * @param ´úÀíµØÖ· [in] Ò»¸öÎÄ±¾ĞÍµÄ²ÎÊı£¬±íÊ¾´úÀíµØÖ·£¬¸ñÊ½Îªip:port£¬ÀıÈç8.8.8.8:88¡£
- * @param ÊÇ·ñ²¹È«±ØÒªĞ­ÒéÍ· [in] µ±¸½¼şĞ­ÒéÍ·Îª¿ÕÊ±×Ô¶¯Ìí¼Ó±ØÒªµÄUAĞ­ÒéÍ· Ä¬ÈÏÎªÕæ£¬¼Ù½«²»ÔÙÌí¼Ó·Ç´«ÈëĞ­ÒéÍ·
- * @param ÊÇ·ñ´¦ÀíĞ­ÒéÍ·´óĞ¡Ğ´ [in] ½«Ğ­ÒéÍ·ÖĞµÄ¼üÃûÊ××ÖÄ¸´¦ÀíÎª´óĞ´
- * @param ÊÇ·ñÊ¹ÓÃsocks4´úÀí [in] ÉèÖÃ´úÀíÀàĞÍ£¬¼ÙÎªhttp(s)´úÀí£¬ÕæÎªsocks4´úÀí
+ * @param ç½‘å€ [in] å®Œæ•´çš„ç½‘é¡µåœ°å€ï¼Œå¿…é¡»åŒ…å«http://æˆ–è€…https://ã€‚
+ * @param è®¿é—®æ–¹å¼ [in] ä¸€ä¸ªæ•´æ•°å‹çš„å‚æ•°ï¼Œå…¶å€¼å¯ä»¥æ˜¯0ï¼ˆGETï¼‰ï¼Œ1ï¼ˆPOSTï¼‰ï¼Œ2ï¼ˆHEADï¼‰ï¼Œ3ï¼ˆPUTï¼‰ï¼Œ4ï¼ˆOPTIONSï¼‰ï¼Œ5ï¼ˆDELETEï¼‰ï¼Œ6ï¼ˆTRACEï¼‰æˆ–7ï¼ˆCONNECTï¼‰ã€‚
+ * @param æäº¤ä¿¡æ¯ [in] ä¸€ä¸ªæ–‡æœ¬å‹çš„å‚æ•°ï¼Œä»…åœ¨è®¿é—®æ–¹å¼ä¸ºPOSTæ—¶æœ‰æ•ˆã€‚
+ * @param æäº¤Cookies [in] ä¸€ä¸ªæ–‡æœ¬å‹çš„å‚æ•°ï¼Œè¡¨ç¤ºæäº¤æ—¶çš„cookieã€‚
+ * @param è¿”å›Cookies [out] ä¸€ä¸ªæ–‡æœ¬å‹çš„å‚æ•°ï¼Œè¡¨ç¤ºè¿”å›çš„Cookieã€‚
+ * @param é™„åŠ åè®®å¤´ [in] ä¸€ä¸ªæ–‡æœ¬å‹çš„å‚æ•°ï¼Œè¡¨ç¤ºä¸€äº›é™„åŠ çš„åè®®å¤´ä¿¡æ¯ï¼Œä¸€è¡Œä¸€ä¸ªï¼Œä»¥æ¢è¡Œç¬¦éš”å¼€ã€‚
+ * @param è¿”å›åè®®å¤´ [out] ä¸€ä¸ªæ–‡æœ¬å‹çš„å‚æ•°ï¼Œè¡¨ç¤ºè¿”å›çš„åè®®å¤´ã€‚
+ * @param ç¦æ­¢é‡å®šå‘ [in] ä¸€ä¸ªé€»è¾‘å‹çš„å‚æ•°ï¼Œè¡¨ç¤ºæ˜¯å¦ç¦æ­¢ç½‘é¡µé‡å®šå‘ã€‚
+ * @param å­—èŠ‚é›†æäº¤ [in] ä¸€ä¸ªå­—èŠ‚é›†çš„å‚æ•°ï¼Œè¡¨ç¤ºæäº¤å­—èŠ‚é›†æ•°æ®ã€‚
+ * @param ä»£ç†åœ°å€ [in] ä¸€ä¸ªæ–‡æœ¬å‹çš„å‚æ•°ï¼Œè¡¨ç¤ºä»£ç†åœ°å€ï¼Œæ ¼å¼ä¸ºip:portï¼Œä¾‹å¦‚8.8.8.8:88ã€‚
+ * @param æ˜¯å¦è¡¥å…¨å¿…è¦åè®®å¤´ [in] å½“é™„ä»¶åè®®å¤´ä¸ºç©ºæ—¶è‡ªåŠ¨æ·»åŠ å¿…è¦çš„UAåè®®å¤´ é»˜è®¤ä¸ºçœŸï¼Œå‡å°†ä¸å†æ·»åŠ éä¼ å…¥åè®®å¤´
+ * @param æ˜¯å¦å¤„ç†åè®®å¤´å¤§å°å†™ [in] å°†åè®®å¤´ä¸­çš„é”®åé¦–å­—æ¯å¤„ç†ä¸ºå¤§å†™
+ * @param æ˜¯å¦ä½¿ç”¨socks4ä»£ç† [in] è®¾ç½®ä»£ç†ç±»å‹ï¼Œå‡ä¸ºhttp(s)ä»£ç†ï¼ŒçœŸä¸ºsocks4ä»£ç†
  *
- * @return std::vector<unsigned char> Ëù·ÃÎÊÍøÒ³µÄÄÚÈİ¶ş½øÖÆÊı¾İÈİÆ÷¡£
+ * @return std::vector<unsigned char> æ‰€è®¿é—®ç½‘é¡µçš„å†…å®¹äºŒè¿›åˆ¶æ•°æ®å®¹å™¨ã€‚
  */
 KrnlnApi std::vector<unsigned char>
-ÍøÒ³·ÃÎÊ(
+ç½‘é¡µè®¿é—®(
 	const std::string& n_url,//0
 	int  n_access_method,//1
 	const std::string& n_post_data,//2
@@ -89,7 +89,7 @@ KrnlnApi std::vector<unsigned char>
 	case 5:access_method = "DELETE"; break;
 	case 6:access_method = "TRACE"; break;
 	case 7:access_method = "CONNECT"; break;
-	default:access_method = "GET"; break;//Ä¬ÈÏ
+	default:access_method = "GET"; break;//é»˜è®¤
 	}
 	bool is_https = false;
 	std::string lower_url = std::string(n_url);
@@ -97,12 +97,12 @@ KrnlnApi std::vector<unsigned char>
 	if (lower_url.substr(0, 8) == "https://") {
 		is_https = true;
 	}
-	//ÕâÀïÏë»»Ò»ÏÂ£¬ÓĞĞ©¾ÉÁË£¬Èç¹û²»Ïà¼æÈİxpµÄ»°¾Í»»µô¾Í¿ÉÒÔ£¬ÕâÌ×´úÂëxpÓ¦¸ÃÒ²ÓÃ²»ÁË°É
+	//è¿™é‡Œæƒ³æ¢ä¸€ä¸‹ï¼Œæœ‰äº›æ—§äº†ï¼Œå¦‚æœä¸ç›¸å…¼å®¹xpçš„è¯å°±æ¢æ‰å°±å¯ä»¥ï¼Œè¿™å¥—ä»£ç xpåº”è¯¥ä¹Ÿç”¨ä¸äº†å§
 	std::string l_user_agent = "Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)";
 	std::string l_lower_additional_header(add_itional_header);
 	std::transform(add_itional_header.begin(), add_itional_header.end(), l_lower_additional_header.begin(), tolower);
 
-	// Èç¹ûÕÒµ½ÁË "user-agent:"£¬Ôò³¢ÊÔÌáÈ¡ÖĞ¼äµÄÄÚÈİ×÷Îª User-Agent
+	// å¦‚æœæ‰¾åˆ°äº† "user-agent:"ï¼Œåˆ™å°è¯•æå–ä¸­é—´çš„å†…å®¹ä½œä¸º User-Agent
 	size_t pos = l_lower_additional_header.find("user-agent:");
 	if (pos != std::string::npos)
 	{
@@ -118,38 +118,38 @@ KrnlnApi std::vector<unsigned char>
 		}
 	}
 
-	// ¶¨ÒåInternet¾ä±ú
+	// å®šä¹‰Internetå¥æŸ„
 	HINTERNET l_HInternet = NULL;
 
-	// ÅĞ¶Ï´úÀíµØÖ·ÊÇ·ñÎª¿Õ
+	// åˆ¤æ–­ä»£ç†åœ°å€æ˜¯å¦ä¸ºç©º
 	if (n_pox_addr.empty()) {
-		// ²»Ê¹ÓÃ´úÀí£¬³õÊ¼»¯Internet¾ä±ú
+		// ä¸ä½¿ç”¨ä»£ç†ï¼Œåˆå§‹åŒ–Internetå¥æŸ„
 		l_HInternet = InternetOpenA(l_user_agent.c_str(), INTERNET_OPEN_TYPE_PRECONFIG, nullptr, nullptr, 0);
 	}
 	else if (is_socks4) {
-		// Ê¹ÓÃsocks4´úÀí£¬³õÊ¼»¯Internet¾ä±ú
+		// ä½¿ç”¨socks4ä»£ç†ï¼Œåˆå§‹åŒ–Internetå¥æŸ„
 		l_HInternet = InternetOpenA(l_user_agent.c_str(), INTERNET_OPEN_TYPE_PROXY, ("SOCKS=" + std::string(n_pox_addr)).c_str(), nullptr, 0);
 	}
 	else if (is_https) {
-		// ½â¾öwin7ÏÂhttpsĞ­Òé´úÀíÎŞĞ§ÎÊÌâ£¬³õÊ¼»¯Internet¾ä±ú
+		// è§£å†³win7ä¸‹httpsåè®®ä»£ç†æ— æ•ˆé—®é¢˜ï¼Œåˆå§‹åŒ–Internetå¥æŸ„
 		l_HInternet = InternetOpenA(l_user_agent.c_str(), INTERNET_OPEN_TYPE_PROXY, n_pox_addr.data(), nullptr, 0);
 	}
 	else {
-		// Ê¹ÓÃhttp´úÀí£¬³õÊ¼»¯Internet¾ä±ú
+		// ä½¿ç”¨httpä»£ç†ï¼Œåˆå§‹åŒ–Internetå¥æŸ„
 		l_HInternet = InternetOpenA(l_user_agent.c_str(), INTERNET_OPEN_TYPE_PROXY, ("http=" + std::string(n_pox_addr)).c_str(), nullptr, 0);
 	}
 
-	// ÅĞ¶ÏInternet¾ä±úÊÇ·ñ³õÊ¼»¯³É¹¦
+	// åˆ¤æ–­Internetå¥æŸ„æ˜¯å¦åˆå§‹åŒ–æˆåŠŸ
 	if (l_HInternet == NULL) {
 		return {};
 	}
 
-	std::string domain; // ´æ´¢ÓòÃû
-	std::string temp_port; // ÁÙÊ±´æ´¢¶Ë¿ÚºÅ
-	std::string url = n_url.data();// ½«ÊäÈëµÄURL×Ö·û´®¸³¸øurl
+	std::string domain; // å­˜å‚¨åŸŸå
+	std::string temp_port; // ä¸´æ—¶å­˜å‚¨ç«¯å£å·
+	std::string url = n_url.data();// å°†è¾“å…¥çš„URLå­—ç¬¦ä¸²èµ‹ç»™url
 	constexpr auto c_https_size = sizeof("https://") - sizeof('\0');
 	constexpr auto c_http_size = sizeof("http://") - sizeof('\0');
-	// ½«urlÖĞµÄ×Ö·ûÈ«²¿×ª»»ÎªĞ¡Ğ´£¬·½±ãºóÃæ¶Ô±È
+	// å°†urlä¸­çš„å­—ç¬¦å…¨éƒ¨è½¬æ¢ä¸ºå°å†™ï¼Œæ–¹ä¾¿åé¢å¯¹æ¯”
 	std::transform(url.begin(), url.end(), url.begin(), ::tolower);
 	if (!url.empty() && url.back() != '/') {
 		url += '/';
@@ -165,7 +165,7 @@ KrnlnApi std::vector<unsigned char>
 		domain = url.substr(c_http_size, url.find("/", c_http_size) - c_http_size);
 		temp_port = temp_port.substr(domain.length());
 	}
-	else {//¶¼Ã»ÓĞ¾ÍÌí¼Óhttp://
+	else {//éƒ½æ²¡æœ‰å°±æ·»åŠ http://
 		url = "http://" + url;
 		temp_port = url.substr(7);
 		domain = url.substr(7, url.find("/", c_http_size) - c_http_size);
@@ -178,11 +178,11 @@ KrnlnApi std::vector<unsigned char>
 		port = atoi(temp_port.substr(port_pos + 1).c_str());
 	}
 	else if (n_url.substr(0, 5) == "https") {
-		//Ê¹ÓÃ°²È«³¬ÎÄ±¾´«ÊäĞ­ÒéµÄÄ¬ÈÏ¶Ë¿Ú (HTTPS) ·şÎñÆ÷ (¶Ë¿Ú 443) ¡£
+		//ä½¿ç”¨å®‰å…¨è¶…æ–‡æœ¬ä¼ è¾“åè®®çš„é»˜è®¤ç«¯å£ (HTTPS) æœåŠ¡å™¨ (ç«¯å£ 443) ã€‚
 		port = INTERNET_DEFAULT_HTTPS_PORT;
 	}
 	else {
-		//Ê¹ÓÃ HTTP ·şÎñÆ÷µÄÄ¬ÈÏ¶Ë¿Ú (¶Ë¿Ú 80) ¡£
+		//ä½¿ç”¨ HTTP æœåŠ¡å™¨çš„é»˜è®¤ç«¯å£ (ç«¯å£ 80) ã€‚
 		port = INTERNET_DEFAULT_HTTP_PORT;
 	}
 	HINTERNET l_HInternetCom = InternetConnectA(l_HInternet, domain.c_str(), port, nullptr, nullptr, 3, 0, 0);
@@ -192,20 +192,20 @@ KrnlnApi std::vector<unsigned char>
 		return {};
 	}
 
-	//Ä¬ÈÏÇëÇó±êÖ¾
+	//é»˜è®¤è¯·æ±‚æ ‡å¿—
 	DWORD l_flag = INTERNET_FLAG_RELOAD | INTERNET_COOKIE_THIRD_PARTY;
-	//Èç¹û'Ìá½»Cookies'Îª¿Õ£¬Çë½«±êÖ¾ÉèÖÃÎª²»·¢ËÍcookie
+	//å¦‚æœ'æäº¤Cookies'ä¸ºç©ºï¼Œè¯·å°†æ ‡å¿—è®¾ç½®ä¸ºä¸å‘é€cookie
 	if (n_post_Cookies.empty())
 	{
 		l_flag = l_flag | INTERNET_FLAG_NO_COOKIES;
 	}
-	//½ûÖ¹ÖØ¶¨Ïò
+	//ç¦æ­¢é‡å®šå‘
 	if (no_redirect)
 	{
 		l_flag = l_flag | INTERNET_FLAG_NO_AUTO_REDIRECT;
 	}
 
-	//¾Ö_HTTPS,Ôö¼ÓÊ¹ÓÃ°²È«Á¬½Ó±êÖ¾£¬·ñÔòºöÂÔÖØ¶¨Ïòµ½HTTPS
+	//å±€_HTTPS,å¢åŠ ä½¿ç”¨å®‰å…¨è¿æ¥æ ‡å¿—ï¼Œå¦åˆ™å¿½ç•¥é‡å®šå‘åˆ°HTTPS
 	if (is_https)
 	{
 		l_flag = l_flag | INTERNET_FLAG_SECURE;
@@ -288,7 +288,7 @@ KrnlnApi std::vector<unsigned char>
 		HttpSendRequestA(l_Hhttpre, add_itional_header.c_str(), add_itional_header.size(), n_post_data_pBuffer.data(), n_post_data_pBuffer.size());
 	}
 
-	//¶ÁÈ¡Êı¾İ
+	//è¯»å–æ•°æ®
 	DWORD byteCount = 0;
 	std::vector<unsigned char> buffer(1024);
 	std::vector<unsigned char> pageContent;
@@ -297,12 +297,12 @@ KrnlnApi std::vector<unsigned char>
 		pageContent.insert(pageContent.end(), buffer.begin(), buffer.begin() + byteCount);
 	} while (byteCount);
 
-	//´¦ÀíĞ­ÒéÍ·
+	//å¤„ç†åè®®å¤´
 	std::string ret_header;
 	DWORD headerLength = 0;
 	HttpQueryInfoA(l_Hhttpre, HTTP_QUERY_RAW_HEADERS_CRLF, nullptr, &headerLength, nullptr);
 	if (headerLength > 0) {
-		char* buffer = new char[headerLength + 1]{ 0 };//³¤¶ÈÊÇ²»°üº¬½áÊø·ûµÄ£¬ÌáÇ°ÉêÇë
+		char* buffer = new char[headerLength + 1]{ 0 };//é•¿åº¦æ˜¯ä¸åŒ…å«ç»“æŸç¬¦çš„ï¼Œæå‰ç”³è¯·
 		HttpQueryInfoA(l_Hhttpre, HTTP_QUERY_RAW_HEADERS_CRLF, buffer, &headerLength, nullptr);
 		ret_header = std::string(buffer);
 		delete[]buffer;
