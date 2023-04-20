@@ -25,9 +25,9 @@ bool 端口检测(unsigned short 端口, const std::string& ip地址 = 取本机
 bool 端口检测(unsigned short 端口, const std::wstring& ip地址 = 取本机IPW());
 bool 是否联网();
 /*类似UDP，用于无需长期监听的短期微量信息发送*/
-bool 发送网络信息(const std::string& IP, unsigned short 端口, const std::vector<unsigned char> 数据);
+bool 发送网络信息(const std::string& IP, unsigned short 端口, const std::vector<unsigned char>& 数据);
 /*类似UDP，用于无需长期监听的短期微量信息发送*/
-bool 发送网络信息(const std::wstring& IP, unsigned short 端口, const std::vector<unsigned char> 数据);
+bool 发送网络信息(const std::wstring& IP, unsigned short 端口, const std::vector<unsigned char>& 数据);
 
 
 

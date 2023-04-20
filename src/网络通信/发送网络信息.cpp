@@ -3,7 +3,7 @@
 #include<vector>
 #include<string>
 #include"文本转换.h"
-KrnlnApi bool 发送网络信息(const std::string& serverIP, u_short port, const std::vector<unsigned char> data) {
+KrnlnApi bool 发送网络信息(const std::string& serverIP, unsigned short port, const std::vector<unsigned char>& data) {
 	//初始化
 	WSADATA wsaData;
 	int iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -64,7 +64,7 @@ KrnlnApi bool 发送网络信息(const std::string& serverIP, u_short port, cons
 	return true;
 }
 
-KrnlnApi bool 发送网络信息(const std::wstring& WserverIP, u_short port, const std::vector<unsigned char> data) {
+KrnlnApi bool 发送网络信息(const std::wstring& WserverIP, unsigned short port, const std::vector<unsigned char>& data) {
 	std::string serverIP = 宽文本到文本(WserverIP);
 	//初始化
 	WSADATA wsaData;
