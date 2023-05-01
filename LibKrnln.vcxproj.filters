@@ -740,5 +740,11 @@
     <ClCompile Include="src\EDBS数据表\edbs.cpp">
       <Filter>源文件\EDBS数据表</Filter>
     </ClCompile>
+    <ClCompile Include="src\文件读写\文件.cpp">
+      <Filter>源文件\文件读写\实现</Filter>
+    </ClCompile>
+    <ClCompile Include="src\环境存取\取特定目录.cpp">
+      <Filter>源文件\环境存取\实现</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

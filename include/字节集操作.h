@@ -180,4 +180,110 @@ intptr_t 倒找字节集(const std::vector<unsigned char>& 被搜寻的字节集
 intptr_t 倒找字节集下标(const std::vector<unsigned char>& b1, const std::vector<unsigned char>& b2, std::optional<size_t> p = std::nullopt);
 
 std::vector<unsigned char> 字节集拼接(std::vector<unsigned char> 字节集1, const std::vector<unsigned char>& 字节集2);
+
+
+
+namespace 字节集 {
+	/*inline std::string 字节集转文本(const std::vector<unsigned char>& 字节集) {
+		if (字节集.empty()) {
+			return "";
+		}
+
+		const size_t 长度 = 字节集.size();
+		std::vector<char> 缓冲区(长度 * 4 + sizeof("{}"));
+
+		size_t 缓冲区索引 = 0;
+		缓冲区[缓冲区索引++] = '{';
+
+		for (const auto 字节 : 字节集) {
+			auto 百位 = 字节 / 100;
+			auto 十位 = 字节 % 100 / 10;
+			auto 个位 = 字节 % 10;
+
+			if (百位 > 0) {
+				缓冲区[缓冲区索引++] = 百位 + '0';
+				缓冲区[缓冲区索引++] = 十位 + '0';
+			}
+			else if (十位 > 0) {
+				缓冲区[缓冲区索引++] = 十位 + '0';
+			}
+			缓冲区[缓冲区索引++] = 个位 + '0';
+			缓冲区[缓冲区索引++] = ',';
+		}
+		缓冲区[缓冲区索引 - 1] = '}';
+
+		return std::string(缓冲区.data(), 缓冲区索引);
+	}
+	inline std::wstring 字节集转文本W(const std::vector<unsigned char>& 字节集) {
+		if (字节集.empty()) {
+			return L"";
+		}
+
+		const size_t 长度 = 字节集.size();
+		std::vector<wchar_t> 缓冲区(长度 * 4 + sizeof("{}"));
+
+		size_t 缓冲区索引 = 0;
+		缓冲区[缓冲区索引++] = L'{';
+
+		for (const auto 字节 : 字节集) {
+			auto 百位 = 字节 / 100;
+			auto 十位 = 字节 % 100 / 10;
+			auto 个位 = 字节 % 10;
+
+			if (百位 > 0) {
+				缓冲区[缓冲区索引++] = 百位 + L'0';
+				缓冲区[缓冲区索引++] = 十位 + L'0';
+			}
+			else if (十位 > 0) {
+				缓冲区[缓冲区索引++] = 十位 + L'0';
+			}
+			缓冲区[缓冲区索引++] = 个位 + L'0';
+			缓冲区[缓冲区索引++] = L',';
+		}
+		缓冲区[缓冲区索引 - 1] = L'}';
+
+		return std::wstring(缓冲区.data(), 缓冲区索引);
+	}*/
+
+#include<string>
+	/*代码支持unicode和ansi，请按照编码格式提供char,wchar_t,char16_t，char32_t等*/
+	template <typename T>
+	inline std::basic_string<T> 字节集转文本(const std::vector<unsigned char>& 字节集) {
+		//using VecValueType = typename std::vector<unsigned char>::value_type;
+		//using StrValueType = typename std::basic_string<T>::value_type;
+		//static_assert(std::is_same<VecValueType, StrValueType>::value, "value_type 不匹配");
+
+		if (字节集.empty()) {
+			return std::basic_string<T>();
+		}
+
+		const size_t 长度 = 字节集.size();
+		std::vector<T> 缓冲区(长度 * 4 + sizeof("{}"));
+
+		size_t 缓冲区索引 = 0;
+		缓冲区[缓冲区索引++] = '{';
+
+		for (const auto 字节 : 字节集) {
+			auto 百位 = 字节 / 100;
+			auto 十位 = 字节 % 100 / 10;
+			auto 个位 = 字节 % 10;
+
+			if (百位 > 0) {
+				缓冲区[缓冲区索引++] = 百位 + T('0');
+				缓冲区[缓冲区索引++] = 十位 + T('0');
+			}
+			else if (十位 > 0) {
+				缓冲区[缓冲区索引++] = 十位 + T('0');
+			}
+			缓冲区[缓冲区索引++] = 个位 + T('0');
+			缓冲区[缓冲区索引++] = ',';
+		}
+		缓冲区[缓冲区索引 - 1] = '}';
+
+		return std::basic_string<T>(缓冲区.data(), 缓冲区索引);
+	}
+}
+
+
+
 #pragma region 

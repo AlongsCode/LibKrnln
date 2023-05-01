@@ -318,3 +318,56 @@ inline std::vector<std::string> 取中间文本(const std::string& 欲取的文�
 	}
 	return aryText;
 };
+
+inline std::string 删数值文本左侧无效零(const std::string& str)
+{
+	std::string result = str;
+	auto pos = result.find_first_not_of('0'); // 找到第一个非零字符的位置
+	if (pos != std::string::npos)
+	{
+		result.erase(0, pos); // 删除左侧无用的零
+	}
+	// 如果存在小数点，则删除结尾的零和小数点
+	if (auto pos_dot = result.find_last_of('.'); pos_dot != std::string::npos)
+	{
+		// 找到最后一个非零数字的位置
+		auto pos_nonzero = result.find_last_not_of('0');
+		// 如果最后一个非零数字位于小数点之前，则将小数点一起删除
+		if (pos_nonzero < pos_dot)
+		{
+			result.erase(pos_dot, std::string::npos);
+		}
+		// 如果最后一个非零数字位于小数点之后，则仅删除结尾的零字符
+		else
+		{
+			result.erase(pos_nonzero + 1, std::string::npos);
+		}
+	}
+	return result;
+}
+inline std::wstring 删数值文本左侧无效零(const std::wstring& str)
+{
+	std::wstring result = str;
+	auto pos = result.find_first_not_of(L'0'); // 找到第一个非零字符的位置
+	if (pos != std::wstring::npos)
+	{
+		result.erase(0, pos); // 删除左侧无用的零
+	}
+	// 如果存在小数点，则删除结尾的零和小数点
+	if (auto pos_dot = result.find_last_of(L'.'); pos_dot != std::wstring::npos)
+	{
+		// 找到最后一个非零数字的位置
+		auto pos_nonzero = result.find_last_not_of(L'0');
+		// 如果最后一个非零数字位于小数点之前，则将小数点一起删除
+		if (pos_nonzero < pos_dot)
+		{
+			result.erase(pos_dot, std::wstring::npos);
+		}
+		// 如果最后一个非零数字位于小数点之后，则仅删除结尾的零字符
+		else
+		{
+			result.erase(pos_nonzero + 1, std::wstring::npos);
+		}
+	}
+	return result;
+}

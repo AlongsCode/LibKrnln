@@ -1042,13 +1042,12 @@ size_t find_sub_bytes(const std::vector<unsigned char>& bytes, const std::vector
 //	}
 //	return "";
 //}
-#include"test.h"
+
 
 
 
 int main() {
-	字节集类 数据(data, data + sizeof(data));
-	写到文件("J:\\MyProject\\LibCpp\\LibExuiClass\\lib\\x64\\exui.dll", 数据);
+
 
 	return 0;
 

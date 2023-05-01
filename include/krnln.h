@@ -3,6 +3,7 @@
 #include<vector>
 #include<optional>
 #include<ctime>
+#include<memory>
 #if  __cplusplus > 202004L
 import STL;
 #endif
@@ -61,13 +62,13 @@ import STL;
 
 
 template <class Ty>
-static void pt(std::wstring& str, Ty v)
+static void al_pt(std::wstring& str, Ty v)
 {
 	using namespace std;
 	str.append(to_wstring(v) + L" | ");
 }
 template <class Ty>
-static void pt(std::wstring& str, std::vector<Ty> v)
+static void al_pt(std::wstring& str, std::vector<Ty> v)
 {
 	using namespace std;
 	if (v.empty())
@@ -86,7 +87,7 @@ static void pt(std::wstring& str, std::vector<Ty> v)
 	str.pop_back();
 	str.append(L"} | ");
 }
-static void pt(std::wstring& str, const wchar_t* s) //这个是 L""
+static void al_pt(std::wstring& str, const wchar_t* s) //这个是 L""
 {
 	using namespace std;
 	str.append(L"\"");
@@ -101,7 +102,7 @@ static void pt(std::wstring& str, const wchar_t* s) //这个是 L""
 
 	str.append(L"\" | ");
 }
-static void pt(std::wstring& str, const char* s) //这个是 L""
+static void al_pt(std::wstring& str, const char* s) //这个是 L""
 {
 	using namespace std;
 	str.append(L"\"");
@@ -117,7 +118,7 @@ static void pt(std::wstring& str, const char* s) //这个是 L""
 
 	str.append(L"\" | ");
 }
-static void pt(std::wstring& str, std::string s)
+static void al_pt(std::wstring& str, std::string s)
 {
 	using namespace std;
 	str.append(L"\"");
@@ -126,14 +127,14 @@ static void pt(std::wstring& str, std::string s)
 
 	str.append(L"\" | ");
 }
-static void pt(std::wstring& str, std::wstring s)
+static void al_pt(std::wstring& str, std::wstring s)
 {
 	using namespace std;
 	str.append(L"\"");
 	str.append(s);
 	str.append(L"\" | ");
 }
-static void pt(std::wstring& str, std::vector<unsigned char> s)
+static void al_pt(std::wstring& str, std::vector<unsigned char> s)
 {
 	using namespace std;
 	if (s.empty())
@@ -153,13 +154,13 @@ static void pt(std::wstring& str, std::vector<unsigned char> s)
 	str.append(L"} | ");
 
 };
-static void pt(std::wstring& str, char* s)
+static void al_pt(std::wstring& str, char* s)
 {
 	using namespace std;
 	str.append(到文本W(std::string(s)) + L" | ");
 
 };
-static void pt(std::wstring& str, std::tm s)
+static void al_pt(std::wstring& str, std::tm s)
 {
 	using namespace std;
 	str.append(到文本W(s) + L" | ");
@@ -170,7 +171,7 @@ template <class... T>
 static void 调试输出(T... args)
 {
 	std::wstring str = L"";
-	std::initializer_list<INT>{(pt(str, std::forward<T>(args)), 0)...};
+	std::initializer_list<INT>{(al_pt(str, std::forward<T>(args)), 0)...};
 
 	str.pop_back();
 	str.pop_back();

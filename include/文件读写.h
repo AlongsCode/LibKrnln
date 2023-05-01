@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 enum class 内存文件操作命令 {
 	读入缓冲区,
 	写入缓冲区,
@@ -49,7 +50,7 @@ public:
 	void 写(const wchar_t* data);
 	template<typename T, typename ... Args>
 	void 写(const T& data) {
-		写(vector<unsigned char>((unsigned char*)&data, ((unsigned char*)&data + sizeof(T))));
+		写(std::vector<unsigned char>((unsigned char*)&data, ((unsigned char*)&data + sizeof(T))));
 	}
 	template<typename T, typename ... Args>
 	void 写(const T& data, const Args&...args) {
